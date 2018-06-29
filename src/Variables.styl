@@ -1,0 +1,319 @@
+/*
+	Variables usadas en la plantilla por defecto.
+*/
+
+
+// Colores
+
+// Base (grises)
+$black = #000
+$grayDarker = #222
+$grayDark = #333
+$gray = #555
+$color15 = #666
+$grayLight = #999
+$color6 = #aaa
+$color7 = #ccc
+$grayLighter = #ddd
+$grayLightest = #eee
+$white = #fff
+
+// Base (vivos)
+$blue = #049cdb
+$blueDark = #0064cd
+$green = #46a546
+$red = #9d261d
+$yellow = #ffc40d
+$orange = #f89406
+$pink = #c3325f
+$purple = #7a43b6
+
+// Otros
+$color1 = #4a4a54
+$color2 = #1d1e21
+$color3 = #ececec
+$color4 = #c5c5c5
+$color5 = #3a3a41
+$color9 = #f1f1f1
+$color10 = #3b3b42
+$color11 = #35353c
+$color12 = #2b2b2f
+$color13 = #2a2a30
+$color18 = #f8f8f8
+$colorPrimary1 = #04c
+$colorPrimary2 = #08c
+$colorLoginButton = #3086a6
+$colorLoginTextBox = #004e72
+$colorLoginButtonHover = #ffd503
+$colorLoginButtonHover2 = #b09100
+$colorGrayBlack = #494852
+$colorBorderTemplateCatalog = #ddd
+
+$blueStrong = #1c678a
+
+$yellowTitleRedmic = #fc0
+
+
+// Gráficos
+
+// Texturas
+$linen-gray-opa = url('/stylesheets/src/images/textures/linen-gray-opa.png')
+$linen-gray = url('/stylesheets/src/images/textures/linen-gray.png')
+$linen-light = url('/stylesheets/src/images/textures/linen-light.png')
+$linen-lighter = url('/stylesheets/src/images/textures/linen-lighter.png')
+
+// Iconos
+$worms-logo = url('/stylesheets/src/images/worms_logo.jpg')
+$pdf-logo = url('/stylesheets/src/images/pdf_logo.png')
+
+// Imágenes
+$404-image = url('/stylesheets/src/images/404.png')
+$login-image = url("/stylesheets/src/images/bglogin.png")
+
+
+
+// Variables base
+
+// General
+$nano = 1px
+$micro = 3px
+$mini = 5px
+$normal = 7px
+$semi = 10px
+$big = 15px
+$mega = 20px
+$noOpacity = 0
+$lowOpacity = 0.2
+$mediumOpacity = 0.5
+$highOpacity = 0.7
+$fullOpacity = 1
+$radio-esquinas = 5px
+$topbar-size = 39px
+$sidebar-size = 76px
+$sidebar-secondary-size = 20rem
+$borderSize = $nano
+$borderType = $borderSize solid
+$borderSizeFat = $micro
+$borderTypeFat = $borderSizeFat solid
+$borde1 = $borderType $color1
+$borde2 = $borderType $color2
+$borderDark = $borderType rgba($black, $mediumOpacity)
+$borderLight = $borderType rgba($white, $mediumOpacity)
+$loadingAndLockedZIndex = 10000
+
+// Tipografías
+$baseFontFamily = 'Open Sans', sans-serif;
+$fa-font-path = '/stylesheets/submodules/Font-Awesome-Stylus/fonts'
+$baseFontSize = 62.5%
+$baseLineHeight = 1.6rem
+$tinyFontSize = 1rem
+$smallFontSize = 1.2rem
+$normalFontSize = 1.4rem
+$bigFontSize = 1.6rem
+$giantFontSize = 1.8rem
+$hugeFontSize = 2.0rem
+$loadingFontSize = 4.0rem
+$textColor = $white
+
+// Sombras (componentes)
+$shadowBoxBlurRadius = 10px
+$shadowBoxBlurRadiusBig = 20px
+$shadowBoxSpreadRadius = 0
+$shadowBoxOpacity = 0.5
+$shadowTextBlurRadius = 0
+$shadowTextOpacity = 0.5
+$sombra-c = 0 0
+$sombra-n = 0 -1px
+$sombra-ne = 1px -1px
+$sombra-e = 1px 0
+$sombra-se = 1px 1px
+$sombra-s = 0 1px
+$sombra-so = -1px 1px
+$sombra-o = -1px 0
+$sombra-no = -1px -1px
+// Sombras de cajas (completas)
+$sombra-contenedor-externa-centrada-oscura = $sombra-c $shadowBoxBlurRadius $shadowBoxSpreadRadius rgba($black, $shadowBoxOpacity)
+$sombra-contenedor-externa-centrada-clara = $sombra-c $shadowBoxBlurRadius $shadowBoxSpreadRadius rgba($white, $shadowBoxOpacity)
+$sombra-contenedor-interna-centrada-oscura = inset $sombra-c $shadowBoxBlurRadius $shadowBoxSpreadRadius rgba($black, $shadowBoxOpacity)
+$sombra-contenedor-interna-centrada-clara = inset $sombra-c $shadowBoxBlurRadius $shadowBoxSpreadRadius rgba($white, $shadowBoxOpacity)
+// Sombras de texto (completas)
+$sombra-texto-centrada-oscura = $sombra-c $shadowTextBlurRadius rgba($black, $shadowTextOpacity)
+$sombra-texto-centrada-clara = $sombra-c $shadowTextBlurRadius rgba($white, $shadowTextOpacity)
+$sombra-texto-sur-oscura = $sombra-s $shadowTextBlurRadius rgba($black, $shadowTextOpacity)
+$sombra-texto-sur-clara = $sombra-s $shadowTextBlurRadius rgba($white, $shadowTextOpacity)
+
+// Backgrounds
+// -------------------------
+$backgroundColor = #f5f5f5;
+$backgroundHighlightColor = #f9f9f9;
+$backgroundHover = $backgroundColor;
+$backgroundActive = $backgroundHover;
+
+$infoBackground = #5bc0de;
+$infoBackgroundHighlight = #2f96b4;
+$successBackground = #62c462;
+$successBackgroundHighlight = #51a351;
+$warningBackgroundHighlight = $orange;
+$warningBackground = lighten($warningBackgroundHighlight, 15%);
+$dangerBackground = #ee5f5b;
+$dangerBackgroundHighlight = #bd362f;
+
+// Variables de Alertify
+$alertifyTextError = $white
+$alertifyTextSuccess = $white
+$alertifyTextWarn = $white
+$alertifyBackgroundError = linear-gradient(top, $dangerBackground, $dangerBackgroundHighlight)
+$alertifyBackgroundSuccess = linear-gradient(top, $successBackground, $successBackgroundHighlight)
+$alertifyBackgroundWarn = linear-gradient(top, $warningBackground, $warningBackgroundHighlight)
+$alertifyBorderError = $white
+$alertifyBorderSuccess = $white
+$alertifyBorderWarn = $white
+
+// Variables del grid
+$tableBorder = $grayLighter
+$gridBorder = $tableBorder
+$gridRowEvenBackground = $white
+$gridRowOddBackground = $grayLightest
+$gridSelectedBackground = $blue
+$gridSelectedColor = $white
+$gridBackgroundHover = lighten($gridSelectedBackground, 20%)
+
+// Variables del mapa
+$layerThumbnailWidth = 100px
+$layerThumbnailHeight = 67px
+
+
+
+
+// mierda por integrar
+// --------------------------------------------------
+
+
+
+
+// Forms
+// -------------------------
+$inputBackground = $white;
+$inputBorder = #ccc;
+$inputBorderRadius = $radio-esquinas;
+$inputDisabledColor = $gray;
+$inputDisabledBackground = $grayLighter;
+$formActionsBackground = $backgroundColor;
+
+// Links
+// -------------------------
+$linkColor = #08c;
+$linkColorHover = darken($linkColor, 15%);
+
+// Buttons
+// -------------------------
+$btnBackground = $white;
+$btnBackgroundHighlight = darken($white, 10%);
+$btnBorder = #bbb;
+
+$btnPrimaryBackground = $linkColor;
+$btnPrimaryBackgroundHighlight = spin($btnPrimaryBackground, 20%);
+
+$btnInfoBackground = $infoBackground;
+$btnInfoBackgroundHighlight = $infoBackgroundHighlight;
+
+$btnSuccessBackground = $successBackground;
+$btnSuccessBackgroundHighlight = $successBackgroundHighlight;
+
+$btnWarningBackground = $warningBackground;
+$btnWarningBackgroundHighlight = $warningBackgroundHighlight;
+
+$btnDangerBackground = $dangerBackground;
+$btnDangerBackgroundHighlight = $dangerBackgroundHighlight;
+
+$btnInverseBackground = #444;
+$btnInverseBackgroundHighlight = $grayDarker;
+
+// Dropdowns
+// -------------------------
+$dropdownBackground = $white;
+$dropdownBorder = rgba(0,0,0,.2);
+$dropdownDividerTop = #e5e5e5;
+$dropdownDividerBottom = $white;
+
+$dropdownLinkColor = $grayDark;
+
+$dropdownLinkColorHover = $white;
+$dropdownLinkBackgroundHover = $dropdownLinkBackgroundActive;
+
+$dropdownLinkColorActive = $dropdownLinkColor;
+$dropdownLinkBackgroundActive = $linkColor;
+
+
+// Navbar
+// -------------------------
+$navbarCollapseWidth = 979px;
+
+$navbarHeight = 40px;
+$navbarBackgroundHighlight = #ffffff;
+$navbarBackground = darken($navbarBackgroundHighlight, 5%);
+$navbarBorder = darken($navbarBackground, 12%);
+
+$navbarText = $gray;
+$navbarLinkColor = $gray;
+$navbarLinkColorHover = $grayDark;
+$navbarLinkColorActive = $gray;
+$navbarLinkBackgroundHover = transparent;
+$navbarLinkBackgroundActive = darken($navbarBackground, 5%);
+
+$navbarBrandColor = $navbarLinkColor;
+
+// Inverted navbar
+$navbarInverseBackground = #111111;
+$navbarInverseBackgroundHighlight = #222222;
+$navbarInverseBorder = #252525;
+
+$navbarInverseText = $grayLight;
+$navbarInverseLinkColor = $grayLight;
+$navbarInverseLinkColorHover = $white;
+$navbarInverseLinkColorActive = $navbarInverseLinkColorHover;
+$navbarInverseLinkBackgroundHover = transparent;
+$navbarInverseLinkBackgroundActive = $navbarInverseBackground;
+
+$navbarInverseSearchBackground = lighten($navbarInverseBackground, 25%);
+$navbarInverseSearchBackgroundFocus = $white;
+$navbarInverseSearchBorder = $navbarInverseBackground;
+$navbarInverseSearchPlaceholderColor = #ccc;
+
+$navbarInverseBrandColor = $white;
+
+
+// Form states and alerts
+// -------------------------
+$warningText = #c09853;
+$warningBackgroundContainer = #fcf8e3;
+$warningBorder = darken(spin($warningBackgroundContainer, -10), 3%);
+
+$errorText = #b94a48;
+$errorBackgroundContainer = #f2dede;
+$errorBorder = darken(spin($errorBackgroundContainer, -10), 3%);
+
+$successText = #468847;
+$successBackgroundContainer = #dff0d8;
+$successBorder = darken(spin($successBackgroundContainer, -10), 5%);
+
+$infoText = #3a87ad;
+$infoBackgroundContainer = #d9edf7;
+$infoBorder = darken(spin($infoBackgroundContainer, -10), 7%);
+
+
+// Tooltips and popovers
+// -------------------------
+$tooltipColor = #fff;
+$tooltipBackground = #000;
+$tooltipArrowWidth = 5px;
+$tooltipArrowColor = $tooltipBackground;
+
+$popoverBackground = #fff;
+$popoverArrowWidth = 5px;
+$popoverArrowColor = #fff;
+$popoverTitleBackground = darken($popoverBackground, 3%);
+
+// Special enhancement for popovers
+$popoverArrowOuterWidth = $popoverArrowWidth + 1;
+$popoverArrowOuterColor = rgba(0,0,0,.25);

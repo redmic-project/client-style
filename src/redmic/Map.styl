@@ -1,0 +1,372 @@
+/*
+	Plantilla para modificar el estilo de los mapas.
+*/
+
+
+
+@import '../submodules/leaflet/dist/leaflet.css'
+@import '../submodules/leaflet-awesome-markers/dist/leaflet.awesome-markers.css'
+@import '../submodules/pruneCluster/dist/LeafletStyleSheet.css'
+
+.map
+	width 100%
+	height 100%
+	border-radius 5px
+	margin 0
+	padding 0
+	color $black
+
+.leaflet-control
+	input[type=radio]
+		display none
+
+.leaflet-queryable
+	cursor help
+
+.leaflet-control-layers-toggle
+	@extend .fa
+	font-size 2.5rem
+	text-align center
+	line-height 3.5rem
+	cursor pointer
+	color $black !important
+	background-image none
+	border-radius 5px
+	&:hover
+		background-color $grayLightest
+	&.active
+		background-color $grayLighter
+
+.leaflet-popup
+	color $black
+	.leaflet-popup-content
+		.propLabel
+			negrita()
+		.propValue
+			.scientificName
+			.authorship
+				negrita()
+				fontSize 1.5rem
+
+.leaflet-pane > svg path
+	pointer-events inherit
+
+.scientificName
+	font-style italic
+
+.leaflet-container
+	z-index 1
+
+.leaflet-marker-pane
+	.animated
+		animation-iteration-count 2
+
+/*icons*/
+
+.grid-distribution, .grid-distribution-select
+	fill-opacity .6
+	cursor pointer
+
+.grid-distribution
+	fill brown
+
+.grid-distribution-select
+	fill green
+
+.count-text
+	text-anchor middle
+	dominant-baseline middle
+	fill white
+
+.d3-tip
+	line-height 1
+	font-weight bold
+	padding 12px
+	background rgba(0, 0, 0, 0.8)
+	color gold
+	border-radius 2px
+	z-index 100
+	:nth-child(2)
+		color $white !important
+
+
+/*coordenates*/
+
+.leaflet-control-coordinates
+	background-color $grayLighter
+	background-color rgba($white,.8)
+	cursor pointer
+
+.leaflet-control-coordinates
+.leaflet-control-coordinates .uiElement input
+	bordeRedondeado()
+
+.leaflet-control-coordinates .uiElement
+	margin 4px
+
+.leaflet-control-coordinates .uiElement .labelFirst
+	margin-right 4px
+	color $color11
+	fontSize 1.4rem
+	font-weight normal
+	line-height 1.6rem
+
+.leaflet-control-coordinates .uiHidden
+	display none
+
+
+/*MiniMap*/
+
+.leaflet-control-minimap
+	border none
+	transition all 0.3s
+	a
+		color $black !important
+		text-decoration none
+		display flex
+		align-items center
+		justify-content center
+		&.minimized-topright
+			border-radius 5px
+
+.leaflet-control-minimap-toggle-display
+	fontSize 2.5rem
+	@extend .fa
+	transform rotate(0deg) !important
+	&:before
+		transform rotate(0deg)
+		@extend .fa-arrow-down:before
+
+.leaflet-control-minimap-toggle-display-topright
+	transform rotate(0deg) !important
+	&:before
+		transition all 0.4s
+		transform rotate(225deg)
+
+.leaflet-control-minimap-toggle-display-topright.minimized-topright
+	&:before
+		transform rotate(45deg)
+
+
+/*Leaflet-NavBar*/
+
+.leaflet-control-navbar
+	a
+		@extend .fa
+	.leaflet-control-navbar-home:before
+		@extend .fa-home:before
+	.leaflet-control-navbar-fwd:before
+		@extend .fa-caret-right:before
+	.leaflet-control-navbar-back:before
+		@extend .fa-caret-left:before
+
+
+/*Botoneras*/
+
+.botoneraH
+	position absolute
+	right 20px
+	bottom 20px
+	flexible h right center
+	z-index 100
+
+.botoneraV
+	position absolute
+	left 17px
+	top 90px
+	flexible v left center
+	max-width 40px
+	.dijitButtonNode
+		padding 9px 10px !important
+
+.emergente
+	position absolute
+	right 20px
+	top 20px
+	border $borderLight
+	sombreadoCaja()
+
+.filtroBusqueda
+	microMargined()
+	flexibleOrder 0
+
+.botonSelection
+	microMargined()
+	flexibleOrder 3
+
+.botonClear
+	microMargined()
+	flexibleOrder 2
+
+.botonPrint
+	flexibleOrder 1
+
+.botonHome
+	microMargined()
+	flexibleOrder 2
+
+.botonLegend
+	microMargined()
+	flexibleOrder 1
+
+.botonFullscreen
+	microMargined()
+	flexibleOrder 4
+
+.botonTopo
+	microMargined()
+	flexibleOrder 0
+
+.thumbList
+	padding-top $semi
+
+.activeThumb
+	border $borderTypeFat $blue
+
+.thumbCaption
+	bottom 3%
+	left 3%
+	microPadded h
+
+.borderRadius
+	border-radius 5px
+
+
+// Para el dialog
+
+//.dijitContentPaneSingleChild
+//	border-radius 5px
+
+.db
+	.dijitTooltipBelow, .dijitTooltipAbove
+		.dijitTooltipContainer
+			border none
+			padding 0
+			.dijitTooltipFocusNode
+				padding 0
+		.dijitTooltipConnector
+			border-bottom-color #3a3a41
+
+.borderContainerDialog
+	border-radius 5px
+	.title
+		padding 10px
+		font-size 1.6rem
+		color #ffd700
+		font-weight bold
+
+
+// info de los layers
+
+.layerInfoGroup
+	border-bottom solid 1px $white
+	margin 5px
+
+	.layerInfoGroupTitle
+		@extend .titleRedmic
+		fontSize 2rem
+		padding 5px
+
+	.layerInfoElement
+		margin-bottom 5px
+		padding 5px
+
+.layerLegend
+	margin 5px
+
+	img
+		margin 10px
+
+	.layerLegendTitle
+		@extend .titleRedmic
+		fontSize 2rem
+		padding 5px
+
+
+.leaflet-overlay-pane.childIsOnHover > .trackingSvg
+	opacity 0.2
+
+.trackingSvg
+	pointer-events none
+	transition-property opacity
+	transition-duration 0.5s
+
+	&.onHover
+		opacity 1 !important
+
+	.trackingLineGroup
+
+		&.onHover
+			opacity 1
+
+			& > defs
+				.trackMarker
+					stroke red
+			.trackingPath
+				stroke red
+			.trackingAxesGroup
+				:not(.trackingCurrentPosition)
+					stroke red
+
+		& > defs
+			.trackMarker
+				stroke $white
+				stroke-width 0.5px
+				pointer-events fill
+				cursor pointer
+				transition-property fill
+				transition-duration 0.5s
+
+			.trackingStartPosition
+				stroke-width 0px
+				fill $green
+
+		.trackingPath
+			stroke-width 2px
+			fill none
+			stroke $white
+			pointer-events stroke
+			cursor pointer
+			transition-property stroke
+			transition-duration 0.5s
+
+		.trackingAxesGroup
+			:not(.trackingCurrentPosition)
+				stroke-width 2px
+				stroke $white
+				stroke-opacity 1
+				cursor pointer
+				pointer-events auto
+				transition-property stroke opacity
+				transition-duration 0.5s
+				&:hover
+					stroke $yellow !important
+
+			.trackingCurrentPosition
+				stroke-width 0px
+				fill $yellow
+				&.endOfTrack
+					fill $red
+
+
+.leaflet-draw-actions
+	margin-left 3px
+	a
+		background-color #fff
+		color #000
+	li:first-child a
+		border-radius 4px 0 0 4px;
+
+
+// De aqui pabajo hay que cambiarlo, no esta traducido a lo nuevo aun
+
+.anidado
+	margin-left 10px
+
+.infoPopUp
+	text-shadow none
+
+
+.mapStep
+	.map
+		height calc(100% - 10px)

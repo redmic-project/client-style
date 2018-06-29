@@ -1,0 +1,49 @@
+@import '../submodules/dropzone/dist/min/dropzone.min.css'
+
+.dropzone
+	bordeRedondeado()
+	fondo color rgba($black, $lowOpacity)
+	fondo textura medium
+	border 1px solid $inputBorder
+	miniPadded()
+	min-height 80px
+	.dz-preview
+		miniMargined()
+		miniPadded()
+		bordeRedondeado()
+		fondo color $white
+
+		img
+			max-width 100%
+
+		.dz-details
+			margin-bottom $mini
+
+			.dz-size
+				noDisplay()
+
+		.dz-error-message
+			top 160px !important
+
+		.dz-error-mark
+			path
+				stroke $white
+				stroke-opacity 0.5
+				stroke-width 1.5px
+				fill $red
+
+	.dz-default.dz-message
+		fullSize()
+		noMargin()
+		miniPadded()
+		top 0
+		left 0
+		flexible h space-between center
+		color $color6
+		fondo none
+		span
+			display block
+		.uploadIcon
+			fontSize 3rem
+			semiMargined h
+			cursor pointer

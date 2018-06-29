@@ -1,0 +1,276 @@
+.topZone
+	@extend .fWidth
+	noScroll()
+	min-height 3rem
+	fondo textura hard
+	border-radius 5px 5px 0 0
+	border-radius unquote('0\9')
+	display flex
+
+	.dijitIcon
+		@extend .fWidth
+
+	.textSearchZone
+		display flex
+		padding 1rem 1rem
+		float right
+
+	.titleZone
+		padding 0
+		line-height 5rem
+		font-size 2rem
+		display flex
+		justify-content flex-start
+		span
+			padding-left 1rem
+			display inline-block
+			overflow hidden
+			white-space nowrap
+			text-overflow ellipsis
+	.widthLimitTitleZone
+		max-width calc(100% - 100px)
+
+	.optionZone
+		padding 1rem 0
+		display flex
+		justify-content space-between
+		padding-right 2rem
+
+	.buttonsZone
+	.filtersZone
+		display flex
+		justify-content flex-end
+		> div
+			margin-right 1rem
+		> span
+			cursor pointer
+		div:last-child
+			margin-right 0
+
+.keypadZone, .selectZone
+	display flex
+	flex-grow 1
+	align-items center
+	justify-content flex-end
+	padding 0
+
+.keypadZone, .selectZone, .containerList .framework
+	.iconKeypad
+		display flex
+		align-items center
+		justify-content space-between
+
+		a
+			color $white
+
+		.iconContainer
+			&.selected
+				color $blue
+
+			&.disabled
+				opacity 0.4
+
+			&:not(.disabled):hover
+				color lighten($blue, 10%)
+
+			i
+				@extend .clickable
+				margin 0 1rem
+				fontSize 2rem
+
+		.iconGroup
+			display flex
+			align-items center
+			justify-content space-between
+			padding 4px 10px
+
+			&:not(:first-child)
+				border-left solid 1px rgba(255, 255, 255, 0.4)
+
+.containerList .framework
+	.iconKeypad
+		margin-bottom 5px
+
+.selectZone
+	margin 5px
+	padding 5px 0
+	border-radius 5px
+	.dijitSelect td
+		line-height 50%
+
+.topZoneCitation
+	display flex
+	flex-direction row-reverse
+	background-color transparent
+	.button
+		padding 0 5px
+
+.topZoneInfoList
+	display flex
+	align-items center
+	justify-content space-between
+	fontSize 2rem
+
+.centerZone
+	height calc(100% - 5rem)
+	display flex
+	justify-content space-between
+	flex-direction row
+	//flexible h space-between center
+	noScroll()
+
+.facetsZone
+	width 25rem
+	min-width 25rem
+	fondo textura hard
+	border-radius 0 0 0 5px
+	@extend .fHeight
+	.containerFacets
+		border-radius 0 0 0 5px
+		border-radius unquote('0\9')
+		margin 5px
+		height calc(100% - 10px)
+	.dijitTab
+		fondo textura hard
+		background-image none
+	.dijitTabPaneWrapper
+		background-image none
+	.dijitTree
+		margin 5px
+
+.isolatedFacetsZone
+	@extend .facetsZone
+	border-radius 5px
+	margin-right 5px
+
+	.containerFacets
+		border-radius 5px
+
+.listZoneWithFacets
+	.containerList
+		.contentList
+			border-radius 5px 0 0 5px
+		.bottomList
+			border-radius 0 0 5px 0
+			border-radius unquote('0\9')
+
+.listZone
+	display flex
+	@extend .fHeight
+	@extend .col-xs-12
+	@extend .col-sm-12
+	@extend .col-md-12
+	@extend .col-lg-12
+	@extend .col-xl-12
+	padding 0
+
+	.containerDetails
+		flex-grow 1
+		border-radius 5px 0 0 0
+		.header
+			border-radius 5px 0 0 0
+		.content
+			border-radius 0 0 5px 0
+
+.listZone > .map
+	border-radius 0 0 5px 0
+
+.sidebarAndContent
+	.topZone, .containerList .bottomList, .containerDetails .content
+		border-radius 0
+	.centerContent
+		border-top 1px solid #4a4a54
+
+.dualContent
+	.topZone
+		.buttonZone
+			padding 0
+			display flex
+			align-items center
+			& > *
+				margin 0.5rem
+
+	.dualCenterZone
+		position relative
+		height calc(100% - 5rem)
+		noScroll()
+
+		.dualListZone
+			display flex
+			position absolute
+			@extend .fHeight
+			@extend .fWidth
+
+			& > *
+				display flex
+				flex-grow 1
+
+			.primaryIn
+				animation enterFromLeftToRight 0.6s
+				animation-fill-mode forwards
+			.primaryOut
+				animation leaveToLeft 0.4s
+				animation-fill-mode forwards
+			.secondaryIn
+				animation enterFromRightToLeft 0.6s
+				animation-fill-mode forwards
+			.secondaryOut
+				animation leaveToRight 0.4s
+				animation-fill-mode forwards
+
+@keyframes enterFromRightToLeft
+	0%
+		transform translateX(100%)
+
+	100%
+		transform translateX(0%)
+
+@keyframes enterFromLeftToRight
+	0%
+		transform translateX(-100%)
+
+	100%
+		transform translateX(0%)
+
+@keyframes leaveToLeft
+	0%
+		transform translateX(0%)
+
+	100%
+		transform translateX(-100%)
+
+@keyframes leaveToRight
+	0%
+		transform translateX(0%)
+
+	100%
+		transform translateX(100%)
+
+
+.embeddedContentTopbar
+	@extend .topZone
+	height 5rem
+	border-radius 5px
+	margin-bottom 5px
+
+.dijitDialog
+	.embeddedContentTopbar
+		border-radius 0
+
+.embeddedContentContainer
+	@extend .centerZone
+
+	.titleRedmic
+		color $grayLightest
+		fontSize 1.8rem
+
+	.listZone
+	.mapSideContainer
+		border-radius 5px
+
+li.objectClassification
+	&:not(:first-child)
+		margin-top 0.5rem
+
+li.objectClassificationDetails
+	padding-left 2rem

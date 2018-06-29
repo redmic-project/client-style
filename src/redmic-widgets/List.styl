@@ -1,0 +1,535 @@
+.containerList .bottomList, .bottomListBorder .contentList
+	border-radius 0 0 5px 5px
+
+.containerList
+	@extend .col-xs-12
+	@extend .col-sm-12
+	@extend .col-md-12
+	@extend .col-lg-12
+	@extend .col-xl-12
+
+	padding 0
+	display flex
+	flex-flow column
+	flex-grow 1
+
+	.pagination
+		display flex
+		margin 0
+		li.active > a, li.active > span,
+		li > a, li > span
+			padding 0px 5px
+			cursor pointer
+			color white
+
+		li > a, li > span
+			background-color transparent
+			border none
+			height 1.6rem
+			display flex !important
+			align-items center
+
+		li.active > a, li.active > span
+			background-color $blue
+			border-radius 5px
+
+		li > .angle:hover
+			color $blue
+
+		li.disabled > a, li.disabled > span
+			cursor not-allowed
+			background-color transparent
+			color rgba(255,255,255,0.5)
+		li.disabled > .angle:hover
+			color black
+
+	.framework
+		fondo textura hard
+		min-height 3.5rem
+		padding 0 1rem
+		padding-top 0.5rem
+
+	.bottomList
+		display flex
+		justify-content space-between
+		align-items center
+
+		.keypadZone
+			margin-bottom 5px
+
+		.iconKeypad
+			margin-bottom 5px
+			i
+				font-size 2rem
+				color #fff
+
+		.totalResult
+			display flex
+			align-items center
+			span
+				color white
+			span:first-child
+				padding-right 5px
+
+		.paginate .selectOption,
+		.paginate .selectPage,
+		.totalResult,
+		.containerSelectionBox
+			margin-bottom 3px
+
+		.paginate
+			display flex
+			flex-wrap wrap
+			justify-content center
+			align-items center
+
+			.selectOption
+				color black
+		.paginate, .containerOrder, .containerSelectionBox
+			.form-control
+				font-size 1.4rem
+				background-image $linen-light
+				color white
+				border-color rgb(169, 169, 169)
+				option
+					color black
+
+	.flexEndContent
+		justify-content flex-end
+
+	.containerScroll
+		display flex
+		flex-direction column
+		overflow auto
+		flex-grow 1
+
+	.contentList
+		position relative
+		overflow auto
+		background-color white
+		flex-grow 1
+		color black
+		display flex
+		align-items center
+
+		.rowsContainer
+			flex-grow 1
+			position absolute
+			top 0
+			width 100%
+			align-self flex-start
+			overflow hidden
+
+		.rowsContainer .rowsContainer
+			padding-left 2rem
+
+		.containerRow
+			&:nth-child(odd)
+				background-color #fff
+			&:nth-child(even)
+				background-color #ddd
+
+		.dragAndDropContainerRow
+			background-color #aaa !important
+
+		.borderTopDragAndDrop
+			border-top 20px solid #fc0 !important
+
+		.borderBottomDragAndDrop
+			border-bottom 20px solid #fc0 !important
+
+		.containerTopRow
+			padding 6px 0 6px 10px
+			flexible h left center
+
+			&:hover
+				box-shadow inset 0px 0px 10px 2px rgba(0, 0, 0, 0.3) !important
+
+			.rowList
+				//width 85%
+				padding 5px 10px
+				display flex
+				align-items center
+
+				> img
+					width 30px
+					margin-right 0.7rem
+					height 30px
+					border-radius 10px
+			.spanIcon
+				font-size 3.2rem
+				padding-right 5px
+				.fa-camera
+					color silver
+
+
+		.containerTopRowDragAndDrop
+			cursor move
+
+		.selectContainerRow > .containerTopRow
+			background-color #049cdb !important
+			color #fff !important
+			box-shadow inset 0 0px 4px -1px rgba(0,0,0,0.5)
+
+			span, .status, .subtitle, .subtitle i, .iconList:hover, em, .containerButtons > a,
+			.containerButtons > i, .containerButtons > a i
+				color #fff !important
+
+			span.checkboxIcon:before
+				@extend .fa
+				@extend .fa-check-square-o:before
+			span.radioButtonIcon:before
+				@extend .fa
+				@extend .fa-check-circle:before
+			span.toggleIcon:before
+				@extend .fa
+				@extend .fa-toggle-on:before
+		.moreResult
+			height 4rem
+			display flex
+			justify-content center
+			background-color #bbb !important
+			font-weight 600
+			cursor pointer
+			span
+				margin 0 3rem
+			&:hover
+				background-color #ccc !important
+
+		em, b
+			color #77779C
+			font-weight 600
+
+
+		.containerButtons
+			color black
+			padding 10px
+			display flex
+			justify-content flex-end
+			align-self flex-start
+
+			> i, > div, > a i
+				margin 0
+				//margin-right 1rem
+				padding 0 5px
+
+			> a, > i, > a i
+				display flex
+				justify-content center
+				flex-direction column
+				color #555
+
+				.fa-info-circle
+					color $blue
+
+		.containerButtonsForm
+			justify-content space-around
+
+	.contentListNoData
+		background-color #eee
+
+	.check
+		width 1rem
+		margin 0 0.5rem
+		cursor pointer
+		flexible h center center
+		span.checkboxIcon:before
+			@extend .fa
+			@extend .fa-square-o:before
+		span.radioButtonIcon:before
+			@extend .fa
+			@extend .fa-circle-thin:before
+		span.toggleIcon:before
+			@extend .fa
+			@extend .fa-toggle-off:before
+
+	.iconListNoButton
+		font-size 3rem
+
+	.notDataFound
+		@extend .fHeight
+		flexible h center center
+		span
+			color black
+
+.containerList, .infoTitle
+	.iconList
+		cursor pointer
+		font-size 20px
+		&:hover
+			color $blue !important
+
+.containerHierarchicalList
+	overflow overlay
+
+	.contentList
+		user-select none
+		cursor default
+		.rowsContainer
+			position inherit
+			width inherit
+		img
+			user-drag none
+		background-color #f2f2f2
+		.containerRow
+			background-color #f2f2f2 !important
+
+			.containerTopRow
+				border-bottom 1px solid #ccc
+				border-left 1px solid #ccc
+				background-color #e6e6e6
+
+				.rowList
+					padding 0px 5px
+
+				.containerButtons
+					padding 2px 10px
+
+			.containerBottomRow
+				.containerTopRow
+					border-bottom 1px solid #dedede
+					border-left 1px solid #dedede
+					background-color #cbcbcb
+
+		.containerTopRow
+			.expandCollapse
+				flexible h center center
+				width 1rem
+				margin 0 0.5rem
+				min-width 1rem
+				max-width 1rem
+				cursor pointer
+				&:hover
+					span
+						color $blue
+				span
+					font-size 1.8rem
+
+		.mixedSelectContainerRow > .containerTopRow
+			background-color #7cc8e7 !important
+			color #fff !important
+			box-shadow inset 0 0px 4px -1px rgba(0,0,0,0.5)
+
+			span, .status, .subtitle, .subtitle i, .iconList:hover, em, .containerButtons > a,
+			.containerButtons > i, .containerButtons > a i
+				color #fff !important
+
+			span.checkboxIcon:before
+				@extend .fa
+				@extend .fa-square:before
+
+.spanTemplate
+	display flex
+	width 100%
+	flex-direction column
+	//padding 0 5px
+	line-height 1.8rem
+	overflow hidden
+	.title
+		font-weight 600
+		.scientificName
+			font-style italic
+
+	.subtitle .subtitleIcon
+		font-size 1.3rem
+		color #666
+
+		.status
+			text-transform capitalize
+
+	.subtitle .name
+		font-style italic
+
+	.subtitle, .title
+		i
+			font-size 1.5rem
+			padding-left 0.5rem
+			cursor default
+
+	.subtitleIcon
+		margin-top 5px
+		i
+			padding-left 0
+			font-size 3rem
+
+	.subTitleFlex
+		display flex
+		align-items center
+		span:last-child
+			margin-left 1rem
+		span:first-child
+			margin-left 0
+		.subtitleIcon
+			margin-top 0
+
+	.picture
+		padding 0.5rem
+		.animalImage
+			width 10rem !important
+			min-width 10rem
+			height 10rem !important
+			min-height 10rem
+
+.spanTemplateTable, .headerList
+	.rowSpan
+		min-width 8rem
+		justify-content center
+		display flex
+
+.headerListWithSelection
+	padding 0.5rem 0
+	padding-left 3rem
+	font-weight bold
+
+.containerRow
+	.table-row
+		display flex
+		align-items initial !important
+		flex-grow 2
+		padding-right 3rem
+
+	.containerButtonsForm .disableButton
+		cursor not-allowed
+		opacity .65
+
+.containerRow .table-row, .headerList
+	.table-cell
+		padding 0 0.5rem
+		border-right 1px solid rgba(0, 0, 0, 0.1)
+		align-items center
+	.table-col-1
+		flex-grow 2
+
+.headerList
+	display flex
+	background-image $linen-light
+	min-height 3.5rem
+	padding 1rem 0 1rem 0
+	position relative
+	.iconOptionHeader
+		position absolute
+		left 10px
+		cursor pointer
+		display flex
+		align-items center
+		height calc(100% - 2rem)
+		&:hover
+			color $blue
+	.table-cell
+		border-right 1px solid rgba(255, 255, 255, 0.5)
+		justify-content center
+
+.spanTemplateStatistic, .spanTemplateTable
+	flex-direction row
+
+.spanTemplateStatistic
+	justify-content space-between
+	flex-wrap wrap
+
+	.title
+		min-width 25rem
+
+	.subtitle
+		display flex
+		.rightColOne, .rightColTwo
+			width 11rem
+
+		.rightColSeparator
+			margin-right 2rem
+
+
+.noBorderList .containerList .contentList
+	border-radius 0
+
+.borderList .containerList .contentList
+	border-radius 5px
+
+.resultZone
+	display flex
+	align-items center
+	flex-wrap wrap
+	div
+		margin-right 1rem
+	div:last-child
+		margin-right 0
+
+.orderZone
+	display flex
+	justify-content center
+	align-items center
+	flex-wrap wrap
+	> span
+		display flex
+		margin-right 1rem
+
+	.containerOrder
+		position relative
+		display flex
+		align-items center
+		select
+			padding-left 2rem
+		span
+			position absolute
+			left 5px
+			top 6px
+			cursor pointer
+			&:hover
+				color $blue
+
+.imageLayerList
+	width 6rem !important
+	min-width 6rem
+	height 6rem !important
+	min-height 6rem
+
+.colorGroup1
+	background-color rgba(255, 235, 134, 0.48) !important
+
+.colorGroup2
+	background-color rgba(246, 171, 119, 0.56) !important
+
+// Colores para los iconos de inspireThemes
+
+.inspire-ad, .inspire-tn, .inspire-el, .inspire-us, .inspire-pf, .inspire-af, .inspire-er //naranja
+	color #F6A41C
+
+.inspire-ge, .inspire-so, .inspire-mr, .inspire-nz //marron
+	color #B57D42
+
+.inspire-au, .inspire-su, .inspire-lu, .inspire-hh, .inspire-pd, .inspire-am //rojo
+	color #F15B40
+
+.inspire-hy, .inspire-ef, .inspire-ac, .inspire-mf, .inspire-of, .inspire-sr //azul
+	color #41A2E9
+
+.inspire-ps, .inspire-lc, .inspire-br, .inspire-hb, .inspire-sd //verde
+	color #94C120
+
+.inspire-rs, .inspire-gg, .inspire-gn, .inspire-cp, .inspire-oi, .inspire-bu //gris
+	color #B5B5B5
+
+.dialogSimple
+	.dijitContentPaneSingleChild, .topZone, .contentList
+		border-radius 0
+
+.infoContainer
+	.contentListNoData
+		background-color #D7D7D7
+
+.removed
+	animation disappear 0.5s
+	animation-fill-mode forwards
+
+@keyframes disappear
+	100%
+		transform translateX(100%)
+
+.added
+	animation appear 0.5s
+	animation-fill-mode forwards
+
+@keyframes appear
+	0%
+		transform translateX(100%)
+	100%
+		transform translateX(0%)

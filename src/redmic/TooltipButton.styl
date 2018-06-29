@@ -1,0 +1,93 @@
+.tooltipButton
+	border 1px rgba(255, 255, 255, 0.7) solid !important
+	right -7px
+	margin-top 8px !important
+	padding 10px !important
+	position relative
+	background-image $linen-gray !important
+	boz-shadow $sombra-contenedor-externa-centrada-clara
+
+	.containerContent, .containerContent > div
+		display flex
+		flex-direction column
+
+	.containerContent
+		.itemMenu
+			margin-top 1rem
+			cursor pointer
+			color white
+			text-decoration none
+			display flex
+			&:first-child
+				margin-top 0
+			i
+				width 2rem
+				font-size 1.8rem
+				justify-content center
+				display flex
+				margin-right 10px
+			&:hover
+				i, span
+					color $blue
+		.itemSelect
+			i, span
+				color $blue
+
+	.indicatorParent
+		position absolute
+		top -14px
+		right 8px
+		font-size 2rem
+
+.tooltipButtonMenu
+	padding 0 !important
+	.containerContent
+		.itemSelect
+			background-color rgba(4, 156, 219, 0.5)
+			i, span
+				color white
+				font-weight bold
+		.itemMenu
+			padding 0.5rem 2rem
+			margin-top 0
+			&:hover
+				background-color $blue
+				i, span
+					color white
+
+.tooltipButtonChart
+	margin-top 4px !important
+
+.tooltipButtonAggrement
+	margin-bottom 5px !important
+
+.tooltipButtonLeft
+	left 0px
+
+	.indicatorParent
+		left 5px
+
+.descriptionTooltip
+	max-width 50rem
+	.hrefInTooltip
+		padding-top 1rem
+		display flex
+		justify-content flex-end
+
+.tooltipUser
+	display flex
+	align-items center
+	padding-bottom 1rem
+	border-bottom 1px solid rgba(255, 255, 255, 0.3)
+	> img
+		width 7rem
+		height 7rem
+		margin-right 1rem
+		border-radius 5px
+	> div
+		display flex
+		flex-direction column
+		.name
+			font-size 1.6rem
+		.email
+			color rgba(255, 255, 255, 0.6)

@@ -1,0 +1,260 @@
+/* Estilos para gráficas */
+
+.chartsContainer
+	@extend .fWidth
+	@extend .fHeight
+	flexible v center center
+	overflow hidden
+	background-color #eee
+	user-select none
+
+	.axis
+		text
+			@extend .fontExo2
+			font-weight bold
+			stroke none
+			pointer-events none
+		line
+			fill none
+			shape-rendering crispEdges
+
+	.axis
+	.gridAxis
+		stroke $black
+		fill $black
+
+		path
+			display none
+
+	.gridAxis
+		stroke-dasharray 1 4
+
+		.radialGridLines
+		.angularGridCircles
+			stroke-dasharray 1 1
+
+		.angularGridCircles
+			fill none
+
+	.angularAxis
+		circle
+			fill none
+			stroke-dasharray 1 1
+		text
+			text-anchor middle
+
+			textPath
+				fontSize 1
+
+				&[startOffset="0%"]
+				&[startOffset="25%"]
+				&[startOffset="50%"]
+				&[startOffset="75%"]
+					fontSize 1.8
+
+				&[startOffset="12.5%"]
+				&[startOffset="37.5%"]
+				&[startOffset="62.5%"]
+				&[startOffset="87.5%"]
+					fontSize 1.4
+
+				&[startOffset="6.25%"]
+				&[startOffset="18.75%"]
+				&[startOffset="31.25%"]
+				&[startOffset="43.75%"]
+				&[startOffset="56.25%"]
+				&[startOffset="68.75%"]
+				&[startOffset="81.25%"]
+				&[startOffset="93.75%"]
+					fontSize 1.2
+
+	.radialAxis
+		text
+		line
+			$radialAxisShadow = 0 0 10px $white
+			text-shadow $radialAxisShadow, $radialAxisShadow, $radialAxisShadow, $radialAxisShadow
+
+	.linearChart
+		fill none
+		stroke-width 2.5px
+		stroke-linecap round
+
+	.chartMarker
+		opacity 0.2
+
+	.pieChart
+	.multiPieChart
+		.multiPieSection
+		.pieSection
+			stroke $white
+			stroke-width 0.3px
+
+		.chartHole
+			circle
+				fill $black
+
+			.chartHoleInfo
+				stroke $white
+				text-shadow 1px 1px $black
+
+			.chartHoleButton
+				stroke $white
+				fill $white
+				cursor pointer
+
+	.zoomByDraggingRect
+		fill $blue
+		fill-opacity 0.2
+
+	.infoOnMouseOverCircle
+		.insideCircle
+			fill none
+			stroke $white
+			stroke-width 1.2px
+		.outsideCircle
+			fill none
+			stroke $blue
+			stroke-width 5px
+			opacity .6
+
+	.sliderBrush
+		.overlay
+			fill $blue
+			fill-opacity 0.1
+		.selection
+			fill $blue
+			fill-opacity 0.2
+			stroke none
+		.handle
+			fill $blue
+			height 10px
+
+	.chartBreadcrumbsBar
+		fill $blue
+		.chartBreadcrumb
+			text
+				fill $white
+				text-shadow 1px 1px $black
+
+	.chartLegendBar
+		.chartLegendElement
+			user-select none
+			cursor pointer
+
+		.hiddenChartLegend
+			opacity .5
+
+	.emptyDataMessage
+		@extend .fWidth
+		@extend .fHeight
+		display flex
+		flex-flow column
+		align-items center
+		justify-content center
+		color $black
+
+		i
+			fontSize 4rem
+
+		span
+			margin-top 5px
+			fontSize 2.5rem
+			line-height 2.5rem
+			text-align center
+
+
+.aboveChartContent
+.underChartContent
+	flexible h space-between center
+	flex-wrap wrap
+
+.aboveChartContent
+	height 50px
+	padding 0 1rem
+	color $white
+	fondo textura medium
+
+	i
+		padding 0 .5rem
+
+	.icon, .titleButton
+		@extend .clickable
+		&.disabled
+			opacity .4
+
+	.titleButton
+		&:not(.disabled)
+			&:hover
+				background-color $blue
+
+	.icon
+		fontSize 2rem
+		&:not(.disabled)
+			&:hover
+				color $blue
+
+.underChartContent
+	@extend .fWidth
+	height 55px
+	border-radius 0 0 5px 5px !important
+	fondo color #eee
+
+.chartsToolbar
+	flexible h flex-start center
+
+	.aggregationToolElement, .icon, .titleButton
+		margin-right 1rem
+
+	.titleButton
+		border 1px solid rgba($white, 0.7)
+		border-radius 3px
+		font-weight bold
+		padding .4rem 1rem
+
+		i
+			padding-left 0.6rem
+
+.chartsTooltip
+	padding 1rem
+	background rgba($black, 0.6)
+	border-radius 5px
+	pointer-events none !important
+	z-index 960
+
+	&.animateIn
+		animation fadeIn 0.3s ease-out
+	&.animateOut
+		animation fadeOut 0.3s ease-out
+
+.chartTooltipContent
+	color $white
+
+	.horizontalValue
+	.categoryName
+		fontSize 1rem
+		margin-bottom 0.5rem
+
+	.verticalValue
+	.categoryValue
+		fontSize 1.2rem
+		font-weight bold
+
+		.colorIndicator
+			margin-right 0.2rem
+			@extend .fa
+			&:before
+				@extend .fa-circle:before
+
+.spanTemplateCharts
+	margin-left -25px
+	.title
+		font-weight bold
+		font-size 16px
+		@extend .fontExo2
+	.typeDataSubtitle
+		font-size 13px
+	.deviceSubtitle
+		font-size 12px
+
+.mapSideContainer
+	border-radius 0 0 5px 5px

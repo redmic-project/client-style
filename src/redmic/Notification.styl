@@ -1,0 +1,190 @@
+.notification, .userArea
+	width auto
+	height 3rem
+	display flex
+	margin-left .5rem
+	> div
+		height 100%
+		width 4rem
+		display flex
+		justify-content center
+		align-items center
+		cursor pointer
+		position relative
+		i
+			font-size 22px
+			margin-top 7px
+			margin-right 5px
+
+.notification
+	> div:hover
+		i
+			color $blue
+		span
+			fondo color $blue
+
+.userArea
+	width 3rem
+	margin-right 1rem
+	i:hover
+		color $blue
+	img
+		width 3rem
+		height 3rem
+		border-radius 5px
+
+.notification > div, .notificationSidebar .buttons .item
+	span
+		sombreadoTexto 1
+		position absolute
+		padding 0 5px
+		font-size 9px
+		right 2px
+		background #51a351
+		border-radius 5px
+		width 1rem
+		display flex
+		justify-content center
+
+.notificationSidebar
+	z-index 1005
+	position absolute
+	right -1px
+
+	top $topbar-size !important
+	height calc(100% - 39px) !important
+	float right
+	display flex
+	flex-direction column
+	width 35rem
+	box-shadow 5px 0 10px 0 rgba($black, $shadowBoxOpacity)
+	border-right $borderDark
+	border-left $borderDark
+	showScroll()
+	.list
+		height calc(100% - 4rem)
+		display flex
+
+.notificationSidebar, .notificationList
+	.containerList .contentList
+		fondo textura hard
+		border-radius 0
+		.containerRow
+			&:nth-child(odd)
+				background-color transparent
+			&:nth-child(even)
+				background-color #494852
+			color #fff
+			span span span, .status, .subtitle, .subtitle i, .iconList:hover, em, .containerButtons > a,
+			.containerButtons > i, .containerButtons > a i
+				color #fff
+			.notificationIcon
+				font-size 2.2rem
+				margin 0.5rem
+.warning
+	color #FFE83A
+.success
+	color #51a351
+.notice
+	color #26ADE4
+.error
+	color red
+.danger
+	color #bd362f
+.message
+	color white
+
+.notificationSidebar
+	.buttons
+		height 4rem
+		width 100%
+		display flex
+		background-color #222
+		.item
+			position relative
+			width calc(100% / 3)
+			cursor pointer
+			display flex
+			justify-content center
+			align-items center
+			border-right 1px solid black
+			i
+				color #ddd
+			span
+				right 30%
+				top 4px
+
+			span.alert
+				background red
+			&:hover
+				background-color #494852
+		.itemSelect
+			height 4rem
+			fondo textura hard
+			cursor initial
+			i
+				color #fff
+
+	.progressBar
+		width 100%
+		padding-top 5px
+		.dijitProgressBarTile
+			background-color $blue
+
+.notificationSidebar.retiring
+	animation retiringSidebarNotification 0.4s
+	animation-fill-mode forwards
+
+.notificationSidebar.overall
+	animation overallSidebarNotification 0.4s
+	animation-fill-mode forwards
+
+@keyframes overallSidebarNotification
+	0%
+		transform translateX(100%)
+
+	100%
+		transform translateX(0%)
+
+@keyframes retiringSidebarNotification
+	0%
+		transform translateX(0%)
+
+	100%
+		transform translateX(100%)
+
+.swing
+	animation-name swing
+	animation-duration 2s
+	animation-fill-mode forwards
+
+@keyframes swing
+	10%
+		transform rotate3d(0, 0, 1, 15deg)
+	20%
+		transform rotate3d(0, 0, 1, -15deg)
+	30%
+		transform rotate3d(0, 0, 1, 15deg)
+	40%
+		transform rotate3d(0, 0, 1, -15deg)
+	50%
+		transform rotate3d(0, 0, 1, 15deg)
+	60%
+		transform rotate3d(0, 0, 1, -15deg)
+	70%
+		transform rotate3d(0, 0, 1, 15deg)
+	80%
+		transform rotate3d(0, 0, 1, -15deg)
+	90%
+		transform rotate3d(0, 0, 1, 7deg)
+	100%
+		transform rotate3d(0, 0, 1, -7deg)
+	to
+		transform rotate3d(0, 0, 1, 0deg)
+
+.alertRestartAction
+	.click
+		color $blueStrong
+	.click:hover
+		cursor pointer
+		color $blue

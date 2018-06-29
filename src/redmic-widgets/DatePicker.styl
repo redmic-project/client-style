@@ -1,0 +1,73 @@
+.datePicker
+	color black
+	position relative
+	.iconCalendar
+		position absolute
+		font-size 2rem
+		padding 0.5rem
+		cursor pointer
+	input
+		border-radius 5px
+		border none
+		height 3rem
+		padding 0 2rem
+		padding-left 3rem
+		width 17rem
+		width calc(100% - 5rem)
+		cursor pointer
+
+.datePickerContainerNotDialog
+	background-color white
+	border-radius 5px
+
+.datePickerContent
+	display flex
+	padding 1rem
+	.from
+		margin-right 1rem
+	.text
+		display flex
+		justify-content space-around
+		align-items center
+		margin-top 1rem
+		padding 0.5rem 1rem
+		border-radius 4px
+		box-shadow 0 5px 10px rgba(0,0,0,0.2)
+		background-color $colorGrayBlack
+		color white
+		.dijitTextBox
+			width 13rem !important
+			border none !important
+			background-image none !important
+			background-color white !important
+			input
+				color black !important
+				background-color white !important
+			.dijitInputField
+				.remove
+					padding 0.1rem 0.5rem
+					color black
+	.dijitCalendar
+		background-color $colorGrayBlack !important
+		width 23rem
+		padding 2px
+
+	.dijitArrowButtonInner
+		color black !important
+
+	.dijitCalendarDecrementArrow
+		left 0 !important
+
+	.dijitCalendarDisabledDate
+		color lightgrey !important
+		text-decoration none
+
+.datePicker, .datePickerContent .dijitTextBox .dijitInputField
+	.remove
+		position absolute
+		font-size 1.5rem
+		cursor pointer
+		padding .75rem
+		right 0
+	.remove:hover
+		color $blue

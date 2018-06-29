@@ -1,0 +1,22 @@
+/*
+	Autor: Pedro E. Trujillo Brito
+
+	Archivo: redmic\public\stylesheets\nib.styl
+
+	Dependencias base de todo el estilo.
+
+	Fecha última modificación: 06/11/2014
+*/
+
+
+
+@import '../node_modules/nib/lib/nib'
+
+gradientBar(primaryColor, secondaryColor, textColor=#fff, textShadow=0 -1px 0 rgba(0,0,0,.25))
+	color textColor
+	text-shadow textShadow
+	background-color secondaryColor
+	background-image linear-gradient(top, primaryColor, secondaryColor)
+	background-repeat repeat-x
+	border-color secondaryColor secondaryColor darken(secondaryColor, 15%)
+	border-color rgba(0,0,0,.1) rgba(0,0,0,.1) fade-in(rgba(0,0,0,.1), 15%)

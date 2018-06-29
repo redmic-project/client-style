@@ -1,0 +1,131 @@
+/*
+	Plantilla para la página de bienvenida a la aplicación.
+*/
+
+.titleWelcome
+	flexible h space-between center
+
+	.divTitle
+		margin 0 auto 0 auto
+
+	span
+		font-size 6.5rem
+		line-height 10rem
+		font-weight bold
+		cursor context-menu
+
+	.colorWelcome
+		color $grayLighter
+
+.box
+	.contentInfo
+		margin 2rem
+		line-height 2
+		color $grayLighter
+		.colorWhite
+			color white
+			font-weight bold
+
+
+.boxContainerBorder
+	border-radius 0 0 5px 5px
+
+.boxContainer
+	showScroll()
+	.boxItems
+		.module
+			flexible h center center
+			margin 10px 0
+			padding 0
+			.button:hover, .activeBox
+				fondo color $blue
+			.disabled:hover
+				background none
+			.disabled
+				opacity 0.5
+			.button
+				flexible v center space-between
+				width 90%
+				bordeRedondeado()
+				sombreadoCaja o
+				padding 10px 0
+				cursor pointer
+				min-height 60px
+
+				.iconModule
+					align-self center
+					font-size 2rem
+					margin 5px 0px
+					width 25px
+					text-align center
+
+				.name, .description
+					display flex
+					align-items center
+					flex-grow 1
+					align-self center
+					line-height 1.4rem !important
+					text-align center
+
+				.description
+					flex-grow 1
+					margin 0px 10px
+					margin-top 10px
+			.box
+				min-height 150px
+				.iconModule
+					font-size 3rem
+
+		.lastActivityModule
+			flexible h space-between center
+			height 10%
+			min-height 5rem
+			padding 0 20px
+			cursor pointer
+			&:hover
+				fondo color $blue
+				.spanTemplate
+					.span, .status, .subtitle, .subtitle i, .iconList:hover, em
+						color #fff !important
+				a
+					color #fff
+					&:hover
+						color grey
+			span
+				//display inline-block
+				overflow hidden
+				white-space nowrap
+				text-overflow ellipsis
+				line-height 1.8rem
+				width 95%
+				.spanTemplate .subtitle
+					color #bbb
+
+		.lastActivityModule:nth-child(odd)
+			@extend .mediumTexturedContainer
+
+.domains
+	overflow auto
+	flex-grow 1
+	@extend .fHeight
+	@extend .borderRadiusBottom
+
+	.boxButton
+		flexible h center center
+		noPadding()
+		margin 0.7rem 0
+		cursor pointer
+		.name
+			text-align center
+			line-height 4rem
+			width 90%
+			bordeRedondeado()
+			sombreadoCaja o
+			&:hover
+				fondo color $blue
+
+a:hover
+	text-decoration none
+
+.domainsSpecial div
+	text-decoration underline

@@ -1,0 +1,80 @@
+.button
+	.dijitButtonNode
+		padding 3px 20px !important
+	.disable
+		background-image none !important
+		opacity .65 !important
+		box-shadow none !important
+		&, & > i
+			cursor not-allowed !important
+
+.comboButton, .button
+	.dijitButtonNode:hover
+		text-decoration none
+		background-position 0 -15px
+		transition background-position .1s linear
+	a
+		color inherit
+
+.comboButton
+	display flex
+	div
+		background-color #e6e6e6 !important
+
+	.dijitButtonNode
+		border 1px solid rgba(187, 187, 187, 0.6) !important
+		border-bottom-color rgba(187, 187, 187, 0.6) !important
+		padding 0 5px !important
+		a span
+			padding-left 5px
+		&:hover
+			.fa, span
+				color $blue
+	.dijitArrowButton
+		border-left-width 0 !important
+		display flex !important
+		flex-direction column !important
+		justify-content center !important
+		&:hover
+			.fa
+				color $blue
+	.dijitStretch
+		padding 0 10px !important
+	.fa
+		&:hover
+			color $blue
+
+.menuPopUpIconEdition
+	padding 0 !important
+	width 100% !important
+	margin 1px 4px 0 !important
+	tbody tr
+		display table-row
+		color black !important
+
+		.dijitMenuItemLabel a
+			color #333
+		&:hover
+			.fa
+				color $blue
+		.dijitMenuItemLabel
+			padding 1px .3em !important
+
+	tbody .dijitMenuItemHover, tbody .dijitMenuItemSelected
+		background-image none
+		background-color transparent
+
+	background-image linear-gradient(to bottom, #fff, #e6e6e6) !important
+
+	tbody tr .fa, > a
+		color black
+		width 100%
+		display flex
+		justify-content center
+		padding 5px 3px
+
+	> a
+		padding 5px 0
+		cursor pointer
+	a:hover
+		color $blue

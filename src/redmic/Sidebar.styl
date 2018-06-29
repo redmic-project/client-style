@@ -1,0 +1,160 @@
+/*
+	Plantilla para controlar las barras laterales de navegación.
+*/
+
+
+
+.mainSidebar
+	@extend .shadowBox
+	top $topbar-size !important
+	height calc(100% - 39px) !important
+	noPadding()
+	noScroll()
+	z-index 4
+
+ol, ul
+	list-style none
+	noMargin()
+	noPadding()
+
+.main-nav > ul
+	border-bottom $borde1
+	negrita()
+
+.main-nav > ul li
+	border-bottom $borde2
+	border-top $borde1
+	color $grayLighter
+	text-shadow $sombra-s $shadowTextBlurRadius rgba($black, $shadowTextOpacity)
+	display block
+	miniPadded v
+	text-decoration none
+	//opacity 0.9
+	cursor pointer
+	&:hover
+		fondo color $blue
+
+.main-nav > ul li i
+.main-nav > ul li > a
+	color $grayLighter
+
+.main-nav > ul li.active
+	fondo degradado sidebar
+	color $color11
+	text-shadow $sombra-s $shadowTextBlurRadius rgba($white, $shadowTextOpacity)
+
+.main-nav > ul li.active i
+.main-nav > ul li.active > a
+	color $color11
+
+.main-nav > ul li.bottom
+	border none
+	border-top $borde1
+
+.main-nav > ul li.bottom a
+	bottom 7px
+	position absolute
+	&:hover
+		background transparent
+
+nav.primary
+	flexible v space-between center
+	fondo textura hard
+	float left
+	fullSize v
+	width $sidebar-size
+
+//Cosas de Alioth
+nav.primary > ul
+	border-bottom $borde1
+	width 100%
+
+nav.primary > ul > li
+	fontSize $smallFontSize
+	text-align center
+
+nav.primary > ul > li
+	semiPadded v
+	&.click
+		fondo color rgba($black, 0.4)
+		&.active
+			fondo color $color4
+
+
+nav.primary > ul > li i
+	display block
+	fontSize 3.2rem
+
+nav.primary > ul > li > span
+	display block
+
+////////////////////////////////////////
+
+nav.secondary
+	top $topbar-size !important
+	height calc(100% - 39px) !important
+	float left
+	width $sidebar-secondary-size
+	fondo textura hard
+	box-shadow 5px 0 10px 0 rgba($black, $shadowBoxOpacity)
+	border-right $borderDark
+	border-left $borderDark
+	showScroll()
+
+nav.secondary > ul li
+	text-align left
+	padding 0
+	//border-bottom none
+	//border-top none
+
+nav.secondary > ul li > a
+	fontSize $smallFontSize
+	padding 5px 0
+	padding-left 1.5rem
+	text-align left
+	text-decoration none
+	display: flex;
+	align-items: center;
+	&:focus
+		outline none
+
+nav.secondary > ul li > a i
+	font-size 2.8rem
+	vertical-align middle
+	margin-right 1rem
+
+// Cosas nuevas Carlos
+
+nav.secondary > ul li > a div
+	width 4rem
+	margin-right 1rem
+
+nav.secondary > ul li > a div i
+	width 100%
+	flexible h center center
+
+nav.secondary.retiring
+	z-index 3
+	noShadow()
+	position absolute
+	left -205px !important
+	transition left 0.5s ease-in 0s
+
+nav.secondary.overall
+	z-index 5
+	position absolute
+	left $sidebar-size
+	transition left 0.4s ease-in 0s, z-index 0.05s ease 0.48s
+
+.reducedMenu
+	nav.secondary.overall
+		left 50px
+	nav.primary
+		width 50px
+	nav.primary > ul > li > span
+		display none
+	nav.primary > ul > li > a > span
+		display none
+
+a:hover, a
+	text-decoration none

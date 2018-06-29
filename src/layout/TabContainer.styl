@@ -1,0 +1,143 @@
+/*
+	Plantilla para los TabContainer (contenedor de pestañas) de DOJO.
+*/
+
+
+.db
+	// Common
+
+	.dijitTabPaneWrapper
+		fondo textura hard
+		border none
+		noScroll()
+
+	.dijitTabPane
+		showScroll()
+
+	.dijitTabContainerBottom-tabs
+	.dijitTabContainerTop-tabs
+	.dijitTabContainerLeft-tabs
+	.dijitTabContainerRight-tabs
+		border none
+
+	.dijitTab
+		color $white
+		fondo textura hard
+		microMargined h
+		fontSize $normalFontSize
+		padding 7.3px 12px
+		opacity $highOpacity
+		bordeRedondeado()
+		min-width 15px
+		text-align center
+
+		.tabLabel
+			font-weight bold
+
+	.dijitTabHover
+		opacity $fullOpacity
+
+	.dijitTabChecked
+		cursor default
+		fontSize $bigFontSize
+		color $blue
+		opacity $fullOpacity
+		border $borderType rgba($white, $mediumOpacity)
+
+	.dijitTabCloseButton
+		font-weight bold
+		text-shadow 0 1px 0 rgba(255,255,255,1)
+		opacity 0.2
+		margin-left 5px
+		cursor pointer
+
+	.dijitTabCloseButtonHover
+		opacity 0.5
+
+	.dijitTabCloseButton .dijitTabCloseText
+		display inline
+
+
+	// Top
+	.dijitTabContainerTop-container
+		margin-top -1px
+		border-top $borderType rgba($white, $mediumOpacity)
+
+	.dijitTabContainerTop .dijitTab
+		border-bottom-left-radius 0px
+		border-bottom-right-radius 0px
+		border 1px solid rgba(255,255,255,0.5)
+		border-bottom-color transparent
+		top -1px
+		margin-top 5px
+
+	.dijitTabContainerTop .dijitTabChecked
+		border-bottom-color transparent
+		top 0
+
+
+	// Bottom
+	.dijitTabContainerBottom-container
+		margin-bottom -1px
+		border-bottom $borderType rgba($white, $mediumOpacity)
+
+	.dijitTabContainerBottom .dijitTab
+		border-top-left-radius 0px
+		border-top-right-radius 0px
+
+	.dijitTabContainerBottom .dijitTabChecked
+		border-top-color transparent
+
+
+	// Tab strip buttons
+	.tabStripButtonHover
+		background-color transparent
+		border 1px solid transparent
+
+	.dijitTabStripIcon:before
+		@extend .dijitIcon:before
+
+	.dijitTabStripSlideLeftIcon:before
+		@extend .fa-chevron-left:before
+
+	.dijitTabStripSlideRightIcon:before
+		@extend .fa-chevron-right:before
+
+	.dijitTabStripMenuIcon:before
+		@extend .fa-chevron-down:before
+
+	.dijitTabDisabled .dijitTabStripIcon
+		opacity 0.65
+
+
+	// Nested
+	.dijitTabContainerTop.dijitTabContainerNested
+		margin-top 5px
+
+	.dijitTabContainerTop .dijitTabPaneWrapperNested
+		border-bottom none
+		border-right none
+		border-left none
+
+	.dijitTabContainerBottom.dijitTabContainerNested
+		margin-bottom 5px
+
+	.dijitTabContainerBottom .dijitTabPaneWrapperNested
+		border-top none
+		border-right none
+		border-left none
+
+
+	// Custom
+
+	.sideTabContainer
+		noPadding()
+		bordeRedondeado()
+
+	.borderRadiusBottomTabContainer
+		&, .dijitTabContainerTop-container
+			border-radius 0px 0px 5px 5px
+
+	.borderRadiusTabContainer
+		&, .dijitTabContainerTop-container
+			border-radius 5px

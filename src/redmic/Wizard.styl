@@ -1,0 +1,172 @@
+/*
+	Plantilla para definir los elementos de Wizard.
+*/
+
+.wizard
+	fondo textura hard-opa
+	border-radius 5px
+	@extend .fHeight
+
+	.titleAssociated
+		justify-content center
+		div
+			font-weight bold
+
+	.wizardContent
+		padding 10px
+		display flex
+		flex-direction column
+		justify-content space-between
+		align-items stretch
+		height calc(100% - 7rem)
+
+	.wizardLabel
+		fontSize $hugeFontSize
+		padding 5px 15px
+		height 4rem
+		align-self flex-start
+		align-items center
+		display flex
+		border-radius 5px 5px 0 0
+		@extend .mediumSolidContainer
+		@extend .fWidth
+		width calc(100% - 3rem)
+		div:first-child
+			margin-right 15px
+			white-space nowrap
+			@extend .titleRedmic
+
+		div:last-child
+			font-size 1.5rem
+			padding-top 2px
+			@extend .inlineRow
+
+	.wizardStepLabel
+		fontSize $bigFontSize
+		miniPadded()
+		height 1.8rem
+		align-self center
+
+	.wizardStepContent
+		margin 10px 5px
+		width calc(100% - 10px)
+
+		.titleZone
+			//line-height 4rem
+			font-size 1.8rem
+			span
+				color #eee
+
+	.wizardNavigation
+		height 70px
+
+	.wizardBreadcrumbs
+		height 40px
+		list-style none
+		flexible h center center
+		align-self center
+
+		& .wizardBreadcrumb
+			span
+				display flex
+				flex-flow row-reverse
+				align-items center
+				background $color5
+				position relative
+				height 30px
+				padding 0 10px 0 5px
+				margin-right 23px
+
+				.statusIndicator
+					margin-right 5px
+					color $white
+					@extend .fa
+					&:before
+						@extend .fa-circle:before
+
+				&.current
+					cursor not-allowed
+					.statusIndicator
+						color $blue
+				&.visited
+					cursor pointer
+					.statusIndicator
+						color $red
+				&.resolved
+					cursor pointer
+					.statusIndicator
+						color $green
+				&.disabled
+					cursor not-allowed
+
+				&:before
+				&:after
+					content ""
+					position absolute
+					top 0
+					border 0 solid $color5
+					border-width 15px 10px
+					width 0
+					height 0
+
+				&:before
+					left -20px
+					border-left-color transparent
+
+				&:after
+					left 100%
+					border-color transparent
+					border-left-color $color5
+
+				&:hover
+					background-color $colorGrayBlack
+
+					&:before
+						border-color $colorGrayBlack
+						border-left-color transparent
+
+					&:after
+						border-left-color $colorGrayBlack
+
+			&:first-child
+				span
+					padding-left 15px
+					border-radius(4px 0 0 4px)
+					&:before
+						border none
+
+			&:last-child
+				span
+					padding-right 15px
+					border-radius(0 4px 4px 0)
+					&:after
+						border none
+
+.blueIcon
+	color $blue !important
+
+.redIcon
+	color red !important
+
+.greenIcon
+	color $green !important
+
+.orangeIcon
+	color $orange !important
+
+.selectOptionBox
+	.boxItems
+		height calc(100% - 8rem)
+		.name
+			font-weight bold
+			color white
+	.boxTitle
+		height 4rem
+		padding 2rem
+		display flex
+		alight-items center
+		span
+			display flex
+			align-items center
+			font-weight 600
+			font-size 16px

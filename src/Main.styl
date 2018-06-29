@@ -1,0 +1,96 @@
+/*
+	Autor: Pedro E. Trujillo Brito
+
+	Archivo: redmic\public\stylesheets\redmic\Main.styl
+
+	Plantilla para elementos base.
+
+	Fecha última modificación: 12/12/2014 - Pedro
+*/
+
+
+
+// Global
+
+html
+	font-size $baseFontSize !important
+	font-family $baseFontFamily
+	fullSize()
+
+	/*-webkit-user-select none
+	-moz-user-select none
+	-khtml-user-select none
+	-ms-user-select none*/
+
+body
+	fullSize()
+	noMargin()
+	noPadding()
+	noScroll()
+	fontSize $normalFontSize
+	line-height $baseLineHeight
+	color $textColor
+	fondo textura soft
+
+*
+	outline none
+
+a
+	color $linkColor
+	text-decoration none
+	cursor pointer
+	&:hover
+		color $linkColorHover
+		text-decoration underline
+
+.db
+	.dijitReadOnly *
+	.dijitDisabled *
+	.dijitReadOnly
+	.dijitDisabled
+		cursor not-allowed
+
+.fHeight
+	height 100%
+
+.fWidth
+	width 100%
+
+.colorWhite
+	color $grayLighter
+
+.shadowBox
+	box-shadow $sombra-s $shadowBoxBlurRadius $shadowBoxSpreadRadius rgba($black, $shadowBoxOpacity)
+
+.titleRedmic
+	font-family 'Exo 2',cursive
+	color rgb(255,204,0)
+
+// Cosas de la plantilla y cosas generales
+
+.padded
+	megaPadded()
+
+.clearfix
+	noScroll()
+	*zoom 1
+
+.hidden
+	noDisplay()
+
+.occult
+	noShow()
+
+.bold
+	font-weight bold
+
+.clickable
+	cursor pointer
+
+// Para los iconos
+
+.wormsLogo
+	fondo imagen $worms-logo
+
+.pdfLogo
+	fondo imagen $pdf-logo

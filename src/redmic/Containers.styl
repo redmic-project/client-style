@@ -1,0 +1,638 @@
+/*
+	Plantilla para definir todos los contenedores comunes.
+*/
+
+// Principales
+
+.masterContainer
+	width 100%
+	height 100%
+	position absolute
+	top 0
+	left 0
+
+.centerContentContainer
+	fullSize()
+	flexible v center center
+	noScroll()
+
+.underConstructionContainer
+	@extend .centerContentContainer
+	fontSize 20rem
+	:nth-child(2)
+		fontSize 5rem
+		line-height 5rem
+		margin-top 10px
+
+#error404Container
+	@extend .masterContainer
+	fondo imagen $login-image
+
+	div
+		@extend .centerContentContainer
+		fondo color rgba(red,0.3)
+		font-size 10rem
+		:nth-child(2)
+			fontSize 5rem
+			line-height 5rem
+			margin-bottom 10px
+		:nth-child(3)
+			fontSize 2rem
+
+#fullScreenContainer
+	@extend .masterContainer
+
+#loadingContainer
+	@extend .masterContainer
+	@extend .centerContentContainer
+	fondo color rgba($black,0.5)
+	z-index $loadingAndLockedZIndex
+	font-size 10rem
+
+#rootContainer
+	@extend .masterContainer
+
+// Estructura
+
+.defaultContainer
+	miniPadded()
+	miniMargined()
+	bordeRedondeado()
+	sombreadoCaja o
+	sombreadoTexto()
+	colorTexto()
+
+.wrapContainer
+	miniMargined()
+	noPadding()
+	bordeRedondeado()
+	sombreadoCaja()
+
+.sharpContainer
+	miniPadded()
+	miniMargined()
+	sombreadoCaja o
+	sombreadoTexto()
+	colorTexto()
+
+.separatorContainer
+	miniPadded()
+	sombreadoCaja i
+
+.marginedContainer
+	miniMargined()
+
+.marginedSizeContainer
+	margin 0 5px
+
+.marginBottomContainer
+	margin-bottom 5px
+
+
+
+// Decoración
+
+.hardTexturedContainer
+	fondo textura hard
+
+.mediumTexturedContainer
+	fondo textura medium
+
+.softTexturedContainer
+	fondo textura soft
+
+.hardSolidContainer
+	fondo color $black
+
+.mediumSolidContainer
+	fondo color $color5
+
+.softSolidContainer
+	fondo color $white
+
+.hardTranslucentContainer
+	fondo color rgba($black, $mediumOpacity)
+
+.mediumTranslucentContainer
+	fondo color rgba($color5, $lowOpacity)
+
+.softTranslucentContainer
+	fondo color rgba($white, $lowOpacity)
+
+.invertedContainer
+	colorTexto inv
+	sombreadoTexto inv
+
+
+
+// Específicos
+
+// Contenedor global
+.mainContainer
+	fullSize()
+	z-index auto
+	fondo textura soft
+
+// Contenedor de pantalla completa
+.fullscreenContainer
+	top 0
+	left 0
+	fullSize()
+	noMargin()
+	noPadding()
+	fondo color $color10
+
+// Contenedor de la zona principal de contenido
+.contentContainer
+	semiPadded()
+
+// Contenedor de posición absoluta
+.absoluteContainer
+	position absolute
+
+// Contenedor de posición relativa
+.relativeContainer
+	position relative
+
+// Contenedor con barra de scroll
+.scrolledContainer
+	overflow auto
+
+// Contenedor sin barras de scroll
+.noScrolledContainer
+	noScroll()
+
+// Contenedor para las imágenes
+.photoFrameContainer
+	position relative
+
+// Contenedor para las miniaturas de las capas del mapa
+.layerThumbnailContainer
+	noPadding()
+	width $layerThumbnailWidth
+	height $layerThumbnailHeight
+	border $borderTypeFat $white
+	cursor pointer
+
+// Medallones
+.badge
+	border-radius $semi
+	box-shadow $sombra-s $nano 0 rgba($white, $highOpacity)
+	color $white
+	sombreadoTexto()
+	bordeOscuro()
+	miniPadded h
+	&.blue
+		fondo color $blue
+	&.black
+		fondo color $black
+	&.gray
+		fondo color $grayDark
+	&.green
+		fondo color $green
+	&.red
+		fondo color $red
+
+// Contenedor de errores
+.errorContainer
+	fullSize()
+	background-position center
+	background-repeat no-repeat
+	background-size 35% 35%
+	&.error404
+		fondo imagen $404-image
+
+.topMarginedContainer
+	margin-top $big
+
+.flexibleCenteredContainer
+	flexible h center center
+
+.dgridPlaceHolderContainer
+	fullSize()
+	flexible h center center
+	megaPadded v
+	fontSize $bigFontSize
+
+.scrollWrapper
+	fondo textura hard
+	noScroll()
+
+.mapSideContainer
+	noPadding()
+
+
+.twoColumnsLayout
+	display flex
+	justify-content space-between
+	align-items stretch
+
+.leftZone
+	display flex
+	flex-flow column
+	flex-grow 1
+
+.rightZone
+	display flex
+	flex-flow column
+	flex-grow 1
+	.containerList > .contentList
+		border-radius 5px
+
+.stretchZone
+	margin-top 10px
+	display flex
+	flex-grow 1
+	.containerList > .contentList
+		border-radius 5px
+
+.rounded
+	bordeRedondeado()
+
+.flexAndAlignCenter
+	display flex
+	align-items center
+
+.flex
+	display flex
+
+.titleContainer
+	margin-bottom 5px
+	padding 0 5px
+	height 30px
+	display flex
+	align-items center
+
+.barSliderContainer
+	height 40px
+
+.infoView
+	display flex
+	flex-direction column
+
+	.infoTitle
+		position relative
+		display flex
+		align-items center
+		margin 0 5px 10px 5px
+		border-radius 5px
+		box-shadow 0 20px 10px -5px rgba(0,0,0,0.25)
+		z-index 2
+		min-height 100px
+
+		.rightSpace
+			min-width 25rem
+		.tabs, .right
+			position absolute
+			display flex
+			right 5rem
+			box-shadow 0 0 10px 0 rgba(0,0,0,0.5),inset 0 0 1px rgba(255,255,255,0.5)
+			border 1px solid rgba(255,255,255,0.3)
+
+		.tabs
+			bottom 0
+			border-bottom none
+			border-radius 5px 5px 0 0
+			.tab
+				cursor pointer
+				display flex
+				justify-content center
+				align-items center
+				width 10rem
+				height 3rem
+				border-right 1px solid rgba(255,255,255,0.3)
+				background-color #222
+				a
+					color #ddd
+					width 100%
+					height 100%
+					display flex
+					justify-content center
+					align-items center
+				&:hover
+					background-color #494852
+			& > .tab:first-child
+				border-top-left-radius 5px
+			& > .tab:last-child
+				border-right none
+				border-top-right-radius 5px
+			.tabSelect
+				background-color $blue
+				a
+					color #fff
+				&:hover
+					background-color $blue
+
+		.left, .right
+			padding 0 10px
+
+			& > i, & > a
+				color #fff
+				margin 0 5px
+
+				&.fa-close:hover
+					color red
+
+		.right
+			top 1.5rem
+			justify-content center
+			align-items center
+			padding 6px
+			border-radius 5px
+
+			& > i, & > a
+				color #fff
+				padding 0 5px
+
+		.center
+			flex-grow 1
+
+			.header
+				@extend .titleRedmic
+				h1
+					line-height 1
+
+		.infoTitleBackground
+			fondo degradado topbar
+			box-shadow none
+
+		.titleParent
+			margin 0 0.7rem
+			span
+				margin 0 !important
+				color #fff
+			&:hover
+				span
+					color $blue
+
+		.centerTitle
+			flex-direction column
+
+		.title
+			margin 0
+			width 100%
+			border-radius 5px
+			margin-right 1px
+
+	.infoContainer
+		flex-grow 1
+		display flex
+		flex-direction row
+		flex-wrap wrap
+		align-items stretch
+		align-content stretch
+		justify-content flex-start
+		overflow-y auto
+		overflow-x hidden
+
+		.view
+			@extend .fHeight
+			padding 5px
+			background-image $linen-light
+
+		.moduleWindow
+			@extend .fHeight
+
+		& > div, .moduleWindow
+			display flex
+			flex-direction column
+			flex-grow 1
+
+		& > div
+			flex-shrink 1
+			margin 5px
+			overflow hidden
+			transition-property height, width
+			transition-duration 0.3s
+
+		& > div
+			$cols = 6
+			for col in 1..$cols
+				&[data-cols=\"{col}\"]
+					$newWidth = (100% / $cols) * col
+					width "calc(%s - 10px)" % $newWidth
+
+			$rows = 6
+			for row in 1..$rows
+				&[data-rows=\"{row}\"]
+					height 90px * row + 10px * (row - 1)
+
+			$rows = 6
+			for row in 1..$rows
+				&[data-percentage-rows=\"{row}\"]
+					$newHeight = (100% / $rows) * row
+					height "calc(%s - 10px)" % $newHeight
+
+		// TODO: Para arreglar pencadas de details antiguos, se revisará
+		.content
+		.contentGrid
+			height 100% !important
+
+.windowTitle
+	fondo degradado topbar
+	border-radius 5px 5px 0 0
+	display flex
+	align-items center
+	justify-content space-between
+	cursor -webkit-grab
+	cursor grab
+
+	.title
+		font-weight bold
+		padding-left 10px
+		cursor inherited
+
+	.buttons
+
+		& > i
+			width 15px
+			height 15px
+			text-align center
+			vertical-align middle
+			margin 0 5px
+			cursor pointer
+			color gray
+
+			&:hover
+				color $blue
+			&.fa-close:hover
+				color red
+
+.windowContent
+	display flex
+	//overflow auto
+	& > :first-child
+		@extend .fWidth
+		@extend .fHeight
+
+.windowContenNoTitle
+	border-radius 5px !important
+
+	& > :first-child
+		border-radius 5px
+
+.speciesDetailsTitle
+	display flex
+	align-items center
+
+	& > :first-child
+		margin 0 10px
+		font-size 5rem
+	& > :last-child
+		display flex
+		flex-direction column
+		align-items space-between
+
+		& > *
+			margin 5px
+
+		& > :first-child
+			//display flex
+
+			& > :last-child
+				margin-left 5px
+	h1
+		line-height 3rem
+
+.imageContainer
+	display flex
+	justify-content center
+	align-items center
+	background-color white
+	flex-grow 1
+	& > img
+		max-width calc(100% - 10px)
+		max-height calc(100% - 10px)
+
+.imageContainerEdit
+	flex-direction column
+	@extend .fHeight
+	border-radius 0px 0px 5px 5px
+	> img
+		max-height calc(100% - 10rem)
+		cursor pointer
+	> span
+		color black
+		margin-top 1rem
+		cursor pointer
+		&:hover
+			color $blue
+
+.redmicLocal
+	background rgba(0,128,0,0.5) !important
+.appDev
+	background rgba(255,0,0,0.5) !important
+
+.atlasLayerInfoMessage
+	padding 5px
+	fontSize 2rem
+	line-height 2rem
+	text-align center
+
+.viewerPDF
+	width 100%
+	height 99.4%
+
+.viewerPDFAuthFailed
+	@extend .fHeight
+	@extends .flexibleCenteredContainer
+	flex-direction column
+	font-size 1.8rem
+	i
+		margin-bottom 2rem
+
+.flexContainerColumn
+	display flex
+	flex-direction column
+
+.flexContainer
+	display flex
+	flex-grow 1
+
+.marginBottomContainer
+	margin-bottom 1rem
+
+.containerFormAndKeypad
+	display flex
+	flex-direction column
+
+.chartTopContent
+.chartTopAndBottomContent
+	@extend .fHeight
+	display flex
+	flex-direction column
+	.centerChartContent
+		display flex
+		flex-grow 1
+
+.compositeSearch, .compositeSearchInTooltip, .editorLayerStyle
+	@extend .fHeight
+
+.compositeSearchInTooltip
+	width 80rem
+
+.compositeSearch
+	.containerFormAndKeypad
+		@extend .fHeight
+
+.editorLayerStyle
+	@extend .mediumTexturedContainer
+	display flex
+	flex-direction column
+	.titleStyleContainer
+		padding 1rem
+		padding-left 3rem
+		span
+			font-size 1.6rem
+			color #ffd700
+			font-weight bold
+	.selectInputContainer
+		padding 2rem
+		border-bottom 3px solid #3a3a41
+		> div
+			display flex
+			flex-direction column
+			.leftContainer
+				display flex
+				align-items center
+				margin-bottom 5px
+
+	.optionsContainer
+		display flex
+		flex-direction row
+		padding 5px 1rem
+		> div
+			height 3rem
+			width 50%
+			display flex
+			justify-content center
+			align-items center
+			margin 0 5px
+			border-bottom 1px solid white
+			cursor pointer
+			&.active
+				border-bottom 1px solid $blue
+				color $blue
+
+	.formStyleContainer
+		flex-grow 3
+		display flex
+		flex-direction column
+		.containerFormAndKeypad
+			display flex
+			flex-grow 1
+			justify-content space-between
+
+.rangeSearch
+	border 1px solid rgba($white, 0.7)
+	border-radius 5px
+	padding 0.3rem 1rem
+	display flex
+	justify-content flex-start
+	min-width 31rem
+	> div
+		display flex
+		align-items center
+		width 16rem
+		> div
+			width 8rem

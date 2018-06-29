@@ -1,0 +1,53 @@
+.switch
+	display flex
+	position relative
+	width 10rem
+	height 3rem
+	border-radius 5px
+	cursor pointer
+	.leftContainerSwitch, .rightContainerSwitch, .primaryContainer
+		height 3rem
+		width 5rem
+		display flex
+		justify-content center
+		align-items center
+
+	.leftContainerSwitch, .rightContainerSwitch, .primaryContainerLeft
+		&:hover
+			text-decoration none
+			background-position 0 -15px
+			transition background-position 0.1s linear
+
+	.leftContainerSwitch, .primaryContainerLeft
+		border-radius 5px 0 0 5px
+	.rightContainerSwitch, .primaryContainerRight
+		border-radius 0 5px 5px 0
+
+	.leftContainerSwitch, .rightContainerSwitch
+		background #999
+
+	.primaryContainer
+		background-color red
+		position absolute
+		z-index 2
+		color #fff
+		text-shadow 0 -1px 0 rgba(0,0,0,0.25)
+		background-repeat repeat-x
+
+	.primaryContainerLeft
+		left 0
+		background-image linear-gradient(to bottom, #62c462, #51a351)
+		background-color #51a351
+
+	.primaryContainerRight
+		cursor not-allowed
+		right 0
+		background-image linear-gradient(to bottom, #929892, #5F665F)
+		background-color #5F665F
+
+	.mapBotton
+		font-size 2.2rem
+
+	&.disable
+		opacity 0.4
+		cursor not-allowed

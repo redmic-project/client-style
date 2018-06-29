@@ -1,0 +1,29 @@
+/*
+	Autor: Pedro E. Trujillo Brito
+
+	Archivo: redmic\public\stylesheets\form\NumberSpinner.styl
+
+	Plantilla para los inputs de números.
+
+	Fecha última modificación: 24/11/2014
+*/
+
+
+
+.db
+	.dijitSpinnerButtonContainer.dijitButtonNode
+		@extend .db .dijitComboBox .dijitButtonNode
+		@extend .db .dijitComboBox .dijitButtonNode.dijitArrowButton
+
+	.dijitSpinnerDisabled .dijitButtonNode
+		@extend .db .dijitComboBoxDisabled .dijitButtonNode
+
+	.dijitArrowButtonInner
+		fontSize 1.6rem
+		line-height 1.3rem
+
+	.dijitSpinnerButtonContainer
+		text-shadow none !important
+
+	.dijitSpinnerButtonContainer.dijitButtonNode
+		padding 0px !important

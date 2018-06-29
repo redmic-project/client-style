@@ -1,0 +1,42 @@
+/*
+	Autor: Pedro E. Trujillo Brito
+
+	Archivo: redmic\public\stylesheets\form\Checkbox.styl
+
+	Plantilla para los inputs de marcado múltiple.
+
+	Fecha última modificación: 05/12/2014 - Pedro
+*/
+
+
+
+.db
+	.dijitCheckBox
+		border 1px solid $grayLight
+		box-shadow inset 1px 1px 1px 0 rgba(1, 1, 1, 0.2)
+		text-align center
+		border-radius 2px
+		padding 1px
+		background-color $white
+		position relative
+
+	.dijitCheckBox input
+		position absolute
+		top 0
+		left 0
+		height 100%
+		width 100%
+
+	.dijitCheckBox:before
+		@extend .dijitIcon:before
+		vertical-align top
+
+	.dijitCheckBox.dijitCheckBoxChecked:before
+		@extend .fa-check:before
+
+	.dijitCheckBoxDisabled
+		opacity .65
+		background-color $grayLightest
+
+	input[type="checkbox"]
+		noMargin()

@@ -1,0 +1,119 @@
+/*
+	Autor Pedro E. Trujillo Brito
+
+	Archivo redmic\public\stylesheets\form\Slider.styl
+
+	Plantilla para los inputs de barra de desplazamiento.
+
+	Fecha última modificación 05/11/2014
+*/
+
+
+
+.db
+	// General
+	.dijitSlider
+		color $grayLight
+		margin 1rem 0
+
+	.dijitSliderRemainingBar
+		border none
+		background-image linear-gradient(center top, $backgroundColor, $backgroundHighlightColor)
+		box-shadow inset 2px 1px 2px rgba(0,0,0,.1)
+
+	.dijitSliderProgressBar
+		border none
+		background-color $defaultAccentColor
+		background-image linear-gradient(center top, $defaultAccentColor, $defaultAccentColorHighlight)
+		box-shadow inset 0 -1px 0 rgba(0,0,0,.15)
+
+	.dijitSliderImageHandle
+		border 1px solid rgba(0, 0, 0, 0.15)
+		background-color $white
+
+	.dijitRuleMark
+		border-color $grayLight
+
+
+	// Horizontal
+	.dijitSliderBarH
+		height 1em
+		fondo none
+		noShadow()
+		noBorder()
+
+
+	.dijitSliderImageHandleH
+		box-shadow 1px 0 2px rgba(0, 0, 0, 0.15)
+		width 11px
+		height 1.5em
+
+	.dijitSliderBumperH
+		@extend .db .dijitSliderRemainingBar
+		height 1em
+		fondo none
+
+	.dijitSliderBumperH.dijitSliderRightBumper
+		border-bottom-right-radius 4px
+		border-top-right-radius 4px
+		margin-left -4px // To hide box shadow
+		padding-right (@margin-left * -1)
+
+	.dijitSliderBumperH.dijitSliderLeftBumper
+		@extend .db .dijitSliderProgressBar
+		border-bottom-left-radius 4px
+		border-top-left-radius 4px
+
+	.dijitSliderProgressBar
+	.dijitSliderLeftBumper
+		background-color $gridSelectedBackground
+
+	.dijitRuleLabelsContainerH
+		padding-bottom 5px
+
+	.dijitSliderButtonInner
+		color white
+		margin 0.5rem
+
+
+	// Vertical
+	.dijitSliderBarV
+		width 1em
+
+	.dijitSliderV .dijitSliderRemainingBar
+		border none
+		background-image linear-gradient(center top, $backgroundColor, $backgroundHighlightColor)
+		box-shadow inset 2px -2px 2px rgba(0,0,0,.1)
+
+	.dijitSliderV .dijitSliderProgressBar
+		border none
+		background-image linear-gradient(left center, $defaultAccentColor, $defaultAccentColorHighlight)
+		box-shadow inset -1px 0 0 rgba(0,0,0,.15)
+
+	.dijitSliderImageHandleV
+		box-shadow 0px 1px 2px rgba(0, 0, 0, 0.15)
+		width 1.5em
+		height 11px
+
+	.dijitSliderBumperV
+		@extend .db .dijitSliderV .dijitSliderRemainingBar
+		width 1em
+
+	.dijitSliderBumperV.dijitSliderTopBumper
+		border-top-left-radius 4px
+		border-top-right-radius 4px
+		margin-bottom -4px // To hide box shadow
+		padding-top (@margin-bottom * -1)
+
+	.dijitSliderBumperV.dijitSliderBottomBumper
+		@extend .db .dijitSliderV .dijitSliderProgressBar
+		border-bottom-left-radius 4px
+		border-bottom-right-radius 4px
+
+	.dijitRuleLabelsContainerV
+		margin 0 5px
+
+
+	// Disabled
+	.dijitSliderDisabled
+		opacity 0.45

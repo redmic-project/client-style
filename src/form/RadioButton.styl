@@ -1,0 +1,28 @@
+/*
+	Autor: Pedro E. Trujillo Brito
+
+	Archivo: redmic\public\stylesheets\form\RadioButton.styl
+
+	Plantilla para los inputs de marcado único.
+
+	Fecha última modificación: 05/11/2014
+*/
+
+
+
+.db
+	.dijitRadio
+		@extend .db .dijitCheckBox
+		border-radius 20px
+
+	.dijitRadio input
+		@extend .db .dijitCheckBox input
+
+	.dijitRadioDisabled
+		@extend .db .dijitCheckBoxDisabled
+
+	.dijitRadio:before
+		@extend .db .dijitCheckBox:before
+
+	.dijitRadio.dijitRadioChecked:before
+		@extend .db .dijitCheckBox.dijitCheckBoxChecked:before

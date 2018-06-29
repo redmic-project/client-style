@@ -1,0 +1,267 @@
+.background
+	background-color $colorGrayBlack
+	color #fff
+
+.backgroundSoft
+	background-color #eee
+
+.colorTextSoft
+	color #444
+
+.borderTop
+	border-top 1px solid $colorBorderTemplateCatalog
+
+.borderBottom
+	border-bottom 1px solid $colorBorderTemplateCatalog
+
+.borderRight
+	border-right 1px solid $colorBorderTemplateCatalog
+
+.containerDetails
+	@extend .fHeight
+	color black
+
+	.noDataFound, .loadingContainer
+		background-color white
+		border-radius 5px
+		min-height 12rem
+
+	h2, h4
+		margin 0
+
+	.cursive
+		font-style italic
+
+	.header
+		border-radius 5px 5px 0 0
+		flexible h center center
+		background-color white
+		height 12rem
+		box-shadow inset 0 0 22px -8px rgba(0,0,0,0.5)
+		border-bottom 1px solid rgba(0,0,0,0.2)
+
+		.left
+			width 10%
+			flexible h space-around center
+			img
+				width 4.5rem
+				height 4.5rem
+
+		.center
+			width 80%
+			flexible v flex-start left
+			line-height 2.5rem
+			padding 1rem 0
+			h2
+				font-style italic
+			.name
+				font-style normal
+		.right
+			width 10%
+			flexible h center center
+			i
+				margin-right 1rem
+
+	.content
+		@extend .fHeight
+		overflow auto
+		background-color white
+		border-radius 0 0 5px 5px
+		border-left 1px solid $colorBorderTemplateCatalog
+
+		.grid
+			@extend .fHeight
+			padding 0 0
+			&:last-child
+				border none
+			h4
+				padding 0 10px
+				line-height 3rem
+				@extend .borderRight
+				i
+					margin-right 10px
+
+			.contentGrid, .contentGridList
+				@extend .borderRight
+				overflow auto
+				height calc(100% - 3rem)
+
+			.contentGrid
+				.row
+					display flex
+					margin 0 0
+					@extend .borderBottom
+					div
+						padding 0 0
+						> span, > p
+							padding 0 10px
+							line-height 3rem
+							margin 0
+						> p
+							line-height 2.5rem
+					.rowLeft
+						@extend .backgroundSoft
+						@extend .colorTextSoft
+					.status
+						text-transform capitalize
+					.code
+						color red
+
+					.contentWithIcon
+						display flex
+						justify-content space-between
+						align-items center
+						a
+							margin-right 1rem
+				.rowDest
+					height 5rem
+					border-bottom 1px solid #fff
+					div
+						display flex
+						align-items center
+					div:first-child
+						background-color rgba(69, 156, 219, 0.3)
+						span
+							color #777
+					div:last-child
+						background-color: rgba(69, 156, 219, 0.2)
+				.double
+					div
+						width 50%
+						border none
+
+			.contentGridList
+				overflow auto
+				height calc(100% - 3rem)
+
+				.rowGridList
+					@extend .borderBottom
+					padding 10px 10px
+					flexible h left center
+					&:nth-child(odd)
+						@extend .backgroundSoft
+					a, span
+						@extend .inlineRow
+						line-height 1.8rem
+					.listActivity
+						line-height 2.6rem
+
+				.rowListContact
+						padding 5px 10px
+						display flex
+						align-items center
+						img
+							width 30px
+							height 30px
+							border-radius 10px
+						.spanTemplate
+							display flex
+
+		.verticalDivision
+			flexible v center center
+			border none
+
+	.contentFirstSpecies
+		@extend .borderBottom
+
+	.contentImg
+		img
+			width calc(100% - 20px)
+			height calc(100% - 20px)
+			margin 10px
+
+	.classification
+		display none !important
+
+	.contentSecondSpecies
+		height calc(100% - 30.1rem)
+		min-height 30rem
+
+		.contentMap
+			@extend .fHeight
+			.mapDetails
+				height calc(100% - 3rem)
+				border-radius 0
+				.map
+					border-radius 0 0 5px 0
+
+	.height-50
+		height 50% !important
+
+	.noBorder
+		border none !important
+
+	@media (max-width: 1600px)
+		.content
+			.grid
+				h4
+					border none
+				height auto
+				border none
+				border-bottom 1px solid $colorBorderTemplateCatalog
+				.contentGrid
+					div:last-child
+						border none
+
+				.contentGridList
+					height auto
+					max-height 30rem
+
+		.contentFirstSpecies
+			height auto
+
+		.contentSecondSpecies
+			.contentMap
+				height 45rem
+
+		.contentImg
+			display flex
+			justify-content center
+			img
+				height auto
+				width auto
+
+	@media (max-width: 1500px)
+		.header
+			.left
+				width 15%
+			.center
+				width 70%
+
+			.right
+				width 15%
+
+	@media (max-width: 1200px)
+		.content
+			.grid
+				.contentGrid
+					.double
+						flexible v center top
+						div
+							width 100%
+							border-bottom 1px solid $colorBorderTemplateCatalog
+							&:last-child
+								border none
+
+	@media (max-width:  1050px)
+		.header
+			.left
+				width 25%
+			.center
+				width 60%
+				h2
+					font-size inherit
+				h4
+					display none
+		.classification
+			display flex !important
+
+	@media (max-width  900px)
+		.header
+			.left
+				width 35%
+			.center
+				width 50%
+				h2
+					display flex
+					flex-direction column

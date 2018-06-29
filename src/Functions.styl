@@ -1,0 +1,424 @@
+/*
+	Funciones definidas en la plantilla por defecto.
+*/
+
+
+
+// Funciones de compatibilidad
+
+fontSize()
+	font-size (arguments * 10)px
+	font-size arguments
+
+box-sizing()
+	-webkit-box-sizing arguments
+	-moz-box-sizing arguments
+	box-sizing arguments
+
+box-shadow()
+	-webkit-box-shadow arguments
+	-moz-box-shadow arguments
+	box-shadow arguments
+
+border-radius()
+	-webkit-border-radius arguments
+	-moz-border-radius arguments
+	-ms-border-radius arguments
+	-o-border-radius arguments
+	border-radius arguments
+
+animation()
+	-moz-animation arguments
+	-webkit-animation arguments
+	-ms-animation arguments
+	-o-animation arguments
+	animation arguments
+
+animation-name()
+	-webkit-animation-name arguments
+	-moz-animation-name arguments
+	-ms-animation-name arguments
+
+animation-duration()
+	-webkit-animation-duration arguments
+	-moz-animation-duration arguments
+	-ms-animation-duration arguments
+
+animation-iteration-count()
+	-webkit-animation-iteration-count arguments
+	-moz-animation-iteration-count arguments
+	-ms-animation-iteration-count arguments
+
+animation-timing-function()
+	-webkit-animation-timing-function arguments
+	-moz-animation-timing-function arguments
+	-ms-animation-timing-function arguments
+
+animation-delay()
+	-moz-animation-delay arguments
+	-webkit-animation-delay arguments
+	-ms-animation-delay arguments
+	-o-animation-delay arguments
+	animation-delay arguments
+
+transform()
+	-moz-transform arguments
+	-webkit-transform arguments
+	-ms-transform arguments
+	-o-transform arguments
+	transform arguments
+
+transform-origin()
+	-moz-transform-origin arguments
+	-webkit-transform-origin arguments
+	-ms-transform-origin arguments
+	-o-transform-origin arguments
+	transform-origin arguments
+
+transition()
+	-webkit-transition arguments
+	-moz-transition arguments
+	-o-transition arguments
+	-ms-transition arguments
+	transition arguments
+
+transition-property()
+	-webkit-transition-property arguments
+	-moz-transition-property arguments
+	-o-transition-property arguments
+	-ms-transition-property arguments
+	transition-property arguments
+
+transition-duration()
+	-webkit-transition-duration arguments
+	-moz-transition-duration arguments
+	-o-transition-duration arguments
+	-ms-transition-duration arguments
+	transition-duration arguments
+
+transition-timing-function()
+	-webkit-transition-timing-function arguments
+	-moz-transition-timing-function arguments
+	-o-transition-timing-function arguments
+	-ms-transition-timing-function arguments
+	transition-timing-function arguments
+
+user-select()
+	-webkit-user-select arguments
+	-moz-user-select arguments
+	-o-user-select arguments
+	-ms-user-select arguments
+	user-select arguments
+
+user-drag()
+	-webkit-user-drag arguments
+	-moz-user-drag arguments
+	-o-user-drag arguments
+	-ms-user-drag arguments
+	user-drag arguments
+
+
+buttonBackground(startColor, endColor, textColor=#fff, textShadow=0 -1px 0 rgba(0,0,0,.25))
+	gradientBar startColor endColor textColor textShadow
+
+
+// Funciones simples
+
+noDisplay()
+	display none !important
+
+noShow()
+	visibility hidden
+
+noDecorated()
+	text-decoration none !important
+
+noShadow()
+	box-shadow none
+
+noMargin(important = 0)
+	if important
+		margin 0 important
+	else
+		margin 0
+
+nanoMargined(modo = 0)
+	if !modo
+		margin $nano
+	if modo == v
+		margin $nano 0
+	if modo == h
+		margin 0 $nano
+
+microMargined(modo = 0)
+	if !modo
+		margin $micro
+	if modo == v
+		margin $micro 0
+	if modo == h
+		margin 0 $micro
+
+miniMargined(modo = 0)
+	if !modo
+		margin $mini
+	if modo == v
+		margin $mini 0
+	if modo == h
+		margin 0 $mini
+
+semiMargined(modo = 0)
+	if !modo
+		margin $semi
+	if modo == v
+		margin $semi 0
+	if modo == h
+		margin 0 $semi
+
+megaMargined(modo = 0)
+	if !modo
+		margin $mega
+	if modo == v
+		margin $mega 0
+	if modo == h
+		margin 0 $mega
+
+noPadding(important = 0)
+	if important
+		padding 0 important
+	else
+		padding 0
+
+nanoPadded(modo = 0)
+	if !modo
+		padding $nano
+	if modo == v
+		padding $nano 0
+	if modo == h
+		padding 0 $nano
+
+microPadded(modo = 0)
+	if !modo
+		padding $micro
+	if modo == v
+		padding $micro 0
+	if modo == h
+		padding 0 $micro
+
+miniPadded(modo = 0)
+	if !modo
+		padding $mini
+	if modo == v
+		padding $mini 0
+	if modo == h
+		padding 0 $mini
+
+semiPadded(modo = 0)
+	if !modo
+		padding $semi
+	if modo == v
+		padding $semi 0
+	if modo == h
+		padding 0 $semi
+
+megaPadded(modo = 0)
+	if !modo
+		padding $mega
+	if modo == v
+		padding $mega 0
+	if modo == h
+		padding 0 $mega
+
+noScroll()
+	overflow hidden !important
+
+showScroll()
+	overflow auto
+
+noBorder(important = 0)
+	if important
+		border none important
+	else
+		border none
+
+bordeRedondeado(borderRadius = $radio-esquinas)
+	border-radius borderRadius
+
+bordeRedondeadoTop(borderRadius = $radio-esquinas)
+	border-top-left-radius borderRadius
+	border-top-right-radius borderRadius
+
+bordeOscuro()
+	border $borderDark
+
+bordeClaro(borde = 0)
+	if !borde
+		border $borderLight
+	if borde == bottom
+		border-bottom $borderLight
+
+sombreadoCaja(direccion = 0)
+	if !direccion
+		box-shadow $sombra-contenedor-externa-centrada-oscura, $sombra-contenedor-interna-centrada-clara
+	if direccion == o
+		box-shadow $sombra-contenedor-externa-centrada-oscura
+	if direccion == i
+		box-shadow $sombra-contenedor-interna-centrada-clara
+
+sombreadoCajaInv(direccion = 0)
+	if !direccion
+		box-shadow $sombra-contenedor-externa-centrada-clara, $sombra-contenedor-interna-centrada-oscura
+	if direccion == o
+		box-shadow $sombra-contenedor-externa-centrada-clara
+	if direccion == i
+		box-shadow $sombra-contenedor-interna-centrada-oscura
+
+sombreadoRelieve(invertido = 0)
+	if !invertido
+		box-shadow inset $sombra-se $nano 0 rgba($black, $highOpacity), inset $sombra-o $nano 0 rgba($black, $highOpacity), inset $sombra-n $nano 0 rgba($white, $highOpacity)
+	else
+		box-shadow inset $sombra-se $nano 0 rgba($white, $highOpacity), inset $sombra-o $nano 0 rgba($white, $highOpacity), inset $sombra-n $nano 0 rgba($black, $highOpacity)
+
+sombreadoTextoOscuro()
+	text-shadow $sombra-texto-sur-oscura
+
+sombreadoTextoClaro()
+	text-shadow $sombra-texto-sur-clara
+
+sombreadoTexto(invertido = 0)
+	if !invertido
+		sombreadoTextoOscuro()
+	else
+		sombreadoTextoClaro()
+
+colorTexto(invertido = 0)
+	if !invertido
+		color $white
+	else
+		color $black
+
+negrita()
+	font-weight bold
+
+
+
+// Funciones compuestas
+
+fullSize(direccion = 0)
+	if !direccion
+		width 100%
+		height 100%
+	if direccion == h
+		width 100%
+	if direccion == v
+		height 100%
+
+halfSize(direccion = 0)
+	if !direccion
+		width 50%
+		height 50%
+	if direccion == h
+		width 50%
+	if direccion == v
+		height 50%
+
+maximizeFont()
+	font-size $baseFontSize + arguments
+	line-height $baseFontSize + arguments
+
+flexible(orientacion, justificado, alineado)
+	display flex
+	flex-wrap nowrap
+	if orientacion == h
+		flex-direction row
+	if orientacion == hr
+		flex-direction row-reverse
+	if orientacion == v
+		flex-direction column
+	if orientacion == vr
+		flex-direction column-reverse
+	if justificado == left
+		justify-content flex-start
+	if justificado == center
+		justify-content center
+	if justificado == right
+		justify-content flex-end
+	if justificado == space-between
+		justify-content space-between
+	if justificado == space-around
+		justify-content space-around
+	if alineado == up
+		align-content flex-start
+		align-items flex-start
+	if alineado == center
+		align-content center
+		align-items center
+	if alineado == down
+		align-content flex-end
+		align-items flex-end
+
+flexibleUp()
+	align-self flex-start
+
+flexibleCenter()
+	align-self center
+
+flexibleDown()
+	align-self flex-end
+
+flexibleOrder(orden)
+	order orden
+
+flexibleGrow(tasa)
+	flex-grow tasa
+
+fondo(tipo, tono = 0)
+	if tipo == none
+		background none
+	if tipo == textura
+		background-repeat repeat
+		if tono == hard-opa
+			background-image $linen-gray-opa
+		if tono == hard
+			background-image $linen-gray
+		if tono == medium
+			background-image $linen-light
+		if tono == soft
+			background-image $linen-lighter
+	if tipo == degradado
+		background-size 100%
+		if tono == topbar
+			background $color13
+			background linear-gradient(top, $colorGrayBlack, $color13)
+		if tono == sidebar
+			background $color4
+			background linear-gradient(top, $color3, $color4)
+		if tono == primary
+			background linear-gradient(bottom, $colorPrimary1, $colorPrimary2)
+		if tono == buttonLogin
+			background linear-gradient(bottom, $colorLoginTextBox, $colorLoginButton)
+		if tono == buttonLoginHover
+			background linear-gradient(bottom, $colorLoginButtonHover2, $colorLoginButtonHover)
+	if tipo == color
+		background tono
+	if tipo == imagen
+		background-image tono
+		background-size cover
+
+
+createAnimation(name, duration, iteration, timing, delay = 0)
+	animation-name name
+	animation-duration duration
+	animation-iteration-count iteration
+	animation-timing-function timing
+	if delay
+		animation-delay delay
+
+zoomWhenMouseHover(inv = 0)
+	if (inv)
+		transform scale(0.8,0.8)
+	transition 0.5s ease-in-out
+	&:hover
+		if (!inv)
+			transform scale(1.2,1.2)
+		else
+			transform scale(1,1)

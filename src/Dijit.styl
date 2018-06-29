@@ -1,0 +1,38 @@
+@import '../submodules/dijit/themes/dijit.css'
+
+.db
+	.dijitBorderContainer
+		fullSize()
+
+	.dijitSplitter
+		miniMargined()
+		fondo color $color13
+		bordeRedondeado()
+		box-shadow $sombra-c $shadowBoxBlurRadius $shadowBoxSpreadRadius rgba($black, $shadowBoxOpacity), inset $sombra-c $nano rgba($white, $shadowBoxOpacity)
+
+	.dijitCalendarContainer table
+		width 100%
+
+	.dijitTextBox input.dijitArrowButtonInner
+		text-indent 0em !important
+
+	.dijitA11ySideArrow
+		display inline-block !important
+		font small-caption
+
+	.dijitCalendarIncrementArrow, .dijitCalendarDecrementArrow
+		position relative
+		line-height 4rem
+		padding 0 10px
+		cursor pointer
+
+	.dijitCalendarIncrementArrow
+		float right
+		right 3%
+
+	.dijitCalendarDecrementArrow
+		float left
+		left 3%
+
+	.dijitCalendar
+		font-size inherit !important

@@ -1,0 +1,151 @@
+/*
+	Autor: Pedro E. Trujillo Brito
+
+	Archivo: redmic\public\stylesheets\form\Button.styl
+
+	Plantilla para los botones.
+
+	Fecha última modificación: 25/11/2014
+*/
+
+
+
+.db
+	.dijitButtonNode
+		border none
+		fontSize $bigFontSize
+
+	.dijitButtonNode *
+		vertical-align baseline
+
+	.dijitButtonNode .dijitIcon
+		// Keeps button heights with and without icons the same
+		line-height $baseLineHeight * 0.65
+
+	.dijitButton
+		microMargined h
+
+	.dijitButton
+	.dijitDropDownButton
+	.dijitComboButton
+	.dijitToggleButton
+		.dijitButtonNode
+			display block // Stretch to fill space
+			margin-bottom 0 // For input.btn
+			padding $micro $big
+			text-align center
+			vertical-align middle
+			cursor pointer
+			buttonBackground($btnBackground, $btnBackgroundHighlight, $grayDark, 0 1px 1px rgba(255,255,255,.75))
+			border 1px solid $btnBorder
+			border-bottom-color darken($btnBorder, 10%)
+			border-radius 4px
+			box-shadow inset 0 1px 0 rgba(255,255,255,0.2), 0 1px 2px rgba(0,0,0,0.05)
+
+
+	// Colours
+	.primary .dijitButtonNode
+		buttonBackground($btnPrimaryBackground, $btnPrimaryBackgroundHighlight)
+
+	.warning .dijitButtonNode
+		buttonBackground($btnWarningBackground, $btnWarningBackgroundHighlight)
+
+	.danger .dijitButtonNode
+		buttonBackground($btnDangerBackground, $btnDangerBackgroundHighlight)
+
+	.success .dijitButtonNode
+		buttonBackground($btnSuccessBackground, $btnSuccessBackgroundHighlight)
+
+	.info .dijitButtonNode
+		buttonBackground($btnInfoBackground, $btnInfoBackgroundHighlight)
+
+	.inverse .dijitButtonNode
+		buttonBackground($btnInverseBackground, $btnInverseBackgroundHighlight)
+
+
+	// Hover
+	.dijitButtonHover .dijitButtonNode
+	.dijitDropDownButtonHover .dijitButtonNode
+	.dijitComboButton .dijitButtonNodeHover
+	.dijitComboButton .dijitDownArrowButtonHover
+	.dijitToggleButtonHover .dijitButtonNode
+		text-decoration none
+		background-position 0 -15px
+		transition background-position .1s linear
+
+
+	// Active - pressed
+	.dijitButtonActive .dijitButtonNode
+	.dijitComboButton .dijitButtonNodeActive
+	.dijitToggleButtonActive .dijitButtonNode
+	.dijitToggleButtonChecked .dijitButtonNode
+		background-image none
+		outline 0
+		box-shadow inset 0 2px 4px rgba(0,0,0,.15), 0 1px 2px rgba(0,0,0,.05)
+
+
+	.dijitDropDownButtonActive .dijitButtonNode
+		@extend .db .dijitDropDownButtonHover .dijitButtonNode
+
+
+	// Disabled
+	.dijitButtonDisabled .dijitButtonNode
+	.dijitDropDownButtonDisabled .dijitButtonNode
+	.dijitComboButtonDisabled .dijitButtonNode
+	.dijitToggleButtonDisabled .dijitButtonNode
+		cursor not-allowed
+		background-image none
+		opacity 0.45
+		box-shadow none
+
+
+	.dijitToggleButtonDisabled.dijitToggleButtonChecked .dijitButtonNode
+		box-shadow inset 0 2px 4px rgba(0,0,0,.15), 0 1px 2px rgba(0,0,0,.05)
+
+
+	// Content
+	.dijitButtonText
+		padding 0 0.3em
+		text-align center
+
+
+	// Arrow
+	.dijitArrowButtonInner
+		@extend .db .dijitButtonNode .dijitIcon
+		height auto
+		width auto
+
+
+	.dijitArrowButtonInner:before
+		@extend .dijitIcon:before
+		@extend .fa-caret-down:before
+
+
+	.dijitUpArrowButton .dijitArrowButtonInner:before
+		@extend .fa-caret-up:before
+
+
+	// Specific Styling
+
+	// Combo Box
+	.dijitComboButton td.dijitStretch
+	.dijitComboButton td.dijitArrowButton
+		display table-cell
+
+
+	.dijitComboButton .dijitArrowButton
+		border-left-width 0
+		padding 6px 10px
+		border-radius 0 5px 5px 0
+
+
+	.dijitComboButton .dijitArrowButton.dijitHasDropDownOpen
+		@extend .db .dijitButtonActive .dijitButtonNode
+
+
+	.dijitComboButton .dijitStretch
+		border-radius 4px 0 0 4px
+
+
+	table.dijitComboButton
+		border-collapse separate

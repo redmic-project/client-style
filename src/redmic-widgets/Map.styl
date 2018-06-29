@@ -1,0 +1,43 @@
+.mapSearch
+	height 300px
+	width 600px
+	margin 0
+	border-radius 5px
+	box-shadow 0 5px 10px rgba(0,0,0,0.2)
+
+	.leaflet-pane
+		z-index 0 !important
+
+	.leaflet-areaselect-shade
+		position absolute
+		background rgba(0,0,0, 0.4)
+
+	.leaflet-areaselect-handle
+		position absolute
+		background #fff
+		border 1px solid #666
+		box-shadow 1px 1px rgba(0,0,0, 0.2)
+		width 14px
+		height 14px
+		cursor move
+
+	.leaflet-areaselect-handle
+		width 12px !important
+		height 12px !important
+		border-radius 10px
+		&:hover
+			fondo color $blue
+
+	.leaflet-areaselect-shade
+		background rgba(0,0,0, 0.2) !important
+
+.mapSearchNotSelectArea
+	width 800px
+	height 600px
+	.leaflet-areaselect-handle
+		display none
+
+// Esto es necesario? Por lo que he visto no
+// Además, todo este fichero hay que replantearlo, porque se aplica a cualquier mapa leaflet
+//.leaflet-bottom.leaflet-right
+//	display none !important

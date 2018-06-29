@@ -1,0 +1,394 @@
+/*
+	Plantilla para modificar el estilo de los elementos de los formularios.
+*/
+
+
+// Campos disabled
+.dj_webkit .db .dijitTextBoxDisabled input, .dj_webkit .db textarea.dijitTextAreaDisabled
+	color #8E8E8E
+
+// Para ocultar los campos ocultos
+.hiddenId
+	noDisplay()
+
+// Para todos los formularios
+.form
+.form-horizontal
+	color $white
+	noShadow()
+	height inherit
+	max-height calc(100% - 20px)
+	showScroll()
+	padding 10px
+	min-width 25rem
+	fieldset
+		width 100%
+		noBorder()
+		noPadding()
+		margin-bottom $semi
+		fondo none
+	legend
+		noBorder()
+		fontSize $bigFontSize
+		padding-left 10%
+		color gold
+		negrita()
+		&:first-of-type
+			padding-top $semi
+	&.form-border
+		border 1px solid #ccc
+
+	&.inverseLeftContainer
+		.inputContainer
+			> *
+			margin-bottom 1rem
+			.leftContainer
+				flex-direction row-reverse
+				label
+					text-align left
+
+				.containerDisableSwitch
+					padding-left 0
+			&.noWrap
+				.leftContainer
+					flex-direction row
+				label
+					text-align right
+
+.inputContainer
+	display flex
+	flex-wrap wrap
+
+	.leftContainer, .rightContainer
+		display flex
+		align-items center
+		padding 3px
+
+	.leftContainer
+		flex 1 2 15rem
+		justify-content flex-end
+		padding-right 7px
+		label
+			margin-bottom 0
+			text-align right
+
+		.containerDisableSwitch
+			padding-right 1rem
+			padding-left 1rem
+			display flex
+			justify-content center
+			font-size 2rem
+			cursor pointer
+
+	.rightContainer
+		flex 4 1 20rem
+
+	&.noWrap
+		flex-wrap nowrap
+
+.form-control
+	fontSize $normalFontSize
+	margin-top 0
+
+.form-vertical
+	display flex
+	.dijitArrowButton
+		padding 5px 10px !important
+	padding-top 0 !important
+
+.embedded
+	.inputContainer
+		margin-bottom 0 !important
+
+.embeddedButton
+	noPadding()
+	flexible h center center
+
+.separateLeft
+	padding-left 2rem
+
+.formLogin
+	margin 10px 0
+
+.reCaptcha
+	width 100%
+	flexible h center center
+	margin-top 2rem
+
+.annotation
+	fondo textura medium
+	miniPadded()
+	bordeRedondeado()
+	bordeClaro()
+
+.geographicCoordinate
+	padding 0
+	> div
+		margin-right 5px
+
+.range
+	> div
+		margin-right 5px
+	.dijitTextBox
+		width 8rem
+
+.dateTime
+	.dijitCalendar
+		box-shadow none !important
+		border none
+
+.timeInput
+	display flex
+	justify-content center
+	.unitContent
+		display flex
+		width 2.5rem
+		//height 7rem
+		flex-direction column
+		align-items center
+		justify-content space-between
+		font-size 1.5rem
+		i
+			cursor pointer
+			padding 3px
+			border-radius 5px
+		i:hover
+			background-color $blue
+	.unitSeparator
+		display flex
+		align-items center
+
+	&.disable
+		cursor not-allowed
+		opacity .65
+		.unitContent
+			i:hover
+				background-color initial
+
+.inputLittleWidth
+	> div
+		max-width 25rem
+
+.textBoxLittleWidth
+	max-width 35rem
+	position relative
+
+.textBoxModWidthExpand
+	@extend .fWidth
+	.additionalOptionInput
+		display flex
+		z-index 999
+		position absolute
+		right 0
+		height 29px
+
+		.contentClick
+			align-items center
+			border-radius 0 5px 5px 0
+			border-left 1px solid #ccc
+			margin 1px
+
+		.contentIcon
+			font-size 2rem
+
+		.contentIcon, .contentClear
+			width 2.2rem
+			display flex
+			justify-content space-around
+			align-items center
+
+		.contentClear
+			cursor pointer
+			i:hover
+				color $blue
+
+	.disable
+		opacity 0.4
+		.contentClick, .contentClear
+			cursor not-allowed
+			&:hover
+				background-color initial
+				color white
+
+	input
+		@extend .inlineRow
+		padding-right 5rem !important
+
+
+.textBoxModWidthExpand, .multiSelect
+	.contentClick
+		width 3.3rem
+		display flex
+		justify-content space-around
+		cursor pointer
+		&:hover
+			background-color $blue
+
+.multiSelect
+	.contentClick
+		width 8rem
+		border-radius 5px
+		border 1px solid rgba($white, 0.7)
+		padding 0.6rem 1rem
+	.active
+		background-color rgba(4,156,219,0.5)
+	.disable
+		opacity 0.4
+		cursor not-allowed
+		&:hover
+			background-color initial
+
+.colorRampSelect, .colorSelect
+	@extend .multiSelect
+	.contentClick
+		width 100%
+		.value
+			height 1rem
+			width 100%
+			border-radius 3px
+
+.colorRampItems
+	flex-direction row !important
+	flex-wrap wrap
+	border-radius 3px
+	.unitColor
+		flex-grow 1
+		height 1rem
+		width 3rem
+
+.dateRange
+	.dijitTextBox
+		width 21rem
+	.textBoxModWidthExpand
+	.additionalOptionInput
+		right 0
+
+.dateRangeComplex
+	padding 0
+	display flex
+	align-items flex-start
+	.containerOptions
+		display flex
+		flex-direction column
+		padding 10px
+		.inputOptions, .valueOptions
+			display flex
+			flex-direction column
+			padding 3px 0
+			.item
+				padding 5px
+				cursor pointer
+				width 12rem
+				&:hover
+					color $blue
+			.active
+				background-color $blue
+				border-radius 2px
+				font-weight bold
+				&:hover
+					color inherit
+		.inputOptions
+			padding-top 1rem
+		.valueOptions
+			border-bottom 1px solid #999
+			padding-bottom 1rem
+	.containerCenter
+		border-left 1px solid #999
+		width 45rem
+		.containerInputs
+			display flex
+			justify-content center
+			> .containerInput:nth-child(2)
+				padding-left 0
+			.containerInput
+				display flex
+				flex-direction column
+				padding 10px
+				.dateTime
+					border 1px solid #555
+					border-radius 5px
+					display flex
+					flex-direction column
+				.control-input
+					padding 0
+				> div:nth-child(2)
+					margin-top 1rem
+	.simpleDate
+		.timeInput
+			display none
+
+.formInBox
+	flex-grow 1
+	display flex
+	flex-direction column-reverse
+	.form-horizontal
+		flex-grow 1
+		display flex
+		justify-content center
+		padding-top 2rem
+		fieldset
+			@extend .fWidth
+
+.dojoxColorPicker
+	background-image $linen-gray
+	color white
+	.dojoxColorPickerPreview
+		border 1px solid rgba(255,255,255,0.5)
+
+.selectOnPopup
+	position relative
+	input, .dijitInputContainer, .dijitDisabled
+		color white !important
+		opacity 1 !important
+		cursor pointer !important
+	.cleanInput
+		position absolute
+		top 10px
+		right 25px
+		cursor pointer
+
+.selectTimeInterval
+	.leftContainer
+		justify-content flex-start
+		padding-left 1rem
+
+.dijitCalendar
+	width 18rem
+	.dijitCalendarMonthContainer
+		.dijitButtonNode
+			padding 3px 5px
+		.dijitCalendarDecrementArrow,
+		.dijitCalendarIncrementArrow
+			padding 0 5px
+			line-height 3.5rem
+	.dijitCalendarDateTemplate
+		padding 1px 4px
+	.dijitCalendarDateLabel,
+	.dijitCalendarDayLabel,
+	.dijitCalendarNextYear,
+	.dijitCalendarPreviousYear
+		font-size 12px
+	.dijitDownArrowButton
+		font-size 13px
+	.dijitCalendarSelectedYear
+		font-size 16px
+	.dijitCalendarYearLabel
+		margin-top 4px
+	.dijitCalendarDayLabel
+		padding-bottom 4px
+		padding-top 0px
+
+.dijitCalendarMonthMenuPopup
+	.dijitCalendarMonthLabel
+		padding 5px 11px !important
+
+.geometryInput
+	textarea
+		height 25rem !important
+		overflow-y auto  !important
+
+.containerImageLayerEdit
+	cursor pointer
+	img
+		margin-bottom 2rem
+		border-radius 5px

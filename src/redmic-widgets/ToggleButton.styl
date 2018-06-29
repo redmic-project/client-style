@@ -1,0 +1,18 @@
+.toggleButton
+	color white
+	flexible h flex-start center
+	.button
+		flexible h center center
+		width 7rem
+		line-height 3rem
+		background linear-gradient(to bottom, #444, #222)
+		border 1px solid rgba(0,0,0,0.4)
+		cursor pointer
+		i
+			margin-right 1rem
+		&:first-child
+			border-radius 5px 0 0 5px
+		&:last-child
+			border-radius 0 5px 5px 0
+	.active
+		background $blue

@@ -1,0 +1,78 @@
+/*
+	Autor Pedro E. Trujillo Brito
+
+	Archivo redmic\public\stylesheets\form\Select.styl
+
+	Plantilla para los inputs desplegables.
+
+	Fecha última modificación 26/11/2014
+*/
+
+
+
+.db
+	.dijitSelect
+		border none
+		color $white
+		transition border linear .2s, box-shadow linear .2s
+
+	.dijitSelect .dijitButtonNode
+		@extend .db .dijitComboBox .dijitButtonNode
+
+	.dijitSelect .dijitButtonNode.dijitArrowButton
+		@extend .db .dijitComboBox .dijitButtonNode.dijitArrowButton
+
+	.dijitSelect .dijitButtonContents
+		background-color $inputBackground
+		box-shadow inset 0 1px 1px rgba(0,0,0,.075)
+		border-radius $inputBorderRadius 0 0 $inputBorderRadius
+		border 1px solid $inputBorder
+		fullSize h
+
+
+	// Disabled
+	.dijitSelect.dijitSelectDisabled .dijitButtonContents
+		@extend .db .dijitTextBoxDisabled
+
+	.dijitSelectDisabled .dijitButtonNode
+		@extend .db .dijitComboBoxDisabled .dijitButtonNode
+
+	.dijitSelectDisabled .dijitButtonContents .dijitButtonText
+		opacity 0.5
+
+
+	// Custom
+	.dijitComboBox input.dijitArrowButtonInner
+	.dijitSelect input.dijitArrowButtonInner
+		display inline
+		font-size $baseFontSize
+		width 1em
+
+	form
+	.dijitTooltipContainer
+		.dijitArrowButtonInner
+			color $white
+
+	.dijitSelect .dijitButtonNode
+		color $white
+		text-shadow none
+		border-bottom-color $btnBorder
+
+		&.dijitArrowButton
+			padding 7px 9px 7px 10px
+			&.dijitArrowButtonContainer
+				fontSize 1.3rem
+
+	.dijitArrowButtonContainer
+	.dijitSpinnerButtonContainer
+		background-color $color10 !important
+		background-image $linen-light !important
+		box-shadow none !important
+		fontSize 2rem
+
+	.dijitMenuNextButton
+	.dijitMenuPreviousButton
+		bordeRedondeado()
+		miniMargined()
+		fondo color $blueDark
+		text-align center

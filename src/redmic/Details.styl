@@ -1,0 +1,178 @@
+/*
+	Plantilla para el visor de detalles.
+*/
+
+.detailsView
+	max-height calc(100% - 20px)
+	showScroll()
+	semiMargined()
+	sombreadoTexto()
+	& a
+		color $white
+	&:focus
+		outline none
+	fieldset
+		noBorder()
+		noPadding()
+		margin-bottom $semi
+		fondo none
+		fullSize h
+	legend
+		fontSize $bigFontSize
+		miniMargined v
+		color $white
+		negrita()
+
+.detailsRow
+	flexible h space-between center
+	miniMargined v
+
+.detailsRowTop
+	flexible h space-between top
+	miniMargined v
+
+.detailsDetached
+	megaMargined v
+
+.detailsTitle
+	fontSize $hugeFontSize
+	semiMargined v
+	color gold
+	line-height 2.2rem
+
+.detailsSubtitle
+	fontSize $giantFontSize
+	color $white
+
+.detailsTopMarker
+	fontSize $bigFontSize
+	negrita()
+	text-align center
+
+.detailsPhoto
+	bordeRedondeado()
+
+.detailsCaption
+	fontSize $bigFontSize
+	negrita()
+	bottom 3%
+	right 3%
+
+.detailsTextRow
+	flexible h space-between top
+	semiMargined v
+
+.detailsLabel
+	text-align right
+	negrita()
+	align-self center
+
+.detailsValue
+	flexible h left center
+	min-height 30px
+	bordeRedondeado()
+	semiPadded h
+	fondo color rgba($black, $lowOpacity)
+	span
+		margin 5px 0
+
+.isolatedValue
+	miniMargined h
+
+.detailsBottomBar
+	megaMargined v
+	flexible h space-between down
+	.left
+		flexible h left center
+	.center
+		flexible h center center
+	.right
+		flexible h right center
+
+.detailsBottomBarLink
+	miniMargined h
+	color gold
+
+.detailsBottomBarButton
+	bordeRedondeado()
+	width 60px
+	height 60px
+
+.noDecoratedLink
+	noDecorated()
+
+.bigBadge
+	padding $micro $semi
+
+.badgeLabel
+	negrita()
+
+.badgeSubLabel
+	fontSize $smallFontSize
+
+.dropzoneCSVDocument
+	border-radius 0
+	border none
+	width 100% !important
+	.dz-default.dz-message
+		flexible h space-around center
+		height auto
+
+	display flex
+	flex-direction column-reverse
+	align-items baseline
+	justify-content space-around
+
+.detailsContainer
+	overflow auto
+
+.detailsRowSeparator
+	@extend .fWidth
+	height 5px
+
+.detailsRowFlex
+	display flex
+	flex-direction column
+	> span
+		line-height 2.3rem !important
+
+.templateInfo
+	background-color rgb(255, 255, 255)
+	@extend .borderRadiusBottom
+	.box
+		@extend .fHeight
+		.contentInfo
+			margin 0
+			color black !important
+			padding 0px 1rem
+
+.selectionDetails
+	width 15px
+	cursor pointer
+
+.containerImageDetails
+	@extend .imageContainer
+	border-bottom 1px solid #ddd
+	padding 1rem 1rem
+	img
+		max-height 25rem
+
+.loadingByImg
+	//@extend .spinningElement
+	@extend .fWidth
+	background url('/stylesheets/src/images/loading.svg') no-repeat center
+	//margin 3rem 0
+	min-height 8rem
+
+.containerImageOrWebcam
+	border none
+	max-width 35rem
+
+.paddingContainerWebcam
+	padding 1rem 0
+
+.paddingItemInRow
+	padding-bottom 5px
+
+.paddingLeftRow
+	padding-left 1rem

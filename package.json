@@ -1,0 +1,63 @@
+{
+  "name": "Style",
+  "version": "0.10.1",
+  "author": "Observatorio Ambiental Granadilla",
+  "homepage": "https://redmic.es",
+  "description": "Estilos y recursos para REDMIC",
+  "contributors": [
+    {
+      "name": "Ignacio Lorenzo García",
+      "email": "nacho@oag-fundacion.org"
+    },
+    {
+      "name": "Pedro E. Trujillo Brito",
+      "email": "pedro@redmic.es"
+    },
+    {
+      "name": "Noel Alonso Expósito",
+      "email": "noel@redmic.es"
+    },
+    {
+      "name": "Carlos Alberto González Carballo",
+      "email": "carlos@redmic.es"
+    }
+  ],
+  "repository": {
+    "type": "git",
+    "url": "http://git.redmic.net/redmic-client/style.git"
+  },
+  "private": true,
+  "dependencies": {
+    "alertifyjs": "^1.11.0",
+    "animate.css": "^3.5.2",
+    "dijit": "^1.13.0",
+    "dojox": "^1.13.0",
+    "dropzone": "^5.2.0",
+    "font-awesome-stylus": "^4.7.1",
+    "leaflet": "^1.2.0",
+    "leaflet-awesome-markers": "https://github.com/lvoogdt/Leaflet.awesome-markers.git#2.0/develop",
+    "leaflet-draw": "^0.4.12",
+    "leaflet-measure": "^2.1.7",
+    "leaflet-minimap": "^3.5.0",
+    "prunecluster": "^2.1.0"
+  },
+  "devDependencies": {
+    "glob": "^7.1.2",
+    "grunt": "^1.0.1",
+    "grunt-contrib-clean": "^1.0.0",
+    "grunt-contrib-copy": "^1.0.0",
+    "grunt-contrib-cssmin": "^2.2.0",
+    "grunt-contrib-stylus": "^1.2.0",
+    "grunt-git": "^1.0.4",
+    "grunt-shell": "^2.1.0",
+    "load-grunt-tasks": "^3.5.2",
+    "nib": "^1.1.2",
+    "stylus": "^0.54.5",
+    "webfont-dl": "^0.1.2"
+  },
+  "engines": {
+    "node": ">=4.4",
+    "npm": ">=3.10"
+  },
+  "license": "ISC"
+}

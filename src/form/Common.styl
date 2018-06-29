@@ -1,0 +1,118 @@
+/*
+	Autor: Pedro E. Trujillo Brito
+
+	Archivo: redmic\public\stylesheets\form\Common.styl
+
+	Plantilla para elementos comunes de los widgets de formulario.
+
+	Fecha última modificación: 25/11/2014
+*/
+
+
+
+.db
+	label
+		vertical-align middle
+
+	// TextBox
+	.dijitTextBox
+		display inline-block
+		color $gray
+		border-radius $inputBorderRadius
+		background-color $inputBackground
+		border 1px solid $inputBorder
+		box-shadow inset 0 1px 1px rgba(0,0,0,.075)
+		transition border linear .2s, box-shadow linear .2s
+
+	.dijitTextBoxFocused
+		outline none
+		border-color rgba(82,168,236,.8)
+		box-shadow inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(82,168,236,.6)
+
+	.dijitInputContainer
+		color $white
+		bordeRedondeado()
+		padding 4px
+
+	.dijitPlaceHolder
+		font-style normal
+		padding 4px 6px
+
+
+	.dijitTextBoxDisabled
+	.dijitTextBoxReadOnly
+		background-image none
+		box-shadow none
+		background-color $inputDisabledBackground
+
+
+	.dijitTextBoxDisabled
+	.dijitTextBoxReadOnly
+		color $inputDisabledColor
+
+
+	// TextArea
+	.dijitTextArea
+		padding 4px 6px
+		line-height 1.5
+		box-sizing border-box
+		min-height 80px
+		color $white
+
+
+	// ComboBox
+	.dijitComboBox .dijitButtonNode
+		@extend .db .dijitComboButton .dijitButtonNode
+
+
+	.dijitComboBox .dijitButtonNode.dijitArrowButton
+		@extend .db .dijitComboButton .dijitArrowButton
+
+
+	.dijitComboBox input.dijitArrowButtonInner
+		display none
+
+
+	.dijitComboBoxDisabled .dijitButtonNode
+		@extend .db .dijitComboButtonDisabled .dijitButtonNode
+		background-color $inputDisabledBackground
+
+
+	// Validation
+	.dijitTextBoxError
+		color $errorText
+		border-color $errorText
+
+
+	.dijitTextBoxError.dijitTextBoxFocused
+		box-shadow inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px lighten($errorText, 20%)
+
+
+	.dijitValidationContainer
+		display none
+
+
+	// All
+	.dijitTextBox
+	.dijitRadio
+	.dijitCheckBox
+	.dijitSelect .dijitButtonContents
+	.dijitMenu
+		bordeRedondeado()
+		fondo color rgba($black, $noOpacity)
+		fondo textura medium
+
+
+.dj_webkit
+	.db
+		.dijitInputField .dijitInputInner
+			height $baseLineHeight
+
+		.dijitInline .dijitInputField .dijitInputInner
+			height inherit
+
+		.dijitTextBoxDisabled input
+		textarea.dijitTextAreaDisabled
+			color $inputDisabledColor
+		.dijitTextBoxDisabled
+			opacity 0.4

@@ -1,0 +1,130 @@
+/*
+	Autor: Pedro E. Trujillo Brito
+
+	Archivo: redmic\public\stylesheets\layout\Dialog.styl
+
+	Plantilla para los Dialog (pop-up) de DOJO.
+
+	Fecha última modificación: 28/11/2014
+*/
+
+
+
+// Todos los Dialog
+
+.db
+	.dijitDialog
+		color $white
+		border 1px solid $colorLoginTextBox
+		sombreadoCajaInv o
+		bordeRedondeado()
+	.dijitDialogUnderlay
+		fondo color $black
+		opacity $mediumOpacity
+		opacity $highOpacity
+	.dijitDialogTitle
+		fontSize $normalFontSize
+		negrita()
+		sombreadoTexto()
+	.dijitDialogCloseIcon
+		.maxIcon
+			margin-right 5px
+			padding-top 1px
+		.closeText, .maxIcon
+			display inline
+			position relative
+			float right
+			fontSize $bigFontSize
+			//negrita()
+			color $white
+			sombreadoTexto()
+			opacity $highOpacity
+	.dijitDialogCloseIconHover
+		.closeText, .maxIcon
+			opacity $fullOpacity
+
+.dijitDialog-xs
+	height 25%
+
+.dijitDialog-sm
+	height 40%
+
+.dijitDialog-md
+	height 60%
+
+.dijitDialog-lg
+	height 80%
+
+
+
+// Todos los Dialog
+
+.dialogComplex
+.dialogSimple
+	noPadding !important
+	display flex
+	flex-flow column
+	flex-grow 1
+
+	.dijitDialogTitleBar
+		padding $semi $big
+		fondo degradado buttonLogin
+		border-bottom 1px solid $color2
+
+	.dijitDialogPaneContent
+		display flex
+		flex-grow 1
+
+		& > div
+			height unset
+
+
+// Dialog pequeño
+
+.dialogSimple
+	fondo textura soft
+
+	.dijitDialogTitleBar
+		border-bottom $borderDark
+		padding $micro $semi
+		fondo degradado buttonLogin
+
+
+// Dialog normal
+
+.dialogComplex
+	fondo textura medium
+
+
+// Botonera
+
+.keypad
+	flexible h space-between center
+	flexibleGrow 1
+	noScroll()
+	box-shadow $sombra-s rgba($white, $lowOpacity) !important
+	border $borderType $color12
+	fondo color $color5
+	min-height 30px
+	.left
+		flexible h center center
+		miniMargined h
+		.btnGroup
+			flexible h left center
+			miniMargined h
+	.center
+		flexible h center center
+		miniMargined h
+		.btnGroup
+			flexible h center center
+			miniMargined h
+	.right
+		flexible h center center
+		miniMargined h
+		.btnGroup
+			flexible h right center
+			miniMargined h
+
+
+.backgroundNone
+	background none
