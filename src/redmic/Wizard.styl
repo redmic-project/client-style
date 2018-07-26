@@ -21,6 +21,8 @@
 		height calc(100% - 7rem)
 
 	.wizardLabel
+		@extend .mediumSolidContainer
+		@extend .fWidth
 		fontSize $hugeFontSize
 		padding 5px 15px
 		height 4rem
@@ -28,9 +30,11 @@
 		align-items center
 		display flex
 		border-radius 5px 5px 0 0
-		@extend .mediumSolidContainer
-		@extend .fWidth
 		width calc(100% - 3rem)
+
+		div
+			height 2rem
+
 		div:first-child
 			margin-right 15px
 			white-space nowrap
