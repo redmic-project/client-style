@@ -74,8 +74,33 @@
 		.paginate .selectOption,
 		.paginate .selectPage,
 		.totalResult,
-		.containerSelectionBox
+		.containerSelectionBox,
+		.orderZone
 			margin-bottom 3px
+			margin-left 3px
+
+		.orderZone
+			display flex
+			justify-content center
+			align-items center
+			flex-wrap wrap
+			> span
+				display flex
+				margin-right 1rem
+
+			.containerOrder
+				position relative
+				display flex
+				align-items center
+				select
+					padding-left 2rem
+				span
+					position absolute
+					left 5px
+					top 6px
+					cursor pointer
+					&:hover
+						color $blue
 
 		.paginate
 			display flex
@@ -452,29 +477,6 @@
 		margin-right 1rem
 	div:last-child
 		margin-right 0
-
-.orderZone
-	display flex
-	justify-content center
-	align-items center
-	flex-wrap wrap
-	> span
-		display flex
-		margin-right 1rem
-
-	.containerOrder
-		position relative
-		display flex
-		align-items center
-		select
-			padding-left 2rem
-		span
-			position absolute
-			left 5px
-			top 6px
-			cursor pointer
-			&:hover
-				color $blue
 
 .imageLayerList
 	width 6rem !important
