@@ -349,8 +349,14 @@
 
 			.header
 				@extend .titleRedmic
+				overflow hidden
+				text-overflow ellipsis
+				display -webkit-box
+				-webkit-line-clamp 3
+				-webkit-box-orient vertical
 				h1
 					line-height 1
+					margin 0
 
 		.infoTitleBackground
 			fondo degradado topbar
