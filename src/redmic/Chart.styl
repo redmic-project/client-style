@@ -137,12 +137,19 @@
 				text-shadow 1px 1px $black
 
 	.chartLegendBar
+		.chartLegendTitle
+			negrita()
+
 		.chartLegendElement
 			user-select none
 			cursor pointer
 
 		.hiddenChartLegend
 			opacity .5
+
+	.chartSummaryBox
+		text-anchor end
+		fontSize 1.1rem
 
 	.emptyDataMessage
 		@extend .fWidth
