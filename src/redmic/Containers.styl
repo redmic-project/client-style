@@ -466,10 +466,10 @@
 
 .windowContent
 	display flex
-	//overflow auto
 	& > :first-child
 		@extend .fWidth
 		@extend .fHeight
+		overflow auto
 
 .windowContenNoTitle
 	border-radius 5px !important
@@ -646,3 +646,14 @@
 .kibana-dashboard
 	width calc(100% - 4px)
 	height calc(100% - 4px)
+
+.socialPanel
+	display flex
+	flex-wrap wrap
+	align-items center
+	justify-content flex-start
+	padding 10px
+	> *
+		fontSize 4rem
+		color $white
+		margin 10px
