@@ -409,7 +409,7 @@
 			margin 5px
 			overflow hidden
 			transition-property height, width
-			transition-duration 0.3s
+			transition-duration .3s
 
 		& > div
 			$cols = 6
@@ -434,48 +434,52 @@
 		.contentGrid
 			height 100% !important
 
-.windowTitle
-	fondo degradado topbar
-	border-radius 5px 5px 0 0
-	display flex
-	align-items center
-	justify-content space-between
-	cursor -webkit-grab
-	cursor grab
+.moduleWindow
+	.windowTitle
+		fondo degradado topbar
+		border-radius 5px 5px 0 0
+		display flex
+		align-items center
+		justify-content space-between
+		cursor -webkit-grab
+		cursor grab
 
-	.title
-		font-weight bold
-		padding-left 10px
-		cursor inherited
+		.title
+			font-weight bold
+			padding-left 10px
+			cursor inherited
 
-	.buttons
+		.buttons
 
-		& > i
-			width 15px
-			height 15px
-			text-align center
-			vertical-align middle
-			margin 0 5px
-			cursor pointer
-			color gray
+			& > i
+				width 15px
+				height 15px
+				text-align center
+				vertical-align middle
+				margin 0 2px
+				cursor pointer
+				color gray
 
-			&:hover
-				color $blue
-			&.fa-close:hover
-				color red
+				&:hover
+					color $blue
+				&.fa-close:hover
+					color red
 
-.windowContent
-	display flex
-	& > :first-child
-		@extend .fWidth
-		@extend .fHeight
-		overflow auto
+	.windowContent
+		display flex
+		transition height .3s linear
+		border-radius 0 0 5px 5px
 
-.windowContenNoTitle
-	border-radius 5px !important
+		& > :first-child
+			@extend .fWidth
+			@extend .fHeight
+			overflow auto
 
-	& > :first-child
-		border-radius 5px
+	.windowWithoutTitleContent
+		border-radius 5px !important
+
+		& > :first-child
+			border-radius 5px
 
 .speciesDetailsTitle
 	display flex
