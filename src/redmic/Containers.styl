@@ -446,12 +446,16 @@
 		position absolute
 		bottom 0
 		right 0
-		transform rotate(45deg) scale(2) translate(0.5px, 2px)
+		width 15px
+		height 15px
+		color gray
+		background-color $colorGrayBlack
 		pointer-events none
 
 	.resizeHandle:before
 		@extend .fa
-		@extend .fa-caret-right:before
+		@extend .fa-sort:before
+		transform rotate(-45deg) scale(1.2) translate(2px, 2px)
 
 .moduleWindow
 	.windowTitle
