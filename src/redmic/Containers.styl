@@ -442,8 +442,18 @@
 	.windowContent
 		padding 0 3px 0 3px
 
-.moduleWindow
+	.resizeHandle
+		position absolute
+		bottom 0
+		right 0
+		transform rotate(45deg) scale(2) translate(0.5px, 2px)
+		pointer-events none
 
+	.resizeHandle:before
+		@extend .fa
+		@extend .fa-caret-right:before
+
+.moduleWindow
 	.windowTitle
 		fondo degradado topbar
 		border-radius 5px 5px 0 0
