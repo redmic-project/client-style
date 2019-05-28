@@ -411,30 +411,39 @@
 			transition-property height, width
 			transition-duration .3s
 
-		& > div
 			$cols = 6
 			for col in 1..$cols
-				&[data-cols=\"{col}\"]
+				&[data-cols=\"{col}\"]:not(.resizedByUser)
 					$newWidth = (100% / $cols) * col
 					width "calc(%s - 10px)" % $newWidth
 
 			$rows = 6
 			for row in 1..$rows
-				&[data-rows=\"{row}\"]
+				&[data-rows=\"{row}\"]:not(.resizedByUser)
 					height 90px * row + 10px * (row - 1)
 
-			$rows = 6
-			for row in 1..$rows
-				&[data-percentage-rows=\"{row}\"]
+				&[data-percentage-rows=\"{row}\"]:not(.resizedByUser)
 					$newHeight = (100% / $rows) * row
 					height "calc(%s - 10px)" % $newHeight
 
-		// TODO: Para arreglar pencadas de details antiguos, se revisará
-		.content
-		.contentGrid
-			height 100% !important
+		& > div.resizedByUser
+			max-width calc(100% - 10px)
+
+.moduleWindow.resizable
+	padding-bottom 15px
+	resize both
+	overflow hidden
+	max-width 100%
+	min-width 100px
+	min-height 100px
+	border-radius 5px 5px 0 5px
+	background linear-gradient(bottom, $colorGrayBlack, $color13)
+
+	.windowContent
+		padding 0 3px 0 3px
 
 .moduleWindow
+
 	.windowTitle
 		fondo degradado topbar
 		border-radius 5px 5px 0 0
