@@ -429,80 +429,80 @@
 		& > div.resizedByUser
 			max-width calc(100% - 10px)
 
-.moduleWindow.resizable
-	padding-bottom 15px
-	resize both
-	overflow hidden
-	max-width 100%
-	min-width 100px
-	min-height 100px
-	border-radius 5px 5px 0 5px
-	background linear-gradient(bottom, $colorGrayBlack, $color13)
+		.moduleWindow.resizable
+			padding-bottom 15px
+			resize both
+			overflow hidden
+			max-width 100%
+			min-width 100px
+			min-height 100px
+			border-radius 5px 5px 0 5px
+			background linear-gradient(bottom, $colorGrayBlack, $color13)
 
-	.windowContent
-		padding 0 3px 0 3px
+			.windowContent
+				padding 0 3px
 
-	.resizeHandle
-		position absolute
-		bottom 0
-		right 0
-		width 15px
-		height 15px
-		color gray
-		background-color $colorGrayBlack
-		pointer-events none
-
-	.resizeHandle:before
-		@extend .fa
-		@extend .fa-sort:before
-		transform rotate(-45deg) scale(1.2) translate(2px, 2px)
-
-.moduleWindow
-	.windowTitle
-		fondo degradado topbar
-		border-radius 5px 5px 0 0
-		display flex
-		align-items center
-		justify-content space-between
-		cursor -webkit-grab
-		cursor grab
-
-		.title
-			font-weight bold
-			padding-left 10px
-			cursor inherited
-
-		.buttons
-
-			& > i
+			.resizeHandle
+				position absolute
+				bottom 0
+				right 0
 				width 15px
 				height 15px
-				text-align center
-				vertical-align middle
-				margin 0 2px
-				cursor pointer
 				color gray
+				background-color $colorGrayBlack
+				pointer-events none
 
-				&:hover
-					color $blue
-				&.fa-close:hover
-					color red
+			.resizeHandle:before
+				@extend .fa
+				@extend .fa-sort:before
+				transform rotate(-45deg) scale(1.2) translate(2px, 2px)
 
-	.windowContent
-		display flex
-		transition height .3s linear
-		border-radius 0 0 5px 5px
+		.moduleWindow
+			.windowTitle
+				fondo degradado topbar
+				border-radius 5px 5px 0 0
+				display flex
+				align-items center
+				justify-content space-between
+				cursor -webkit-grab
+				cursor grab
 
-		& > :first-child
-			@extend .fWidth
-			@extend .fHeight
-			overflow auto
+				.title
+					font-weight bold
+					padding-left 10px
+					cursor inherited
 
-	.windowWithoutTitleContent
-		border-radius 5px !important
+				.buttons
 
-		& > :first-child
-			border-radius 5px
+					& > i
+						width 15px
+						height 15px
+						text-align center
+						vertical-align middle
+						margin 0 2px
+						cursor pointer
+						color gray
+
+						&:hover
+							color $blue
+						&.fa-close:hover
+							color red
+
+			.windowContent
+				display flex
+				transition height .3s linear
+				border-radius 0 0 5px 5px
+
+				& > :first-child
+					@extend .fWidth
+					@extend .fHeight
+					overflow auto
+
+			.windowWithoutTitleContent
+				border-radius 5px !important
+
+				& > :first-child
+					border-radius 5px
 
 .speciesDetailsTitle
 	display flex
