@@ -409,73 +409,100 @@
 			margin 5px
 			overflow hidden
 			transition-property height, width
-			transition-duration 0.3s
+			transition-duration .3s
 
-		& > div
 			$cols = 6
 			for col in 1..$cols
-				&[data-cols=\"{col}\"]
+				&[data-cols=\"{col}\"]:not(.resizedByUser)
 					$newWidth = (100% / $cols) * col
 					width "calc(%s - 10px)" % $newWidth
 
 			$rows = 6
 			for row in 1..$rows
-				&[data-rows=\"{row}\"]
+				&[data-rows=\"{row}\"]:not(.resizedByUser)
 					height 90px * row + 10px * (row - 1)
 
-			$rows = 6
-			for row in 1..$rows
-				&[data-percentage-rows=\"{row}\"]
+				&[data-percentage-rows=\"{row}\"]:not(.resizedByUser)
 					$newHeight = (100% / $rows) * row
 					height "calc(%s - 10px)" % $newHeight
 
-		// TODO: Para arreglar pencadas de details antiguos, se revisará
-		.content
-		.contentGrid
-			height 100% !important
+		& > div.resizedByUser
+			max-width calc(100% - 10px)
 
-.windowTitle
-	fondo degradado topbar
-	border-radius 5px 5px 0 0
-	display flex
-	align-items center
-	justify-content space-between
-	cursor -webkit-grab
-	cursor grab
+		.moduleWindow.resizable
+			padding-bottom 15px
+			resize both
+			overflow hidden
+			max-width 100%
+			min-width 100px
+			min-height 100px
+			border-radius 5px 5px 0 5px
+			background linear-gradient(bottom, $colorGrayBlack, $color13)
 
-	.title
-		font-weight bold
-		padding-left 10px
-		cursor inherited
+			.windowContent
+				padding 0 3px
 
-	.buttons
+			.resizeHandle
+				position absolute
+				bottom 0
+				right 0
+				width 15px
+				height 15px
+				color gray
+				background-color $colorGrayBlack
+				pointer-events none
 
-		& > i
-			width 15px
-			height 15px
-			text-align center
-			vertical-align middle
-			margin 0 5px
-			cursor pointer
-			color gray
+			.resizeHandle:before
+				@extend .fa
+				@extend .fa-sort:before
+				transform rotate(-45deg) scale(1.2) translate(2px, 2px)
 
-			&:hover
-				color $blue
-			&.fa-close:hover
-				color red
+		.moduleWindow
+			.windowTitle
+				fondo degradado topbar
+				border-radius 5px 5px 0 0
+				display flex
+				align-items center
+				justify-content space-between
+				cursor -webkit-grab
+				cursor grab
 
-.windowContent
-	display flex
-	//overflow auto
-	& > :first-child
-		@extend .fWidth
-		@extend .fHeight
+				.title
+					font-weight bold
+					padding-left 10px
+					cursor inherited
 
-.windowContenNoTitle
-	border-radius 5px !important
+				.buttons
 
-	& > :first-child
-		border-radius 5px
+					& > i
+						width 15px
+						height 15px
+						text-align center
+						vertical-align middle
+						margin 0 2px
+						cursor pointer
+						color gray
+
+						&:hover
+							color $blue
+						&.fa-close:hover
+							color red
+
+			.windowContent
+				display flex
+				transition height .3s linear
+				border-radius 0 0 5px 5px
+
+				& > :first-child
+					@extend .fWidth
+					@extend .fHeight
+					overflow auto
+
+			.windowWithoutTitleContent
+				border-radius 5px !important
+
+				& > :first-child
+					border-radius 5px
 
 .speciesDetailsTitle
 	display flex
@@ -524,8 +551,6 @@
 		&:hover
 			color $blue
 
-.redmicLocal
-	background rgba(0,128,0,0.5) !important
 .appDev
 	background rgba(255,0,0,0.5) !important
 
@@ -645,4 +670,15 @@
 
 .kibana-dashboard
 	width calc(100% - 4px)
-	height calc(100% - 4px)
+	height calc(100% - 8px)
+
+.socialPanel
+	display flex
+	flex-wrap wrap
+	align-items center
+	justify-content flex-start
+	padding 10px
+	> *
+		fontSize 4rem
+		color $white
+		margin 10px
