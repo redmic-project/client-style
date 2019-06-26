@@ -4,15 +4,14 @@
 
 .titleWelcome
 	flexible h space-between center
+	cursor default
 
 	.divTitle
 		margin 0 auto 0 auto
 
 	span
-		font-size 6.5rem
-		line-height 10rem
+		fontSize 4rem
 		font-weight bold
-		cursor context-menu
 
 	.colorWelcome
 		color $grayLighter
@@ -129,3 +128,13 @@ a:hover
 
 .domainsSpecial div
 	text-decoration underline
+
+.socialPanel
+	display flex
+	flex-wrap wrap
+	align-items center
+	justify-content flex-start
+	> *
+		fontSize 3rem
+		color $white
+		margin 0.2rem 0.5rem

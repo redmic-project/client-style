@@ -21,7 +21,6 @@
 	fontSize 20rem
 	:nth-child(2)
 		fontSize 5rem
-		line-height 5rem
 		margin-top 10px
 
 #error404Container
@@ -31,10 +30,9 @@
 	div
 		@extend .centerContentContainer
 		fondo color rgba(red,0.3)
-		font-size 10rem
+		fontSize 10rem
 		:nth-child(2)
 			fontSize 5rem
-			line-height 5rem
 			margin-bottom 10px
 		:nth-child(3)
 			fontSize 2rem
@@ -47,10 +45,11 @@
 	@extend .centerContentContainer
 	fondo color rgba($black,0.5)
 	z-index $loadingAndLockedZIndex
-	font-size 10rem
+	fontSize 13rem
 
 #rootContainer
 	@extend .masterContainer
+	min-width 300px
 
 // Estructura
 
@@ -278,7 +277,7 @@
 		border-radius 5px
 		box-shadow 0 20px 10px -5px rgba(0,0,0,0.25)
 		z-index 2
-		min-height 100px
+		min-height 10rem
 
 		.rightSpace
 			min-width 25rem
@@ -346,6 +345,8 @@
 
 		.center
 			flex-grow 1
+			display flex
+			align-items center
 
 			.header
 				@extend .titleRedmic
@@ -510,7 +511,7 @@
 
 	& > :first-child
 		margin 0 10px
-		font-size 5rem
+		fontSize 5rem
 	& > :last-child
 		display flex
 		flex-direction column
@@ -557,7 +558,6 @@
 .atlasLayerInfoMessage
 	padding 5px
 	fontSize 2rem
-	line-height 2rem
 	text-align center
 
 .viewerPDF
@@ -568,7 +568,7 @@
 	@extend .fHeight
 	@extends .flexibleCenteredContainer
 	flex-direction column
-	font-size 1.8rem
+	fontSize 1.8rem
 	i
 		margin-bottom 2rem
 
@@ -614,7 +614,7 @@
 		padding 1rem
 		padding-left 3rem
 		span
-			font-size 1.6rem
+			fontSize 1.6rem
 			color #ffd700
 			font-weight bold
 	.selectInputContainer
@@ -671,14 +671,3 @@
 .kibana-dashboard
 	width calc(100% - 4px)
 	height calc(100% - 8px)
-
-.socialPanel
-	display flex
-	flex-wrap wrap
-	align-items center
-	justify-content flex-start
-	padding 10px
-	> *
-		fontSize 4rem
-		color $white
-		margin 10px

@@ -1,34 +1,22 @@
-/*
-	Autor: Pedro E. Trujillo Brito
-
-	Archivo: redmic\public\stylesheets\redmic\Main.styl
-
-	Plantilla para elementos base.
-
-	Fecha última modificación: 12/12/2014 - Pedro
-*/
-
-
-
 // Global
 
 html
-	font-size $baseFontSize !important
 	font-family $baseFontFamily
+	font-size $baseFontSize
+	@media (max-width $media-high-size)
+		font-size $baseFontSize * 0.85
+	@media (max-width $media-medium-size)
+		font-size $baseFontSize * 0.7
+	@media (max-width $media-low-size)
+		font-size $baseFontSize * 0.5
+	line-height $baseLineHeight
 	fullSize()
-
-	/*-webkit-user-select none
-	-moz-user-select none
-	-khtml-user-select none
-	-ms-user-select none*/
 
 body
 	fullSize()
 	noMargin()
 	noPadding()
 	noScroll()
-	fontSize $normalFontSize
-	line-height $baseLineHeight
 	color $textColor
 	fondo textura soft
 
