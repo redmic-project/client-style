@@ -373,11 +373,13 @@
 			flex-direction column
 			justify-content center
 
+			.center
+				width 100%
+
 		.title
 			margin 0
 			width 100%
 			border-radius 5px
-			margin-right 1px
 
 	.infoContainer
 		flex-grow 1
@@ -392,7 +394,7 @@
 
 		.view
 			@extend .fHeight
-			padding 5px
+			padding 0.3rem
 			background-image $linen-light
 
 		.moduleWindow
@@ -405,7 +407,7 @@
 
 		& > div
 			flex-shrink 1
-			margin 5px
+			margin $moduleWindowMargin
 			overflow hidden
 			transition-property height, width
 			transition-duration .3s
@@ -414,22 +416,22 @@
 			for col in 1..$cols
 				&[data-cols=\"{col}\"]:not(.resizedByUser)
 					$newWidth = (100% / $cols) * col
-					width "calc(%s - 10px)" % $newWidth
+					width "calc(%s - %s)" % ($newWidth (2 * $moduleWindowMargin))
 
 			$rows = 6
 			for row in 1..$rows
 				&[data-rows=\"{row}\"]:not(.resizedByUser)
-					height 90px * row + 10px * (row - 1)
+					height 90px * row + (2 * $moduleWindowMargin) * (row - 1)
 
 				&[data-percentage-rows=\"{row}\"]:not(.resizedByUser)
 					$newHeight = (100% / $rows) * row
-					height "calc(%s - 10px)" % $newHeight
+					height "calc(%s - %s)" % ($newHeight (2 * $moduleWindowMargin))
 
 		& > div.resizedByUser
-			max-width calc(100% - 10px)
+			max-width "calc(100% - %s)" % (2 * $moduleWindowMargin)
 
 		.moduleWindow.resizable
-			padding-bottom 15px
+			padding-bottom $moduleWindowButtonSize
 			resize both
 			overflow hidden
 			max-width 100%
@@ -445,8 +447,8 @@
 				position absolute
 				bottom 0
 				right 0
-				width 15px
-				height 15px
+				width $moduleWindowButtonSize
+				height $moduleWindowButtonSize
 				color gray
 				background-color $colorGrayBlack
 				pointer-events none
@@ -468,14 +470,14 @@
 
 				.title
 					font-weight bold
-					padding-left 10px
+					padding-left 1rem
 					cursor inherited
 
 				.buttons
 
 					& > i
-						width 15px
-						height 15px
+						width $moduleWindowButtonSize
+						height $moduleWindowButtonSize
 						text-align center
 						vertical-align middle
 						margin 0 2px

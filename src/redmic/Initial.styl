@@ -7,7 +7,11 @@
 	cursor default
 
 	.divTitle
-		margin 0 auto 0 auto
+		margin 0 auto
+		textEllipsis()
+
+		span
+			fontSize 3.5rem
 
 	span
 		fontSize 4rem
@@ -31,11 +35,24 @@
 
 .boxContainer
 	showScroll()
+
+	.favouritesBoxItems
+		display flex
+		flex-wrap wrap
+		justify-content start
+		align-items start
+
+		.module
+			flex-grow 1
+
+			.button
+				flex-grow 1
+
 	.boxItems
 		.module
 			flexible h center center
-			margin 10px 0
-			padding 0
+			padding 0.5rem
+
 			.button:hover, .activeBox
 				fondo color $blue
 			.disabled:hover
@@ -44,12 +61,11 @@
 				opacity 0.5
 			.button
 				flexible v center space-between
-				width 90%
+				width 10rem
 				bordeRedondeado()
 				sombreadoCaja o
-				padding 10px 0
+				padding 1rem 0
 				cursor pointer
-				min-height 60px
 
 				.iconModule
 					align-self center
@@ -68,12 +84,12 @@
 
 				.description
 					flex-grow 1
-					margin 0px 10px
-					margin-top 10px
+					margin 0px 1rem
+					margin-top 1rem
 			.box
 				min-height 150px
 				.iconModule
-					font-size 3rem
+					fontSize 3rem
 
 		.lastActivityModule
 			flexible h space-between center
