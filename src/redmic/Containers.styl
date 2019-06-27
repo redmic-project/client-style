@@ -265,6 +265,9 @@
 .barSliderContainer
 	height 40px
 
+.templateDisplayer
+	width 100%
+
 .infoView
 	display flex
 	flex-direction column
@@ -279,8 +282,6 @@
 		z-index 2
 		min-height 10rem
 
-		.rightSpace
-			min-width 25rem
 		.tabs, .right
 			position absolute
 			display flex
@@ -322,8 +323,9 @@
 				&:hover
 					background-color $blue
 
-		.left, .right
-			padding 0 10px
+		.left
+		.right
+			padding 0 1rem
 
 			& > i, & > a
 				color #fff
@@ -344,20 +346,15 @@
 				padding 0 5px
 
 		.center
-			flex-grow 1
 			display flex
 			align-items center
+			width calc(100% - 18rem)
 
 			.header
 				@extend .titleRedmic
-				overflow hidden
-				text-overflow ellipsis
-				display -webkit-box
-				-webkit-line-clamp 3
-				-webkit-box-orient vertical
 				h1
-					line-height 1
 					margin 0
+					textEllipsis()
 
 		.infoTitleBackground
 			fondo degradado topbar
@@ -374,6 +371,7 @@
 
 		.centerTitle
 			flex-direction column
+			justify-content center
 
 		.title
 			margin 0
@@ -510,8 +508,12 @@
 	align-items center
 
 	& > :first-child
-		margin 0 10px
+		margin-right 1rem
 		fontSize 5rem
+
+	& > :nth-child(2)
+		width calc(100% - 8rem)
+
 	& > :last-child
 		display flex
 		flex-direction column
@@ -521,12 +523,11 @@
 			margin 5px
 
 		& > :first-child
-			//display flex
 
 			& > :last-child
 				margin-left 5px
 	h1
-		line-height 3rem
+		textEllipsis()
 
 .imageContainer
 	display flex

@@ -77,9 +77,8 @@
 
 		.lastActivityModule
 			flexible h space-between center
-			height 10%
 			min-height 5rem
-			padding 0 20px
+			padding 0 1rem
 			cursor pointer
 			&:hover
 				fondo color $blue
@@ -91,12 +90,10 @@
 					&:hover
 						color grey
 			span
-				//display inline-block
-				overflow hidden
-				white-space nowrap
-				text-overflow ellipsis
+				textEllipsis()
 				line-height 1.8rem
-				width 95%
+				margin-right 0.5rem
+
 				.spanTemplate .subtitle
 					color #bbb
 
