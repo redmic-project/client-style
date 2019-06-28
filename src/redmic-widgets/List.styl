@@ -45,9 +45,8 @@
 
 	.framework
 		fondo textura hard
-		min-height 3.5rem
+		min-height 2.5rem
 		padding 0 1rem
-		padding-top 0.5rem
 
 	.bottomList
 		display flex
@@ -60,7 +59,7 @@
 		.iconKeypad
 			margin-bottom 5px
 			i
-				font-size 2rem
+				fontSize 1.4rem
 				color #fff
 
 		.totalResult
@@ -70,14 +69,6 @@
 				color white
 			span:first-child
 				padding-right 5px
-
-		.paginate .selectOption,
-		.paginate .selectPage,
-		.totalResult,
-		.containerSelectionBox,
-		.orderZone
-			margin-bottom 3px
-			margin-left 3px
 
 		.orderZone
 			display flex
@@ -112,7 +103,6 @@
 				color black
 		.paginate, .containerOrder, .containerSelectionBox
 			.form-control
-				font-size 1.4rem
 				background-image $linen-light
 				color white
 				border-color rgb(169, 169, 169)
@@ -348,7 +338,7 @@
 	width 100%
 	flex-direction column
 	//padding 0 5px
-	line-height 1.8rem
+	//line-height 1.8rem
 	overflow hidden
 	.title
 		font-weight 600
@@ -365,7 +355,8 @@
 	.subtitle .name
 		font-style italic
 
-	.subtitle, .title
+	.subtitle
+	.title
 		i
 			font-size 1.5rem
 			padding-left 0.5rem

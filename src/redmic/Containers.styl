@@ -431,7 +431,7 @@
 			max-width "calc(100% - %s)" % (2 * $moduleWindowMargin)
 
 		.moduleWindow.resizable
-			padding-bottom $moduleWindowButtonSize
+			padding-bottom $moduleWindowButtonSize + 0.1
 			resize both
 			overflow hidden
 			max-width 100%
@@ -441,7 +441,7 @@
 			background linear-gradient(bottom, $colorGrayBlack, $color13)
 
 			.windowContent
-				padding 0 3px
+				padding 0 0.2rem
 
 			.resizeHandle
 				position absolute
@@ -456,7 +456,7 @@
 			.resizeHandle:before
 				@extend .fa
 				@extend .fa-sort:before
-				transform rotate(-45deg) scale(1.2) translate(2px, 2px)
+				transform translate(0.25rem, -0.13rem) scale(1.2) rotate(-45deg)
 
 		.moduleWindow
 			.windowTitle
@@ -474,13 +474,14 @@
 					cursor inherited
 
 				.buttons
+					padding-right 0.5rem
 
 					& > i
 						width $moduleWindowButtonSize
 						height $moduleWindowButtonSize
 						text-align center
 						vertical-align middle
-						margin 0 2px
+						margin 0 0.2rem
 						cursor pointer
 						color gray
 
@@ -556,7 +557,7 @@
 			color $blue
 
 .appDev
-	background rgba(255,0,0,0.5) !important
+	background linear-gradient(top, $pink, $red) !important
 
 .atlasLayerInfoMessage
 	padding 5px

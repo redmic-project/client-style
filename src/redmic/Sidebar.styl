@@ -48,7 +48,7 @@ nav.main-nav > ul
 
 nav.primary
 	flexible v space-between center
-	fondo textura hard
+	background $color13
 	fullSize v
 	width $sidebar-size
 	@media (max-width $media-high-size)
@@ -87,7 +87,7 @@ nav.secondary
 		width $sidebar-secondary-size * 0.8
 	@media (max-width $media-low-size)
 		width $sidebar-secondary-size * 0.7
-	background linear-gradient(left, rgba($color13, 0.9), rgba($colorGrayBlack, 0.7))
+	background linear-gradient(left, $color13, rgba($colorGrayBlack, 0.9))
 	box-shadow 5px 0 10px 0 rgba($black, $shadowBoxOpacity)
 	showScroll()
 
