@@ -80,7 +80,9 @@ nav.primary
 				textEllipsis()
 
 nav.secondary
+	position absolute
 	top $topbar-size
+	z-index 3
 	height "calc(100% - %s)" % $topbar-size
 	width $sidebar-secondary-size
 	@media (max-width $media-high-size)
@@ -116,15 +118,11 @@ nav.secondary
 				fontSize 2.2rem
 
 	&.retiring
-		z-index 3
 		noShadow()
-		position absolute
 		left - $sidebar-secondary-size
 		transition left 0.5s ease-in 0s
 
 	&.overall
-		z-index 5
-		position absolute
 		left $sidebar-size
 		@media (max-width $media-high-size)
 			left $sidebar-size * 0.85
