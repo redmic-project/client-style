@@ -129,6 +129,7 @@
 
 // Contenedor global
 .mainContainer
+	width inherit
 	height inherit
 
 // Contenedor de pantalla completa
@@ -142,7 +143,12 @@
 
 // Contenedor de la zona principal de contenido
 .contentContainer
-	semiPadded()
+	display flex
+	flex-grow 1
+
+	> *
+		padding 0.5rem
+
 
 // Contenedor de posición absoluta
 .absoluteContainer
@@ -674,3 +680,21 @@
 .kibana-dashboard
 	width calc(100% - 4px)
 	height calc(100% - 8px)
+
+
+
+.designLayoutContainer
+	display flex
+	flex-grow 1
+
+.mapAndContentLayoutMapDesign
+	> :first-child
+	> :last-child
+		display flex
+
+	> :first-child
+		flex-grow 5
+		margin-right 0.5rem
+
+	> :last-child
+		flex-grow 3
