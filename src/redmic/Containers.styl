@@ -148,6 +148,12 @@
 
 	> *
 		padding 0.5rem
+		@media (max-width $media-high-size)
+			padding 0.4rem
+		@media (max-width $media-medium-size)
+			padding 0.3rem
+		@media (max-width $media-low-size)
+			padding 0.2rem
 
 
 // Contenedor de posición absoluta
@@ -394,7 +400,7 @@
 		align-items stretch
 		align-content stretch
 		justify-content flex-start
-		overflow-y auto
+		overflow-y overlay
 		overflow-x hidden
 
 		.view
@@ -680,21 +686,3 @@
 .kibana-dashboard
 	width calc(100% - 4px)
 	height calc(100% - 8px)
-
-
-
-.designLayoutContainer
-	display flex
-	flex-grow 1
-
-.mapAndContentLayoutMapDesign
-	> :first-child
-	> :last-child
-		display flex
-
-	> :first-child
-		flex-grow 5
-		margin-right 0.5rem
-
-	> :last-child
-		flex-grow 3
