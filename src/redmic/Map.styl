@@ -16,6 +16,12 @@
 	padding 0
 	color $black
 
+.leaflet-top.leaflet-right
+	> .leaflet-control
+		> a
+			width 28px !important
+			height 28px !important
+
 .leaflet-control
 	input[type=radio]
 		display none
@@ -28,7 +34,7 @@
 	display flex
 	justify-content center
 	align-items center
-	fontSize 1.6rem
+	font-size 16px
 	text-align center
 	cursor pointer
 	color $black !important
@@ -109,17 +115,19 @@
 .leaflet-control-minimap
 	border none
 	transition all 0.3s
+
 	a
 		color $black !important
 		text-decoration none
 		display flex
 		align-items center
 		justify-content center
+
 		&.minimized-topright
 			border-radius 5px
 
 .leaflet-control-minimap-toggle-display
-	fontSize 1.6rem
+	font-size 16px
 	@extend .fa
 	transform rotate(0deg) !important
 	&:before
@@ -148,9 +156,6 @@
 		@extend .fa-caret-right:before
 	.leaflet-control-navbar-back:before
 		@extend .fa-caret-left:before
-
-.leaflet-control-measure-toggle
-	background-size 1.14rem
 
 .leaflet-control-layers-expanded
 	padding 6px
