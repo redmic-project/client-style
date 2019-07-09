@@ -13,6 +13,11 @@
 		flex-grow 1
 		@media (orientation landscape)
 			margin-right 0.3rem
+
+			@media (min-resolution $mobile-min-density)
+				@media (max-aspect-ratio 4/3), (min-aspect-ratio 6/1)
+					display none
+
 		@media (orientation portrait)
 			margin-bottom 0.3rem
 
@@ -21,6 +26,12 @@
 			height 100%
 			width 35%
 			max-width 40rem
+
+			@media (min-resolution $mobile-min-density)
+				@media (max-aspect-ratio 4/3), (min-aspect-ratio 6/1)
+					width 100%
+					max-width 100%
+
 		@media (orientation portrait)
 			height 35%
 			width 100%
