@@ -3,13 +3,14 @@
 	@media (orientation portrait)
 		flex-flow column
 
-.mapAndContentLayoutMapDesign
-	> :first-child
-	> :last-child
+
+.mapAndContentLayoutMapWithSideContentDesign
+	> .mapContainer
+	> .mapSideContainer
 		display flex
 		position relative
 
-	> :first-child
+	> .mapContainer
 		flex-grow 1
 		@media (orientation landscape)
 			margin-right 0.3rem
@@ -21,7 +22,7 @@
 		@media (orientation portrait)
 			margin-bottom 0.3rem
 
-	> :last-child
+	> .mapSideContainer
 		@media (orientation landscape)
 			height 100%
 			width 35%
@@ -36,6 +37,16 @@
 			height 35%
 			width 100%
 
+.mapAndContentAndTopbarLayoutMapWithSideContentDesign
+	@extends .flexContainer
+	flex-flow column
+
+	> .mapCenterContainer
+		@extend .designLayoutContainer
+		@extend .mapAndContentLayoutMapWithSideContentDesign
+		position relative
+
+
 .layoutListDesign
 .layoutTextSearchListDesign
 .layoutTextSearchFacetsListDesign
@@ -45,6 +56,11 @@
 
 	.centerZone
 		flex-grow 1
+
+.speciesMainTextSearchFacetsListDesign
+	.facetsZone
+		width 25rem !important
+
 
 .atlasContainer
 	@extends .flexContainer
