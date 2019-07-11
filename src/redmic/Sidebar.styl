@@ -66,6 +66,7 @@ nav.primary
 			border-bottom $borde2
 			text-align center
 			padding 0.5rem 0
+
 			&.click
 				fondo color rgba($black, 0.4)
 				&.active
@@ -74,8 +75,14 @@ nav.primary
 			& i
 				display block
 				fontSize 2.6rem
+				@media (max-width $media-high-size)
+					fontSize 2.4rem
+				@media (max-width $media-medium-size)
+					fontSize 2.2rem
+				@media (max-width $media-low-size)
+					fontSize 2rem
 
-			& > span
+			& span
 				display block
 				textEllipsis()
 				padding 0.1rem
@@ -133,24 +140,10 @@ nav.secondary
 			left $sidebar-size * 0.5
 		transition left 0.4s ease-in 0s, z-index 0.05s ease 0.48s
 
-.reducedMenu
-	nav.primary
-		width $sidebar-reduced-size
-		@media (max-width $media-high-size)
-			width $sidebar-reduced-size * 0.85
-		@media (max-width $media-medium-size)
-			width $sidebar-reduced-size * 0.7
-		@media (max-width $media-low-size)
-			width $sidebar-reduced-size * 0.5
+.collapsedSidebar
+	nav
+		&.primary
+			width 0
 
-		& span
-			display none
-
-	nav.secondary.overall
-		left $sidebar-reduced-size
-		@media (max-width $media-high-size)
-			left $sidebar-reduced-size * 0.85
-		@media (max-width $media-medium-size)
-			left $sidebar-reduced-size * 0.7
-		@media (max-width $media-low-size)
-			left $sidebar-reduced-size * 0.5
+		&.secondary.overall
+			width 0

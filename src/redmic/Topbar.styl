@@ -12,11 +12,24 @@
 	height $topbar-size
 	noScroll()
 	z-index 6
+	padding 0 0.5rem
+
+	.collapseSidebarButton
+		@extend .fa
+		display none
+		fontSize 1.6rem
+		padding 0 0.5rem
+
+		&:before
+			@extend .fa-bars:before
+
+.enableCollapseSidebar
+	.collapseSidebarButton
+		display flex
 
 .topbarLogo
 	flexible h center center
 	min-width 115px
-	margin-left 7px
 
 	img.logo
 		width 115px
