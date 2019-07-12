@@ -16,20 +16,19 @@
 
 	.collapseSidebarButton
 		@extend .fa
-		display none
 		fontSize 1.6rem
 		padding 0 0.5rem
 
 		&:before
 			@extend .fa-bars:before
 
-.enableCollapseSidebar
-	.collapseSidebarButton
-		display flex
+		&:hover
+			color $blue
 
 .topbarLogo
 	flexible h center center
 	min-width 115px
+	user-select none
 
 	img.logo
 		width 115px
