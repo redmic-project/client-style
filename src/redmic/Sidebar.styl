@@ -12,136 +12,151 @@
 	> div
 		height 100%
 
-nav.main-nav > ul
-	list-style none
-	noMargin()
-	noPadding()
-	border-bottom $borde1
-	negrita()
+.main-nav-list
+	& > ul
+		list-style none
+		margin 0
+		padding 0
+		border-bottom $borde1
+		negrita()
 
-	& li
-		border-top $borde1
-		color $grayLighter
-		text-shadow $sombra-s $shadowTextBlurRadius rgba($black, $shadowTextOpacity)
-		display block
-		text-decoration none
-		cursor pointer
-		&:hover
-			fondo color $blue
-
-		& i
-		& > a
+		& li
 			color $grayLighter
+			text-shadow $sombra-s $shadowTextBlurRadius rgba($black, $shadowTextOpacity)
+			text-decoration none
+			border-top $borde1
+			cursor pointer
 
-		&.active
-			fondo degradado sidebar
-			color $color11
-			text-shadow $sombra-s $shadowTextBlurRadius rgba($white, $shadowTextOpacity)
+			&:hover
+				fondo color $blue
 
 			& i
 			& > a
+				color $grayLighter
+
+			&.active
+				fondo degradado sidebar
 				color $color11
+				text-shadow $sombra-s $shadowTextBlurRadius rgba($white, $shadowTextOpacity)
 
-	& a
-	& a:hover
-		text-decoration none
+				& i
+				& > a
+					color $color11
 
-nav.primary
-	flexible v space-between center
-	background $color13
-	height 100%
-	overflow auto
-	width $sidebar-size
-	@media (max-width $media-high-size)
-		width $sidebar-size * 0.85
-	@media (max-width $media-medium-size)
-		width $sidebar-size * 0.7
-	@media (max-width $media-low-size)
-		width $sidebar-size * 0.5
-
-	& > ul
-		width 100%
-
-		& > li
-			border-bottom $borde2
-			text-align center
-			padding 0.5rem 0
-
-			&.click
-				fondo color rgba($black, 0.4)
-				&.active
-					fondo color $color4
-
-			& i
-				display block
-				fontSize 2.6rem
-				@media (max-width $media-high-size)
-					fontSize 2.4rem
-				@media (max-width $media-medium-size)
-					fontSize 2.2rem
-				@media (max-width $media-low-size)
-					fontSize 2rem
-
-			& span
-				display block
-				textEllipsis()
-				padding 0.1rem
-
-nav.secondary
-	position absolute
-	top $topbar-size
-	z-index 3
-	height "calc(100% - %s)" % $topbar-size
-	width $sidebar-secondary-size
-	@media (max-width $media-high-size)
-		width $sidebar-secondary-size * 0.9
-	@media (max-width $media-medium-size)
-		width $sidebar-secondary-size * 0.8
-	@media (max-width $media-low-size)
-		width $sidebar-secondary-size * 0.7
-	background linear-gradient(left, $color13, rgba($colorGrayBlack, 0.9))
-	box-shadow 5px 0 10px 0 rgba($black, $shadowBoxOpacity)
-	showScroll()
-
-	& > ul li
-		text-align left
-		padding 0
-
-		& > a
-			padding 0.5rem
-			text-align left
+		& a
+		& a:hover
 			text-decoration none
-			display flex
-			align-items center
 
-			&:focus
-				outline none
+.main-nav
+	&.primarySidebar nav
+	nav&.secondarySidebar
+		@extend .main-nav-list
 
-			& div
-				width 3rem
-				margin-right 0.5rem
-				text-align center
-
-			& i
-				fontSize 2.2rem
-
-	&.retiring
-		noShadow()
-		left - $sidebar-secondary-size
-		transition left 0.5s ease-in 0s
-
-	&.overall
-		left $sidebar-size
+	&.primarySidebar nav
+		flexible v space-between center
+		background $color13
+		height 100%
+		overflow auto
+		width $sidebar-size
 		@media (max-width $media-high-size)
-			left $sidebar-size * 0.85
+			width $sidebar-size * 0.85
 		@media (max-width $media-medium-size)
-			left $sidebar-size * 0.7
+			width $sidebar-size * 0.7
 		@media (max-width $media-low-size)
-			left $sidebar-size * 0.5
-		transition left 0.4s ease-in 0s, z-index 0.05s ease 0.48s
+			width $sidebar-size * 0.5
+
+		& > ul
+			width 100%
+
+			& > li
+				border-bottom $borde2
+				text-align center
+				padding 0.5rem 0
+
+				&.click
+					fondo color rgba($black, 0.4)
+					&.active
+						fondo color $color4
+
+				& i
+					display block
+					fontSize 2.6rem
+					@media (max-width $media-high-size)
+						fontSize 2.4rem
+					@media (max-width $media-medium-size)
+						fontSize 2.2rem
+					@media (max-width $media-low-size)
+						fontSize 2rem
+
+				& span
+					display block
+					textEllipsis()
+					padding 0.1rem
+
+	nav&.secondarySidebar
+		position absolute
+		top $topbar-size
+		z-index 3
+		height "calc(100% - %s)" % $topbar-size
+		width $sidebar-secondary-size
+		@media (max-width $media-high-size)
+			width $sidebar-secondary-size * 0.9
+		@media (max-width $media-medium-size)
+			width $sidebar-secondary-size * 0.8
+		@media (max-width $media-low-size)
+			width $sidebar-secondary-size * 0.7
+		background linear-gradient(left, $color13, rgba($colorGrayBlack, 0.9))
+		box-shadow 5px 0 10px 0 rgba($black, $shadowBoxOpacity)
+		showScroll()
+
+		& > ul li
+			text-align left
+			padding 0
+
+			& > a
+				padding 0.5rem
+				text-align left
+				text-decoration none
+				display flex
+				align-items center
+
+				&:focus
+					outline none
+
+				& div
+					width 3rem
+					margin-right 0.5rem
+					text-align center
+
+				& i
+					fontSize 2.2rem
+
+		&.retiring
+			noShadow()
+			left - $sidebar-secondary-size
+			transition left 0.5s ease-in 0s
+
+		&.overall
+			left $sidebar-size
+			@media (max-width $media-high-size)
+				left $sidebar-size * 0.85
+			@media (max-width $media-medium-size)
+				left $sidebar-size * 0.7
+			@media (max-width $media-low-size)
+				left $sidebar-size * 0.5
+			transition left 0.4s ease-in 0s, z-index 0.05s ease 0.48s
 
 body:not(.uncollapsedSidebar)
-	nav.main-nav
-		&.primary
-		&.secondary.overall
+	.main-nav
+		&.primarySidebar nav
+		&.secondarySidebar.overall
 			width 0
+
+.mainContainer
+	& > .main-nav.primarySidebar
+		@extend .shadowBox
+		position absolute
+		top $topbar-size
+		left 0
+		height "calc(100% - %s)" % $topbar-size
+		z-index 4
