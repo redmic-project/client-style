@@ -140,10 +140,8 @@ nav.secondary
 			left $sidebar-size * 0.5
 		transition left 0.4s ease-in 0s, z-index 0.05s ease 0.48s
 
-.collapsedSidebar
-	nav
+body:not(.uncollapsedSidebar)
+	nav.main-nav
 		&.primary
-			width 0
-
 		&.secondary.overall
 			width 0
