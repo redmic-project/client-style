@@ -61,9 +61,9 @@
 		@media (max-width $media-high-size)
 			width $sidebar-size * 0.85
 		@media (max-width $media-medium-size)
-			width $sidebar-size * 0.7
+			width $sidebar-size * 0.75
 		@media (max-width $media-low-size)
-			width $sidebar-size * 0.5
+			width $sidebar-size * 0.65
 
 		& > ul
 			width 100%
@@ -105,7 +105,7 @@
 			width $sidebar-secondary-size * 0.8
 		@media (max-width $media-low-size)
 			width $sidebar-secondary-size * 0.7
-		background linear-gradient(left, $color13, rgba($colorGrayBlack, 0.9))
+		background $color13
 		box-shadow 5px 0 10px 0 rgba($black, $shadowBoxOpacity)
 		showScroll()
 
@@ -141,16 +141,33 @@
 			@media (max-width $media-high-size)
 				left $sidebar-size * 0.85
 			@media (max-width $media-medium-size)
-				left $sidebar-size * 0.7
+				left $sidebar-size * 0.75
 			@media (max-width $media-low-size)
-				left $sidebar-size * 0.5
+				left $sidebar-size * 0.65
 			transition left 0.4s ease-in 0s, z-index 0.05s ease 0.48s
 
-body:not(.uncollapsedSidebar)
-	.main-nav
-		&.primarySidebar nav
-		&.secondarySidebar.overall
-			width 0
+.overlaySidebarBackground
+	position absolute
+	top $topbar-size
+	height "calc(100% - %s)" % $topbar-size
+	width 100%
+	z-index 2
+	background-color $black
+	opacity 0
+	transition opacity 0.3s ease-in-out
+	pointer-events none
+
+body
+	&.reducedWidth.uncollapsedSidebar
+		.overlaySidebarBackground
+			opacity 0.5
+			pointer-events all
+
+	&:not(.uncollapsedSidebar)
+		.main-nav
+			&.primarySidebar nav
+			&.secondarySidebar
+				width 0
 
 .mainContainer
 	& > .main-nav.primarySidebar
