@@ -1,10 +1,13 @@
 .designLayoutContainer
 	@extends .flexContainer
-	@media (orientation portrait)
-		flex-flow column
+	max-width 100%
+	max-height 100%
 
 
 .mapAndContentLayoutMapWithSideContentDesign
+	@media (orientation portrait)
+		flex-flow column
+
 	> .mapContainer
 	> .mapSideContainer
 		display flex
@@ -53,7 +56,6 @@
 .layoutTextSearchFacetsListDesign
 .layoutExternalTextSearchListDesign
 	flex-flow column
-	max-width 100%
 
 	.centerZone
 		flex-grow 1
@@ -61,6 +63,54 @@
 .speciesMainTextSearchFacetsListDesign
 	.facetsZone
 		width 25rem !important
+		@media (max-width $media-high-size)
+			width 24rem !important
+		@media (max-width $media-medium-size)
+			width 23rem !important
+		@media (max-width $media-low-size)
+			width 20rem !important
+
+
+.topAndCenterContentLayoutEmbeddedContentWithTopbarDesign
+	flex-flow column
+
+	.embeddedContentTopbar
+		@extend .topZone
+		border-radius 5px
+		margin-bottom 0.5rem
+
+	.embeddedContentContainer
+		@extend .centerZone
+		flex-grow 1
+
+		.titleRedmic
+			color $grayLightest
+			fontSize 1.8rem
+
+		.listZone
+		.mapSideContainer
+			border-radius 5px
+
+
+.topSecondaryContentLayoutDynamicDualContentDesign
+.leftSecondaryContentLayoutDynamicDualContentDesign
+	.primaryContent
+	.secondaryContent
+		display flex
+
+		> *
+			flex-grow 1
+
+	.primaryContent
+		display flex
+		flex-grow 1
+		overflow auto
+
+.topSecondaryContentLayoutDynamicDualContentDesign
+	flex-flow column
+
+.leftSecondaryContentLayoutDynamicDualContentDesign
+	flex-flow row
 
 
 .atlasContainer

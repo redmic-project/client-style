@@ -124,7 +124,12 @@
 	position relative !important
 	height unset !important
 	width 15rem !important
-	min-width 15rem
+	@media (max-width $media-high-size)
+		width 14rem !important
+	@media (max-width $media-medium-size)
+		width 13rem !important
+	@media (max-width $media-low-size)
+		width 12rem !important
 	fondo color $color13
 	border-radius 0 0 0 5px
 	.containerFacets
@@ -248,27 +253,6 @@
 	100%
 		transform translateX(100%)
 
-
-.embeddedContentTopbar
-	@extend .topZone
-	height 5rem
-	border-radius 5px
-	margin-bottom 5px
-
-.dijitDialog
-	.embeddedContentTopbar
-		border-radius 0
-
-.embeddedContentContainer
-	@extend .centerZone
-
-	.titleRedmic
-		color $grayLightest
-		fontSize 1.8rem
-
-	.listZone
-	.mapSideContainer
-		border-radius 5px
 
 li.objectClassification
 	&:not(:first-child)
