@@ -94,6 +94,7 @@
 
 .topSecondaryContentLayoutDynamicDualContentDesign
 .leftSecondaryContentLayoutDynamicDualContentDesign
+.facetsInLeftSecondaryContentLayoutDynamicDualContentDesign
 	.primaryContent
 	.secondaryContent
 		display flex
@@ -111,6 +112,51 @@
 
 .leftSecondaryContentLayoutDynamicDualContentDesign
 	flex-flow row
+
+
+.chartTopContent
+.chartTopAndBottomContent
+	@extend .fHeight
+	display flex
+	flex-direction column
+	.centerChartContent
+		display flex
+		flex-grow 1
+		height 100%
+
+.sideAndTopAndBottomContentLayoutChartDesign
+	@media (orientation portrait)
+		flex-flow column
+
+	> .chartCenterContainer
+	> .chartSideContainer
+		display flex
+		flex-direction column
+		position relative
+
+	> .chartCenterContainer
+		@extend .chartTopAndBottomContent
+		flex-grow 1
+		@media (orientation landscape)
+			margin-right 0.3rem
+
+		@media (orientation portrait)
+			margin-bottom 0.3rem
+
+	> .chartSideContainer
+		@media (orientation landscape)
+			height 100%
+			width 35%
+			max-width 40rem
+
+		@media (orientation portrait)
+			height 35%
+			width 100%
+
+		.chartSmartLegend
+			display flex
+			flex-grow 1
+			overflow none
 
 
 .atlasContainer
