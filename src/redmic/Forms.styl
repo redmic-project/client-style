@@ -176,13 +176,12 @@
 	position relative
 
 .textBoxModWidthExpand
-	@extend .fWidth
 	.additionalOptionInput
 		display flex
-		z-index 999
+		z-index 1
 		position absolute
 		right 0
-		height 29px
+		height 100%
 
 		.contentClick
 			align-items center
@@ -273,48 +272,72 @@
 		display flex
 		flex-direction column
 		padding 10px
-		.inputOptions, .valueOptions
+
+		.inputOptions
+		.valueOptions
 			display flex
 			flex-direction column
 			padding 3px 0
+
 			.item
 				padding 5px
 				cursor pointer
-				width 12rem
+				//width 12rem
+
 				&:hover
 					color $blue
+
 			.active
 				background-color $blue
 				border-radius 2px
 				font-weight bold
 				&:hover
 					color inherit
+
 		.inputOptions
 			padding-top 1rem
+
 		.valueOptions
 			border-bottom 1px solid #999
 			padding-bottom 1rem
+
 	.containerCenter
 		border-left 1px solid #999
-		width 45rem
+		//width 45rem
+
 		.containerInputs
 			display flex
 			justify-content center
+			flex-direction row
+			@media (max-width $media-low-size)
+				flex-direction column
+
 			> .containerInput:nth-child(2)
 				padding-left 0
+
 			.containerInput
 				display flex
 				flex-direction column
 				padding 10px
+
 				.dateTime
 					border 1px solid #555
 					border-radius 5px
 					display flex
 					flex-direction column
+
 				.control-input
 					padding 0
+
 				> div:nth-child(2)
 					margin-top 1rem
+
+				.dijitTextBox
+					width 100%
+
+				.dijitCalendar
+					width unset
+
 	.simpleDate
 		.timeInput
 			display none
