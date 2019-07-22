@@ -148,13 +148,7 @@
 	flex-grow 1
 
 	> *
-		padding 0.5rem
-		@media (max-width $media-high-size)
-			padding 0.4rem
-		@media (max-width $media-medium-size)
-			padding 0.3rem
-		@media (max-width $media-low-size)
-			padding 0.2rem
+		padding $contentContainerChildPadding
 
 
 // Contenedor de posición absoluta
@@ -285,6 +279,7 @@
 .infoView
 	display flex
 	flex-direction column
+	height "calc(100% - %s)" % (2 * $contentContainerChildPadding)
 
 	.infoTitle
 		position relative
@@ -402,13 +397,13 @@
 		align-items stretch
 		align-content stretch
 		justify-content flex-start
-		overflow-y overlay
+		overflow-y auto
 		overflow-x hidden
 
 		.view
 			@extend .fHeight
 			padding 0.3rem
-			background-image $linen-light
+			background-color gray
 
 		.moduleWindow
 			@extend .fHeight
@@ -434,42 +429,23 @@
 			$rows = 6
 			for row in 1..$rows
 				&[data-rows=\"{row}\"]:not(.resizedByUser)
-					height 90px * row + (2 * $moduleWindowMargin) * (row - 1)
-
-				&[data-percentage-rows=\"{row}\"]:not(.resizedByUser)
-					$newHeight = (100% / $rows) * row
-					height "calc(%s - %s)" % ($newHeight (2 * $moduleWindowMargin))
+					height $detailsRowHeight * row + (2 * $moduleWindowMargin) * (row - 1)
 
 		& > div.resizedByUser
 			max-width "calc(100% - %s)" % (2 * $moduleWindowMargin)
 
 		.moduleWindow.resizable
-			padding-bottom $moduleWindowButtonSize + 0.1
+			padding-bottom $moduleWindowButtonSize
 			resize both
 			overflow hidden
 			max-width 100%
-			min-width 100px
-			min-height 100px
+			min-width $detailsWindowMinWidth - $moduleWindowButtonSize
+			min-height $detailsRowHeight - $moduleWindowButtonSize
 			border-radius 5px 5px 0 5px
 			background linear-gradient(bottom, $colorGrayBlack, $color13)
 
 			.windowContent
 				padding 0 2px
-
-			.resizeHandle
-				position absolute
-				bottom 0
-				right 0
-				width $moduleWindowButtonSize
-				height $moduleWindowButtonSize
-				color gray
-				background-color $colorGrayBlack
-				pointer-events none
-
-			.resizeHandle:before
-				@extend .fa
-				@extend .fa-sort:before
-				transform translate(0.25rem, -0.13rem) scale(1.2) rotate(-45deg)
 
 		.moduleWindow
 			.windowTitle
@@ -478,16 +454,16 @@
 				display flex
 				align-items center
 				justify-content space-between
-				cursor -webkit-grab
 				cursor grab
 
 				.title
 					font-weight bold
 					padding-left 1rem
 					cursor inherited
+					textEllipsis()
 
 				.buttons
-					padding-right 0.5rem
+					min-width 5rem
 
 					& > i
 						width $moduleWindowButtonSize
