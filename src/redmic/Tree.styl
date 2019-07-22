@@ -35,6 +35,7 @@
 
 	.dijitTreeRow
 		display flex
+		align-items center
 
 	.dijitTreeExpando
 		display none
@@ -44,6 +45,8 @@
 		visibility hidden
 		width 1.5rem
 		margin-left 0.5rem
+		fontSize 1.8rem
+		line-height 100%
 		@extend .fa
 		&:hover
 			color $blue
@@ -68,8 +71,9 @@
 
 	.cbtreeCheckBox
 		@extend .fa
-		width 12px
-		height 14px
+		width 1.5rem
+		height 1.5rem
+		fontSize 1.4rem
 		position relative
 		//margin-right 0.5rem
 		&:before
