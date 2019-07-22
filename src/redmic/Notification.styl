@@ -1,6 +1,23 @@
+.languageSelector
+.fullscreenToggle
+	display flex
+	margin-left 0.5rem
+	height 2.5rem
+	width 2.5rem
+	display flex
+	justify-content center
+	align-items center
+	cursor pointer
+	position relative
+
+	&:hover
+		color $blue
+
+	i
+		fontSize 1.6rem
+
 .notification
 .userArea
-.languageSelector
 	display flex
 	margin-left 0.5rem
 
@@ -13,17 +30,17 @@
 		cursor pointer
 		position relative
 
+		&:hover
+			color $blue
+
 		i
 			fontSize 1.6rem
 
 .notification
-.languageSelector
 	> div:hover
-		i
-			color $blue
-
 		span
 			fondo color $blue
+			color $white
 
 .userArea
 	margin-right 1rem
