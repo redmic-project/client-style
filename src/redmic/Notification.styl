@@ -1,5 +1,6 @@
 .languageSelector
 .fullscreenToggle
+.userArea
 	display flex
 	margin-left 0.5rem
 	height 2.5rem
@@ -17,7 +18,6 @@
 		fontSize 1.6rem
 
 .notification
-.userArea
 	display flex
 	margin-left 0.5rem
 
@@ -30,38 +30,32 @@
 		cursor pointer
 		position relative
 
+		span
+			sombreadoTexto 1
+			fontSize 0.8rem
+			position absolute
+			top 0.2rem
+			right 0.2rem
+			padding 0.2rem 0.4rem
+			background $green
+			border-radius 5px
+
 		&:hover
 			color $blue
+
+			span
+				fondo color $blue
+				color $white
 
 		i
 			fontSize 1.6rem
 
-.notification
-	> div:hover
-		span
-			fondo color $blue
-			color $white
-
 .userArea
 	margin-right 1rem
-
-	i:hover
-		color $blue
 
 	img
 		width 100%
 		height 100%
-		border-radius 5px
-
-.notification > div
-	span
-		sombreadoTexto 1
-		fontSize 0.8rem
-		position absolute
-		top 0.2rem
-		right 0.2rem
-		padding 0.2rem 0.4rem
-		background $green
 		border-radius 5px
 
 .containerNotificationSidebar
