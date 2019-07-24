@@ -577,19 +577,11 @@
 .marginBottomContainer
 	margin-bottom 1rem
 
-.containerFormAndKeypad
-	display flex
-	flex-direction column
-
 .compositeSearch, .compositeSearchInTooltip, .editorLayerStyle
 	@extend .fHeight
 
 .compositeSearchInTooltip
 	max-width 30rem
-
-.compositeSearch
-	.containerFormAndKeypad
-		@extend .fHeight
 
 .editorLayerStyle
 	@extend .mediumTexturedContainer
@@ -634,10 +626,6 @@
 		flex-grow 3
 		display flex
 		flex-direction column
-		.containerFormAndKeypad
-			display flex
-			flex-grow 1
-			justify-content space-between
 
 .rangeSearch
 	border 1px solid rgba($white, 0.7)
