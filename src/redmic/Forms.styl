@@ -11,6 +11,17 @@
 .hiddenId
 	noDisplay()
 
+.formContainerWithKeypad
+	display flex
+	flex-direction column-reverse
+	flex-grow 1
+	max-height 100%
+
+	div:last-child
+		overflow auto
+		display flex
+		flex-grow 1
+
 // Para todos los formularios
 .form
 .form-horizontal
@@ -21,7 +32,7 @@
 	showScroll()
 	padding 10px
 	min-width 25rem
-	width 100%
+	width calc(100% - 20px)
 	fieldset
 		width 100%
 		noBorder()
