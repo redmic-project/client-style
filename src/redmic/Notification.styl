@@ -65,10 +65,9 @@
 		border-radius 5px
 
 .containerNotificationSidebar
+	@extend .contentDisplacedByTopbar
 	position absolute
-	top $topbar-size
 	right 0
-	height "calc(100% - %s)" % $topbar-size
 	width $notificationbar-size
 	@media (max-width $media-high-size)
 		width $notificationbar-size * 0.9

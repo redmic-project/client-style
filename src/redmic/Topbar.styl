@@ -9,15 +9,28 @@
 	width 100% !important
 	fondo degradado topbar
 	flexible h space-between center
-	height $topbar-size
+	height $topbar-default-size
+	@media (max-width $media-high-size)
+		height $topbar-high-size
+	@media (max-width $media-medium-size)
+		height $topbar-medium-size
+	@media (max-width $media-low-size)
+		height $topbar-low-size
 	noScroll()
 	z-index 6
-	padding 0 0.5rem
 
 	.collapseSidebarButton
 		@extend .fa
-		fontSize 1.6rem
-		padding 0 0.5rem
+		display flex
+		justify-content center
+		width $sidebar-default-size
+		@media (max-width $media-high-size)
+			width $sidebar-high-size
+		@media (max-width $media-medium-size)
+			width $sidebar-medium-size
+		@media (max-width $media-low-size)
+			width $sidebar-low-size
+		fontSize 2rem
 
 		&:before
 			@extend .fa-bars:before
@@ -25,13 +38,12 @@
 		&:hover
 			color $blue
 
-.topbarLogo
-	flexible h center center
-	min-width 115px
-	user-select none
+	.topbarLogo
+		flexible h center center
+		user-select none
 
-	img.logo
-		width 115px
+		img.logo
+			width 3rem
 
 .manager
 	flexible h space-between center
@@ -87,3 +99,19 @@
 .listMenu
 	.flag
 		height 1.5rem
+
+.contentDisplacedByTopbar
+	top $topbar-default-size !important
+	@media (max-width $media-high-size)
+		top $topbar-high-size !important
+	@media (max-width $media-medium-size)
+		top $topbar-medium-size !important
+	@media (max-width $media-low-size)
+		top $topbar-low-size !important
+	height "calc(100% - %s)" % $topbar-default-size !important
+	@media (max-width $media-high-size)
+		height "calc(100% - %s)" % $topbar-high-size !important
+	@media (max-width $media-medium-size)
+		height "calc(100% - %s)" % $topbar-medium-size !important
+	@media (max-width $media-low-size)
+		height "calc(100% - %s)" % $topbar-low-size !important

@@ -2,23 +2,18 @@
 	Plantilla para controlar las barras laterales de navegación.
 */
 
-$sidebar-size-high-factor = 0.85
-$sidebar-size-medium-factor = 0.75
-$sidebar-size-low-factor = 0.65
-
 .sidebarWidthSizing
-	width $sidebar-size
+	width $sidebar-default-size
 	@media (max-width $media-high-size)
-		width $sidebar-size * $sidebar-size-high-factor
+		width $sidebar-high-size
 	@media (max-width $media-medium-size)
-		width $sidebar-size * $sidebar-size-medium-factor
+		width $sidebar-medium-size
 	@media (max-width $media-low-size)
-		width $sidebar-size * $sidebar-size-low-factor
+		width $sidebar-low-size
 
 .mainSidebar
 	@extend .sidebarWidthSizing
-	top $topbar-size !important
-	height "calc(100% - %s)" % $topbar-size !important
+	@extend .contentDisplacedByTopbar
 	padding 0
 
 .main-nav-list
@@ -64,10 +59,9 @@ $sidebar-size-low-factor = 0.65
 	nav.primarySidebar
 		@extend .shadowBox
 		@extend .sidebarWidthSizing
+		@extend .contentDisplacedByTopbar
 		position absolute
-		top $topbar-size
 		left 0
-		height "calc(100% - %s)" % $topbar-size
 		z-index 4
 		flexible v space-between center
 		background $color13
@@ -97,10 +91,9 @@ $sidebar-size-low-factor = 0.65
 					padding 0.1rem
 
 	nav.secondarySidebar
+		@extend .contentDisplacedByTopbar
 		position absolute
-		top $topbar-size
 		z-index 3
-		height "calc(100% - %s)" % $topbar-size
 		width $sidebar-secondary-size
 		@media (max-width $media-high-size)
 			width $sidebar-secondary-size * 0.9
@@ -122,6 +115,7 @@ $sidebar-size-low-factor = 0.65
 				text-decoration none
 				display flex
 				align-items center
+				min-height 3rem
 
 				&:focus
 					outline none
@@ -140,19 +134,18 @@ $sidebar-size-low-factor = 0.65
 			transition left 0.5s ease-in 0s
 
 		&.overall
-			left $sidebar-size
+			left $sidebar-default-size
 			@media (max-width $media-high-size)
-				left $sidebar-size * $sidebar-size-high-factor
+				left $sidebar-high-size
 			@media (max-width $media-medium-size)
-				left $sidebar-size * $sidebar-size-medium-factor
+				left $sidebar-medium-size
 			@media (max-width $media-low-size)
-				left $sidebar-size * $sidebar-size-low-factor
+				left $sidebar-low-size
 			transition left 0.4s ease-in 0s, z-index 0.05s ease 0.48s
 
 .overlaySidebarBackground
+	@extend .contentDisplacedByTopbar
 	position absolute
-	top $topbar-size
-	height "calc(100% - %s)" % $topbar-size
 	width 100%
 	z-index 2
 	background-color $black
