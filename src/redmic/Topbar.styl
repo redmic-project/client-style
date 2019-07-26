@@ -21,6 +21,7 @@
 
 	.collapseSidebarButton
 		@extend .fa
+		@extend .highlightOnHover
 		display flex
 		justify-content center
 		width $sidebar-default-size
@@ -30,20 +31,33 @@
 			width $sidebar-medium-size
 		@media (max-width $media-low-size)
 			width $sidebar-low-size
-		fontSize 2rem
+		fontSize 1.6rem
+		color $grayLighter
 
 		&:before
 			@extend .fa-bars:before
 
-		&:hover
-			color $blue
-
 	.topbarLogo
+		@extend .highlightOnHover
 		flexible h center center
 		user-select none
+		text-decoration none
 
-		img.logo
-			width 3rem
+		&:hover
+			transform scale(1.01)
+
+		img
+			width 2.5rem
+
+		span
+			@extend .titleRedmic
+			fontSize 2.5rem
+			padding-bottom 0.3rem
+			margin-left 0.5rem
+			@media (max-width $media-medium-size)
+				display none
+			@media (max-width $media-low-size)
+				display none
 
 .manager
 	flexible h space-between center
@@ -91,7 +105,7 @@
 		justify-content space-between
 
 .versionNumber
-	color #aaa
+	color $grayLighter
 	fontSize 0.9rem
 	padding 0 1rem
 	user-select none

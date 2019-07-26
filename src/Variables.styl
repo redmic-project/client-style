@@ -94,7 +94,7 @@ $topbar-medium-size = 4.6rem
 $topbar-low-size = 4.9rem
 $sidebar-default-size = 5.4rem
 $sidebar-high-size = 5.7rem
-$sidebar-default-size = 6rem
+$sidebar-medium-size = 6rem
 $sidebar-low-size = 6.3rem
 $sidebar-secondary-size = 200px
 $notificationbar-size = 400px
@@ -200,6 +200,12 @@ $gridBackgroundHover = lighten($gridSelectedBackground, 20%)
 $layerThumbnailWidth = 100px
 $layerThumbnailHeight = 67px
 
+// Clases abstractas
+.highlightOnHover
+	transition transform 0.2s ease-in-out
+	&:hover
+		filter drop-shadow(0 0 0.3rem $grayLighter)
+		transform scale(1.1)
 
 
 

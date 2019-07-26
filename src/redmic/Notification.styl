@@ -1,63 +1,56 @@
+.notification
 .languageSelector
 .fullscreenToggle
 .userArea
+	@extend .highlightOnHover
 	display flex
-	margin-left 0.5rem
 	height 2.5rem
-	width 2.5rem
+	width 3.5rem
+	@media (max-width $media-high-size)
+		width 3.6rem
+	@media (max-width $media-medium-size)
+		width 3.7rem
+	@media (max-width $media-low-size)
+		width 3.8rem
 	display flex
 	justify-content center
 	align-items center
 	cursor pointer
 	position relative
-
-	&:hover
-		color $blue
+	color $grayLighter
 
 	i
-		fontSize 1.6rem
+		fontSize 1.5rem
 
 .notification
-	display flex
-	margin-left 0.5rem
+	span
+		sombreadoTexto 1
+		fontSize 0.8rem
+		position absolute
+		top 0
+		right 0
+		padding 0.2rem 0.4rem
+		background $green
+		border-radius 5px
 
-	> div
-		height 2.5rem
-		width 2.5rem
-		display flex
-		justify-content center
-		align-items center
-		cursor pointer
-		position relative
-
-		span
-			sombreadoTexto 1
-			fontSize 0.8rem
-			position absolute
-			top 0.2rem
-			right 0.2rem
-			padding 0.2rem 0.4rem
-			background $green
-			border-radius 5px
-
-		&:hover
-			color $blue
-
-			span
-				fondo color $blue
-				color $white
-
-		i
-			fontSize 1.6rem
+	&:hover span
+		fondo color $blue
+		color $white
 
 .languageSelector
 	.flag
-		width 2.5rem
-		height 2.5rem
-		background-size 2rem
+		width 2.4rem
+		height 1.6rem
+		background-size contain
+		background-color rgba(black, 0.08)
+		background-blend-mode overlay
+		border-radius 0.5rem
+
+		&:hover
+			background-blend-mode unset
 
 .userArea
-	margin-right 1rem
+	margin 0 1.5rem
 
 	img
 		width 2.5rem
