@@ -379,16 +379,6 @@ flexibleGrow(tasa)
 fondo(tipo, tono = 0)
 	if tipo == none
 		background none
-	if tipo == textura
-		background-repeat repeat
-		if tono == hard-opa
-			background-image $linen-gray-opa
-		if tono == hard
-			background-image $linen-gray
-		if tono == medium
-			background-image $linen-light
-		if tono == soft
-			background-image $linen-lighter
 	if tipo == degradado
 		background-size 100%
 		if tono == topbar

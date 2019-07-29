@@ -92,15 +92,6 @@
 
 // Decoración
 
-.hardTexturedContainer
-	fondo textura hard
-
-.mediumTexturedContainer
-	fondo textura medium
-
-.softTexturedContainer
-	fondo textura soft
-
 .hardSolidContainer
 	fondo color $black
 
@@ -108,7 +99,7 @@
 	fondo color $color5
 
 .softSolidContainer
-	fondo color $white
+	fondo color $color1
 
 .hardTranslucentContainer
 	fondo color rgba($black, $mediumOpacity)
@@ -117,7 +108,7 @@
 	fondo color rgba($color5, $lowOpacity)
 
 .softTranslucentContainer
-	fondo color rgba($white, $lowOpacity)
+	fondo color rgba($color1, $lowOpacity)
 
 .invertedContainer
 	colorTexto inv
@@ -580,7 +571,7 @@
 	max-width 30rem
 
 .editorLayerStyle
-	@extend .mediumTexturedContainer
+	@extend .softSolidContainer
 	display flex
 	flex-direction column
 	.titleStyleContainer
