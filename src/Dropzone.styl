@@ -2,11 +2,11 @@
 
 .dropzone
 	bordeRedondeado()
-	fondo color rgba($black, $lowOpacity)
-	fondo textura medium
+	background-color $color13
 	border 1px solid $inputBorder
-	miniPadded()
-	min-height 80px
+	padding 0.1rem
+	min-height 15rem
+	flex-direction column
 	.dz-preview
 		miniMargined()
 		miniPadded()
@@ -34,16 +34,19 @@
 
 	.dz-default.dz-message
 		fullSize()
-		noMargin()
-		miniPadded()
+		display flex
+		flex-direction row
+		justify-content space-between
+		align-items center
+		margin 0
+		padding 0.5rem
 		top 0
 		left 0
-		flexible h space-between center
 		color $color6
 		fondo none
 		span
 			display block
 		.uploadIcon
-			fontSize 3rem
-			semiMargined h
+			fontSize 2rem
+			margin 0 1rem
 			cursor pointer

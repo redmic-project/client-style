@@ -5,8 +5,8 @@
 // Principales
 
 .masterContainer
-	width 100%
-	height 100%
+	width inherit
+	height inherit
 	position absolute
 	top 0
 	left 0
@@ -21,7 +21,6 @@
 	fontSize 20rem
 	:nth-child(2)
 		fontSize 5rem
-		line-height 5rem
 		margin-top 10px
 
 #error404Container
@@ -31,10 +30,9 @@
 	div
 		@extend .centerContentContainer
 		fondo color rgba(red,0.3)
-		font-size 10rem
+		fontSize 10rem
 		:nth-child(2)
 			fontSize 5rem
-			line-height 5rem
 			margin-bottom 10px
 		:nth-child(3)
 			fontSize 2rem
@@ -47,10 +45,12 @@
 	@extend .centerContentContainer
 	fondo color rgba($black,0.5)
 	z-index $loadingAndLockedZIndex
-	font-size 10rem
+	fontSize $loadingFontSize
 
 #rootContainer
 	@extend .masterContainer
+	min-width 300px
+	min-height 300px
 
 // Estructura
 
@@ -92,15 +92,6 @@
 
 // Decoración
 
-.hardTexturedContainer
-	fondo textura hard
-
-.mediumTexturedContainer
-	fondo textura medium
-
-.softTexturedContainer
-	fondo textura soft
-
 .hardSolidContainer
 	fondo color $black
 
@@ -108,7 +99,7 @@
 	fondo color $color5
 
 .softSolidContainer
-	fondo color $white
+	fondo color $color1
 
 .hardTranslucentContainer
 	fondo color rgba($black, $mediumOpacity)
@@ -117,7 +108,7 @@
 	fondo color rgba($color5, $lowOpacity)
 
 .softTranslucentContainer
-	fondo color rgba($white, $lowOpacity)
+	fondo color rgba($color1, $lowOpacity)
 
 .invertedContainer
 	colorTexto inv
@@ -129,9 +120,8 @@
 
 // Contenedor global
 .mainContainer
-	fullSize()
-	z-index auto
-	fondo textura soft
+	width inherit
+	height inherit
 
 // Contenedor de pantalla completa
 .fullscreenContainer
@@ -144,7 +134,42 @@
 
 // Contenedor de la zona principal de contenido
 .contentContainer
-	semiPadded()
+	display flex
+	flex-direction column
+	position absolute
+	left 0
+	width 100%
+	top $topbar-default-size
+	@media (max-width $media-high-size)
+		top $topbar-high-size
+	@media (max-width $media-medium-size)
+		top $topbar-medium-size
+	@media (max-width $media-low-size)
+		top $topbar-low-size
+	height "calc(100% - %s)" % $topbar-default-size
+	@media (max-width $media-high-size)
+		height "calc(100% - %s)" % $topbar-high-size
+	@media (max-width $media-medium-size)
+		height "calc(100% - %s)" % $topbar-medium-size
+	@media (max-width $media-low-size)
+		height "calc(100% - %s)" % $topbar-low-size
+
+	> *
+		padding $contentContainerChildPadding
+
+body.uncollapsedSidebar
+	.contentContainer
+		left $sidebar-default-size
+		@media (max-width $media-high-size)
+			left $sidebar-high-size
+		@media (max-width $media-medium-size)
+			left 0
+		width "calc(100% - %s)" % $sidebar-default-size
+		@media (max-width $media-high-size)
+			width "calc(100% - %s)" % $sidebar-high-size
+		@media (max-width $media-medium-size)
+			width 100%
+
 
 // Contenedor de posición absoluta
 .absoluteContainer
@@ -215,7 +240,8 @@
 	fontSize $bigFontSize
 
 .scrollWrapper
-	fondo textura hard
+	fondo color $color13
+	display flex
 	noScroll()
 
 .mapSideContainer
@@ -240,7 +266,7 @@
 		border-radius 5px
 
 .stretchZone
-	margin-top 10px
+	//margin-top 0.5rem
 	display flex
 	flex-grow 1
 	.containerList > .contentList
@@ -264,24 +290,26 @@
 	align-items center
 
 .barSliderContainer
-	height 40px
+	min-height 4rem
+	overflow hidden !important
+
+.templateDisplayer
+	width 100%
 
 .infoView
 	display flex
 	flex-direction column
+	height "calc(100% - %s)" % (2 * $contentContainerChildPadding)
 
 	.infoTitle
 		position relative
 		display flex
 		align-items center
-		margin 0 5px 10px 5px
+		margin 0.3rem
 		border-radius 5px
 		box-shadow 0 20px 10px -5px rgba(0,0,0,0.25)
-		z-index 2
-		min-height 100px
+		min-height 10rem
 
-		.rightSpace
-			min-width 25rem
 		.tabs, .right
 			position absolute
 			display flex
@@ -323,8 +351,9 @@
 				&:hover
 					background-color $blue
 
-		.left, .right
-			padding 0 10px
+		.left
+		.right
+			padding 0 1rem
 
 			& > i, & > a
 				color #fff
@@ -345,18 +374,15 @@
 				padding 0 5px
 
 		.center
-			flex-grow 1
+			display flex
+			align-items center
+			width calc(100% - 18rem)
 
 			.header
 				@extend .titleRedmic
-				overflow hidden
-				text-overflow ellipsis
-				display -webkit-box
-				-webkit-line-clamp 3
-				-webkit-box-orient vertical
 				h1
-					line-height 1
 					margin 0
+					textEllipsis()
 
 		.infoTitleBackground
 			fondo degradado topbar
@@ -373,12 +399,15 @@
 
 		.centerTitle
 			flex-direction column
+			justify-content center
+
+			.center
+				width 100%
 
 		.title
 			margin 0
 			width 100%
 			border-radius 5px
-			margin-right 1px
 
 	.infoContainer
 		flex-grow 1
@@ -393,8 +422,8 @@
 
 		.view
 			@extend .fHeight
-			padding 5px
-			background-image $linen-light
+			padding 0.3rem
+			background-color gray
 
 		.moduleWindow
 			@extend .fHeight
@@ -406,7 +435,7 @@
 
 		& > div
 			flex-shrink 1
-			margin 5px
+			margin $moduleWindowMargin
 			overflow hidden
 			transition-property height, width
 			transition-duration .3s
@@ -415,47 +444,28 @@
 			for col in 1..$cols
 				&[data-cols=\"{col}\"]:not(.resizedByUser)
 					$newWidth = (100% / $cols) * col
-					width "calc(%s - 10px)" % $newWidth
+					width "calc(%s - %s)" % ($newWidth (2 * $moduleWindowMargin))
 
 			$rows = 6
 			for row in 1..$rows
 				&[data-rows=\"{row}\"]:not(.resizedByUser)
-					height 90px * row + 10px * (row - 1)
-
-				&[data-percentage-rows=\"{row}\"]:not(.resizedByUser)
-					$newHeight = (100% / $rows) * row
-					height "calc(%s - 10px)" % $newHeight
+					height $detailsRowHeight * row + (2 * $moduleWindowMargin) * (row - 1)
 
 		& > div.resizedByUser
-			max-width calc(100% - 10px)
+			max-width "calc(100% - %s)" % (2 * $moduleWindowMargin)
 
 		.moduleWindow.resizable
-			padding-bottom 15px
+			padding-bottom $moduleWindowButtonSize
 			resize both
 			overflow hidden
 			max-width 100%
-			min-width 100px
-			min-height 100px
+			min-width $detailsWindowMinWidth - $moduleWindowButtonSize
+			min-height $detailsRowHeight - $moduleWindowButtonSize
 			border-radius 5px 5px 0 5px
 			background linear-gradient(bottom, $colorGrayBlack, $color13)
 
 			.windowContent
-				padding 0 3px
-
-			.resizeHandle
-				position absolute
-				bottom 0
-				right 0
-				width 15px
-				height 15px
-				color gray
-				background-color $colorGrayBlack
-				pointer-events none
-
-			.resizeHandle:before
-				@extend .fa
-				@extend .fa-sort:before
-				transform rotate(-45deg) scale(1.2) translate(2px, 2px)
+				padding 0 2px
 
 		.moduleWindow
 			.windowTitle
@@ -464,22 +474,23 @@
 				display flex
 				align-items center
 				justify-content space-between
-				cursor -webkit-grab
 				cursor grab
 
 				.title
 					font-weight bold
-					padding-left 10px
+					padding-left 1rem
 					cursor inherited
+					textEllipsis()
 
 				.buttons
+					min-width 5rem
 
 					& > i
-						width 15px
-						height 15px
+						width $moduleWindowButtonSize
+						height $moduleWindowButtonSize
 						text-align center
 						vertical-align middle
-						margin 0 2px
+						margin 0 0.2rem
 						cursor pointer
 						color gray
 
@@ -509,8 +520,12 @@
 	align-items center
 
 	& > :first-child
-		margin 0 10px
-		font-size 5rem
+		margin-right 1rem
+		fontSize 5rem
+
+	& > :nth-child(2)
+		width calc(100% - 8rem)
+
 	& > :last-child
 		display flex
 		flex-direction column
@@ -520,12 +535,11 @@
 			margin 5px
 
 		& > :first-child
-			//display flex
 
 			& > :last-child
 				margin-left 5px
 	h1
-		line-height 3rem
+		textEllipsis()
 
 .imageContainer
 	display flex
@@ -551,13 +565,9 @@
 		&:hover
 			color $blue
 
-.appDev
-	background rgba(255,0,0,0.5) !important
-
 .atlasLayerInfoMessage
 	padding 5px
 	fontSize 2rem
-	line-height 2rem
 	text-align center
 
 .viewerPDF
@@ -568,7 +578,7 @@
 	@extend .fHeight
 	@extends .flexibleCenteredContainer
 	flex-direction column
-	font-size 1.8rem
+	fontSize 1.8rem
 	i
 		margin-bottom 2rem
 
@@ -583,38 +593,21 @@
 .marginBottomContainer
 	margin-bottom 1rem
 
-.containerFormAndKeypad
-	display flex
-	flex-direction column
-
-.chartTopContent
-.chartTopAndBottomContent
-	@extend .fHeight
-	display flex
-	flex-direction column
-	.centerChartContent
-		display flex
-		flex-grow 1
-
 .compositeSearch, .compositeSearchInTooltip, .editorLayerStyle
 	@extend .fHeight
 
 .compositeSearchInTooltip
-	width 80rem
-
-.compositeSearch
-	.containerFormAndKeypad
-		@extend .fHeight
+	max-width 30rem
 
 .editorLayerStyle
-	@extend .mediumTexturedContainer
+	@extend .softSolidContainer
 	display flex
 	flex-direction column
 	.titleStyleContainer
 		padding 1rem
 		padding-left 3rem
 		span
-			font-size 1.6rem
+			fontSize 1.6rem
 			color #ffd700
 			font-weight bold
 	.selectInputContainer
@@ -649,10 +642,6 @@
 		flex-grow 3
 		display flex
 		flex-direction column
-		.containerFormAndKeypad
-			display flex
-			flex-grow 1
-			justify-content space-between
 
 .rangeSearch
 	border 1px solid rgba($white, 0.7)
@@ -671,14 +660,3 @@
 .kibana-dashboard
 	width calc(100% - 4px)
 	height calc(100% - 8px)
-
-.socialPanel
-	display flex
-	flex-wrap wrap
-	align-items center
-	justify-content flex-start
-	padding 10px
-	> *
-		fontSize 4rem
-		color $white
-		margin 10px

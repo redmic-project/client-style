@@ -65,6 +65,7 @@
 	display flex
 	flex-flow column
 	flex-grow 1
+	background $grayLight
 
 	.dijitDialogTitleBar
 		padding $semi $big
@@ -74,6 +75,7 @@
 	.dijitDialogPaneContent
 		display flex
 		flex-grow 1
+		padding 0.3rem
 
 		& > div
 			height unset
@@ -82,18 +84,10 @@
 // Dialog pequeño
 
 .dialogSimple
-	fondo textura soft
-
 	.dijitDialogTitleBar
 		border-bottom $borderDark
 		padding $micro $semi
 		fondo degradado buttonLogin
-
-
-// Dialog normal
-
-.dialogComplex
-	fondo textura medium
 
 
 // Botonera

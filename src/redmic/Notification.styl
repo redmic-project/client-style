@@ -1,146 +1,161 @@
 .notification
-.userArea
 .languageSelector
-	width auto
-	height 3rem
+.fullscreenToggle
+.userArea
+	@extend .highlightOnHover
 	display flex
-	margin-left .5rem
-	> div
-		height 100%
-		width 4rem
-		display flex
-		justify-content center
-		align-items center
-		cursor pointer
-		position relative
-		i
-			font-size 22px
-			margin-top 7px
-			margin-right 5px
+	height 2.5rem
+	width 3.5rem
+	@media (max-width $media-high-size)
+		width 3.6rem
+	@media (max-width $media-medium-size)
+		width 3.7rem
+	@media (max-width $media-low-size)
+		width 3.8rem
+	display flex
+	justify-content center
+	align-items center
+	cursor pointer
+	position relative
+	color $grayLighter
+
+	i
+		fontSize 1.5rem
 
 .notification
-.languageSelector
-	> div:hover
-		i
-			color $blue
-		span
-			fondo color $blue
-
-.userArea
-	width 3rem
-	margin-right 1rem
-	i:hover
-		color $blue
-	img
-		width 3rem
-		height 3rem
-		border-radius 5px
-
-.notification > div, .notificationSidebar .buttons .item
 	span
 		sombreadoTexto 1
+		fontSize 0.8rem
 		position absolute
-		padding 0 5px
-		font-size 9px
-		right 2px
-		background #51a351
+		top 0
+		right 0
+		padding 0.2rem 0.4rem
+		background $green
 		border-radius 5px
-		width 1rem
+
+	&:hover span
+		fondo color $blue
+		color $white
+
+.languageSelector
+	.flag
+		width 2.4rem
+		height 1.6rem
+		background-size contain
+		background-color rgba(black, 0.08)
+		background-blend-mode overlay
+		border-radius 0.5rem
+
+		&:hover
+			background-blend-mode unset
+
+.userArea
+	margin 0 1.5rem
+
+	i
+		fontSize 2rem
+
+	img
+		width 2.5rem
+		height 2.5rem
+		border-radius 5px
+
+.containerNotificationSidebar
+	@extend .contentDisplacedByTopbar
+	position absolute
+	right 0
+	width $notificationbar-size
+	z-index 3
+	overflow hidden
+	pointer-events none
+
+	.notificationSidebar
+		height 100%
 		display flex
-		justify-content center
+		flex-direction column
+		box-shadow 5px 0 10px 0 rgba($black, $shadowBoxOpacity)
+		overflow auto
+		pointer-events initial
+
+		&.retiring
+			animation retiringSidebarNotification 0.4s
+			animation-fill-mode forwards
+
+		&.overall
+			animation overallSidebarNotification 0.4s
+			animation-fill-mode forwards
+
+		.list
+			height 100%
+			display flex
+
+		.progressBar
+			width 100%
+			padding-top 5px
+
+			.dijitProgressBarTile
+				background-color $blue
+
+		// TODO eliminar este estilo si se decide omitir pestañas de notificaciones, por ahora oculto
+		.buttons
+			display none
 
 .notificationSidebar
-	z-index 1005
-	position absolute
-	right -1px
-
-	top $topbar-size !important
-	height calc(100% - 39px) !important
-	float right
-	display flex
-	flex-direction column
-	width 35rem
-	box-shadow 5px 0 10px 0 rgba($black, $shadowBoxOpacity)
-	border-right $borderDark
-	border-left $borderDark
-	showScroll()
-	.list
-		height calc(100% - 4rem)
-		display flex
-
-.notificationSidebar, .notificationList
+.notificationList
 	.containerList .contentList
-		fondo textura hard
+		background linear-gradient(right, $color13, rgba($colorGrayBlack, 0.9))
 		border-radius 0
+
 		.containerRow
+			color #fff
+
 			&:nth-child(odd)
 				background-color transparent
+
 			&:nth-child(even)
-				background-color #494852
-			color #fff
-			span span span, .status, .subtitle, .subtitle i, .iconList:hover, em, .containerButtons > a,
-			.containerButtons > i, .containerButtons > a i
+				background-color rgba($colorGrayBlack, 0.5)
+				//background-color #494852
+
+			span span span
+			.status
+			.subtitle
+			.subtitle i
+			.iconList:hover
+			em
+			.containerButtons > a
+			.containerButtons > i
+			.containerButtons > a i
 				color #fff
+
 			.notificationIcon
 				font-size 2.2rem
-				margin 0.5rem
+				margin 0.5rem 1rem 0.5rem 0
+
+			.spanTemplate
+				.iconList
+					font-size inherit
+
+	.containerList .framework
+		border-radius 0
+		background linear-gradient(right, $color13, rgba($colorGrayBlack, 0.9))
+
 .warning
 	color #FFE83A
+
 .success
 	color #51a351
+
 .notice
 	color #26ADE4
+
 .error
 	color red
+
 .danger
 	color #bd362f
+
 .message
 	color white
-
-.notificationSidebar
-	.buttons
-		height 4rem
-		width 100%
-		display flex
-		background-color #222
-		.item
-			position relative
-			width calc(100% / 3)
-			cursor pointer
-			display flex
-			justify-content center
-			align-items center
-			border-right 1px solid black
-			i
-				color #ddd
-			span
-				right 30%
-				top 4px
-
-			span.alert
-				background red
-			&:hover
-				background-color #494852
-		.itemSelect
-			height 4rem
-			fondo textura hard
-			cursor initial
-			i
-				color #fff
-
-	.progressBar
-		width 100%
-		padding-top 5px
-		.dijitProgressBarTile
-			background-color $blue
-
-.notificationSidebar.retiring
-	animation retiringSidebarNotification 0.4s
-	animation-fill-mode forwards
-
-.notificationSidebar.overall
-	animation overallSidebarNotification 0.4s
-	animation-fill-mode forwards
 
 @keyframes overallSidebarNotification
 	0%
@@ -188,6 +203,7 @@
 .alertRestartAction
 	.click
 		color $blueStrong
-	.click:hover
-		cursor pointer
-		color $blue
+
+		&:hover
+			cursor pointer
+			color $blue
