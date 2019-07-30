@@ -2,20 +2,6 @@
 	Plantilla para controlar las barras laterales de navegación.
 */
 
-.sidebarWidthSizing
-	width $sidebar-default-size
-	@media (max-width $media-high-size)
-		width $sidebar-high-size
-	@media (max-width $media-medium-size)
-		width $sidebar-medium-size
-	@media (max-width $media-low-size)
-		width $sidebar-low-size
-
-.mainSidebar
-	@extend .sidebarWidthSizing
-	@extend .contentDisplacedByTopbar
-	padding 0
-
 .main-nav-list
 	& > ul
 		list-style none
@@ -58,8 +44,14 @@
 
 	nav.primarySidebar
 		@extend .shadowBox
-		@extend .sidebarWidthSizing
 		@extend .contentDisplacedByTopbar
+		width $sidebar-default-size
+		@media (max-width $media-high-size)
+			width $sidebar-high-size
+		@media (max-width $media-medium-size)
+			width $sidebar-medium-size
+		@media (max-width $media-low-size)
+			width $sidebar-low-size
 		position absolute
 		left 0
 		z-index 4
@@ -149,15 +141,11 @@
 
 body
 	&.reducedWidth
-		.mainSidebar
-			width 0
-
 		&.uncollapsedSidebar
 			.overlaySidebarBackground
 				opacity 0.5
 				pointer-events all
 
 	&:not(.uncollapsedSidebar)
-		.mainSidebar
 		.main-nav > nav
 			width 0

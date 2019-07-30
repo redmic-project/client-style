@@ -136,10 +136,39 @@
 .contentContainer
 	display flex
 	flex-direction column
-	flex-grow 1
+	position absolute
+	left 0
+	width 100%
+	top $topbar-default-size
+	@media (max-width $media-high-size)
+		top $topbar-high-size
+	@media (max-width $media-medium-size)
+		top $topbar-medium-size
+	@media (max-width $media-low-size)
+		top $topbar-low-size
+	height "calc(100% - %s)" % $topbar-default-size
+	@media (max-width $media-high-size)
+		height "calc(100% - %s)" % $topbar-high-size
+	@media (max-width $media-medium-size)
+		height "calc(100% - %s)" % $topbar-medium-size
+	@media (max-width $media-low-size)
+		height "calc(100% - %s)" % $topbar-low-size
 
 	> *
 		padding $contentContainerChildPadding
+
+body.uncollapsedSidebar
+	.contentContainer
+		left $sidebar-default-size
+		@media (max-width $media-high-size)
+			left $sidebar-high-size
+		@media (max-width $media-medium-size)
+			left 0
+		width "calc(100% - %s)" % $sidebar-default-size
+		@media (max-width $media-high-size)
+			width "calc(100% - %s)" % $sidebar-high-size
+		@media (max-width $media-medium-size)
+			width 100%
 
 
 // Contenedor de posición absoluta

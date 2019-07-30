@@ -2,7 +2,6 @@
 	Plantilla para la barra superior.
 */
 
-
 .topbar
 	@extend .shadowBox
 	left 0px !important
@@ -24,6 +23,7 @@
 		@extend .highlightOnHover
 		display flex
 		justify-content center
+		align-items center
 		width $sidebar-default-size
 		@media (max-width $media-high-size)
 			width $sidebar-high-size
@@ -31,6 +31,7 @@
 			width $sidebar-medium-size
 		@media (max-width $media-low-size)
 			width $sidebar-low-size
+		height 2.5rem
 		fontSize 1.6rem
 		color $grayLighter
 
@@ -61,6 +62,33 @@
 			@media (max-width $media-medium-size)
 				display none
 
+	.topbarContent
+		display flex
+		flex-grow 1
+
+		> .manager
+			display flex
+			flex-grow 1
+
+		> .buttons
+			display flex
+
+.contentDisplacedByTopbar
+	top $topbar-default-size !important
+	@media (max-width $media-high-size)
+		top $topbar-high-size !important
+	@media (max-width $media-medium-size)
+		top $topbar-medium-size !important
+	@media (max-width $media-low-size)
+		top $topbar-low-size !important
+	height "calc(100% - %s)" % $topbar-default-size !important
+	@media (max-width $media-high-size)
+		height "calc(100% - %s)" % $topbar-high-size !important
+	@media (max-width $media-medium-size)
+		height "calc(100% - %s)" % $topbar-medium-size !important
+	@media (max-width $media-low-size)
+		height "calc(100% - %s)" % $topbar-low-size !important
+
 .manager
 	flexible h space-between center
 	flexibleGrow 1
@@ -75,9 +103,6 @@
 		.btnGroup
 			margin 0 3px
 			flexible h right center
-
-.displace
-	margin-left -13px
 
 .containerSelectionBox
 	display flex
@@ -109,19 +134,3 @@
 .listMenu
 	.flag
 		height 1.5rem
-
-.contentDisplacedByTopbar
-	top $topbar-default-size !important
-	@media (max-width $media-high-size)
-		top $topbar-high-size !important
-	@media (max-width $media-medium-size)
-		top $topbar-medium-size !important
-	@media (max-width $media-low-size)
-		top $topbar-low-size !important
-	height "calc(100% - %s)" % $topbar-default-size !important
-	@media (max-width $media-high-size)
-		height "calc(100% - %s)" % $topbar-high-size !important
-	@media (max-width $media-medium-size)
-		height "calc(100% - %s)" % $topbar-medium-size !important
-	@media (max-width $media-low-size)
-		height "calc(100% - %s)" % $topbar-low-size !important

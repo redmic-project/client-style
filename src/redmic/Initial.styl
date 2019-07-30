@@ -89,22 +89,28 @@
 			flexible h space-between center
 			min-height 5rem
 			padding 0 1rem
-			cursor pointer
-			&:hover
-				fondo color $blue
-				.spanTemplate
-					.span, .status, .subtitle, .subtitle i, .iconList:hover, em
-						color #fff !important
-				a
-					color #fff
-					&:hover
-						color grey
+
 			span
 				textEllipsis()
 				margin-right 0.5rem
 
 				.spanTemplate .subtitle
 					color #bbb
+
+			a
+				fontSize 1.6rem
+
+			&:hover
+				fondo color $blue
+
+				.spanTemplate
+					.span, .status, .subtitle, .subtitle i, .iconList:hover, em
+						color #fff !important
+
+				a
+					color #fff
+					&:hover
+						color grey
 
 		.lastActivityModule:nth-child(odd)
 			@extend .softSolidContainer
