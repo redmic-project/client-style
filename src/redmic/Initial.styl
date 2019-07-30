@@ -4,27 +4,27 @@
 
 .titleWelcome
 	flexible h space-between center
+	cursor default
 
 	.divTitle
-		margin 0 auto 0 auto
+		margin 0 auto
+		textEllipsis()
+
+		span
+			fontSize 3.5rem
 
 	span
-		font-size 6.5rem
-		line-height 10rem
+		fontSize 4rem
 		font-weight bold
-		cursor context-menu
 
 	.colorWelcome
 		color $grayLighter
 
 .box
 	.contentInfo
+		fontSize 1.1rem
 		margin 0.5rem
-		line-height 2
 		color $grayLighter
-		.colorWhite
-			color white
-			font-weight bold
 
 
 .boxContainerBorder
@@ -32,11 +32,24 @@
 
 .boxContainer
 	showScroll()
+
+	.favouritesBoxItems
+		display flex
+		flex-wrap wrap
+		justify-content start
+		align-items start
+
+		.module
+			flex-grow 1
+
+			.button
+				flex-grow 1
+
 	.boxItems
 		.module
 			flexible h center center
-			margin 10px 0
-			padding 0
+			padding 0.5rem
+
 			.button:hover, .activeBox
 				fondo color $blue
 			.disabled:hover
@@ -45,87 +58,106 @@
 				opacity 0.5
 			.button
 				flexible v center space-between
-				width 90%
+				width 10rem
+				height 5rem
 				bordeRedondeado()
 				sombreadoCaja o
-				padding 10px 0
+				padding 1rem
 				cursor pointer
-				min-height 60px
 
 				.iconModule
 					align-self center
-					font-size 2rem
-					margin 5px 0px
-					width 25px
-					text-align center
+					fontSize 2rem
 
-				.name, .description
+				.name
+				.description
 					display flex
 					align-items center
 					flex-grow 1
 					align-self center
-					line-height 1.4rem !important
 					text-align center
 
 				.description
-					flex-grow 1
-					margin 0px 10px
-					margin-top 10px
+					margin 0 1rem
+					margin-top 1rem
 			.box
 				min-height 150px
 				.iconModule
-					font-size 3rem
+					fontSize 3rem
 
 		.lastActivityModule
 			flexible h space-between center
-			height 10%
 			min-height 5rem
-			padding 0 20px
-			cursor pointer
+			padding 0 1rem
+
+			span
+				textEllipsis()
+				margin-right 0.5rem
+
+				.spanTemplate .subtitle
+					color #bbb
+
+			a
+				fontSize 1.6rem
+
 			&:hover
 				fondo color $blue
+
 				.spanTemplate
 					.span, .status, .subtitle, .subtitle i, .iconList:hover, em
 						color #fff !important
+
 				a
 					color #fff
 					&:hover
 						color grey
-			span
-				//display inline-block
-				overflow hidden
-				white-space nowrap
-				text-overflow ellipsis
-				line-height 1.8rem
-				width 95%
-				.spanTemplate .subtitle
-					color #bbb
 
 		.lastActivityModule:nth-child(odd)
-			@extend .mediumTexturedContainer
+			@extend .softSolidContainer
 
 .domains
 	overflow auto
-	flex-grow 1
-	@extend .fHeight
 	@extend .borderRadiusBottom
 
-	.boxButton
-		flexible h center center
-		noPadding()
-		margin 0.7rem 0
-		cursor pointer
-		.name
-			text-align center
-			line-height 4rem
-			width 90%
-			bordeRedondeado()
-			sombreadoCaja o
-			&:hover
-				fondo color $blue
+	.domainsBox
+		display flex
+		flex-wrap wrap
+		justify-content start
+		align-items start
+
+		.boxButton
+			flexible h center center
+			flex-grow 1
+			margin 0.5rem
+			width 10rem
+			cursor pointer
+			.name
+				display flex
+				justify-content center
+				align-items center
+				height 5rem
+				width 100%
+				padding 0.5rem
+				bordeRedondeado()
+				sombreadoCaja o
+				&:hover
+					fondo color $blue
+
+				span
+					text-align center
 
 a:hover
 	text-decoration none
 
 .domainsSpecial div
 	text-decoration underline
+
+.socialPanel
+	display flex
+	flex-wrap wrap
+	align-items center
+	justify-content flex-start
+	> *
+		fontSize 3rem
+		color $white
+		margin 0.2rem 0.5rem

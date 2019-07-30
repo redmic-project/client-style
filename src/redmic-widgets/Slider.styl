@@ -79,7 +79,6 @@
 
 	.dijitSliderH
 		@extend .mediumSolidContainer
-		//background-image $linen-light
 
 	.sliderForm, .horizontalRuleForm, .horizontalRuleLabelsForm
 		.control-input
@@ -100,10 +99,13 @@
 		.containerSlider
 			flex 4 1 20rem
 			margin 0 1rem
+
 .progressSlider
 	width 100%
-	height 3rem
+	flex-wrap wrap
+	justify-content center
 	align-items center
+
 	.dijitSlider
 		margin 0 0.5rem 0 1.5rem
 	.dijitSliderBumperH .dijitSliderLeftBumper
@@ -117,7 +119,8 @@
 		flex-grow 1
 		.dijitSliderImageHandleH
 			margin -1px
-	.fa-pause, .fa-play
+	.fa-pause
+	.fa-play
 		width 14px
 
 	.dijitSliderBumperH
@@ -134,33 +137,34 @@
 		border-radius 0 5px 5px 0
 
 	.button .dijitButtonNode
-		padding 0px 20px !important
-		font-size 1.4rem
+		padding 0 1rem !important
+		fontSize 1.2rem
 
 	.dijitButton
-		margin 0 5px
+		margin 0 0.3rem
 
 	.containerBar
 		display flex
 		flex-direction column
 		flex-grow 1
-		padding-top 8px
-		@extends .fWidth
+		padding-top 1rem
+		min-width 10rem
+
 		.containerLimit
 			display flex
 			justify-content space-between
-			margin 0rem .5rem 0 1.5rem
+			margin 0.5rem 0.5rem 0.5rem 1.5rem
 			span
-				font-size 1rem
+				fontSize 1rem
+
 	.containerValue
-		padding 0 5px
-		font-size 14px
+		padding 0 0.5rem
+		fontSize 1.2rem
 		display flex
 		text-align center
-		height 100%
 		align-items center
 		justify-content center
-		width 12rem
+		min-width 3rem
 
 .tooltipDialogSlider
 	.dijitTooltipConnector
@@ -216,7 +220,7 @@
 	flex-direction row
 	.selectOption
 		.form-control
-			background-image $linen-light
+			background-color $color1
 			color white
 		option
 			background gray

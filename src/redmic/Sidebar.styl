@@ -2,159 +2,150 @@
 	Plantilla para controlar las barras laterales de navegación.
 */
 
+.main-nav-list
+	& > ul
+		list-style none
+		margin 0
+		padding 0
+		border-bottom $borde1
+		negrita()
 
+		& li
+			color $grayLighter
+			text-shadow $sombra-s $shadowTextBlurRadius rgba($black, $shadowTextOpacity)
+			text-decoration none
+			border-top $borde1
+			cursor pointer
 
-.mainSidebar
-	@extend .shadowBox
-	top $topbar-size !important
-	height calc(100% - 39px) !important
-	noPadding()
-	noScroll()
-	z-index 4
+			&:hover
+				fondo color $blue
 
-ol, ul
-	list-style none
-	noMargin()
-	noPadding()
+			& i
+			& > a
+				color $grayLighter
 
-.main-nav > ul
-	border-bottom $borde1
-	negrita()
+			&.active
+				fondo degradado sidebar
+				color $color11
+				text-shadow $sombra-s $shadowTextBlurRadius rgba($white, $shadowTextOpacity)
 
-.main-nav > ul li
-	border-bottom $borde2
-	border-top $borde1
-	color $grayLighter
-	text-shadow $sombra-s $shadowTextBlurRadius rgba($black, $shadowTextOpacity)
-	display block
-	miniPadded v
-	text-decoration none
-	//opacity 0.9
-	cursor pointer
-	&:hover
-		fondo color $blue
+				& i
+				& > a
+					color $color11
 
-.main-nav > ul li i
-.main-nav > ul li > a
-	color $grayLighter
+		& a
+		& a:hover
+			text-decoration none
 
-.main-nav > ul li.active
-	fondo degradado sidebar
-	color $color11
-	text-shadow $sombra-s $shadowTextBlurRadius rgba($white, $shadowTextOpacity)
+.main-nav
+	nav.primarySidebar
+	nav.secondarySidebar
+		@extend .main-nav-list
 
-.main-nav > ul li.active i
-.main-nav > ul li.active > a
-	color $color11
+	nav.primarySidebar
+		@extend .shadowBox
+		@extend .contentDisplacedByTopbar
+		width $sidebar-default-size
+		@media (max-width $media-high-size)
+			width $sidebar-high-size
+		@media (max-width $media-medium-size)
+			width $sidebar-medium-size
+		@media (max-width $media-low-size)
+			width $sidebar-low-size
+		position absolute
+		left 0
+		z-index 4
+		flexible v space-between center
+		background $color13
+		height 100%
+		overflow auto
 
-.main-nav > ul li.bottom
-	border none
-	border-top $borde1
+		& > ul
+			width 100%
 
-.main-nav > ul li.bottom a
-	bottom 7px
+			& > li
+				border-bottom $borde2
+				text-align center
+				padding 0.5rem 0
+
+				&.click
+					fondo color rgba($black, 0.4)
+					&.active
+						fondo color $color4
+
+				& i
+					display block
+					fontSize 2rem
+
+				& span
+					display block
+					textEllipsis()
+					padding 0.1rem
+
+	nav.secondarySidebar
+		@extend .contentDisplacedByTopbar
+		position absolute
+		z-index 3
+		width $sidebar-secondary-size
+		background $color13
+		box-shadow 5px 0 10px 0 rgba($black, $shadowBoxOpacity)
+		showScroll()
+
+		& > ul li
+			text-align left
+			padding 0
+
+			& > a
+				padding 0.5rem
+				text-align left
+				text-decoration none
+				display flex
+				align-items center
+				min-height 3rem
+
+				&:focus
+					outline none
+
+				& div
+					width 3rem
+					margin-right 0.5rem
+					text-align center
+
+				& i
+					fontSize 1.4rem
+
+		&.retiring
+			noShadow()
+			left - $sidebar-secondary-size
+			transition left 0.5s ease-in 0s
+
+		&.overall
+			left $sidebar-default-size
+			@media (max-width $media-high-size)
+				left $sidebar-high-size
+			@media (max-width $media-medium-size)
+				left $sidebar-medium-size
+			@media (max-width $media-low-size)
+				left $sidebar-low-size
+			transition left 0.4s ease-in 0s, z-index 0.05s ease 0.48s
+
+.overlaySidebarBackground
+	@extend .contentDisplacedByTopbar
 	position absolute
-	&:hover
-		background transparent
-
-nav.primary
-	flexible v space-between center
-	fondo textura hard
-	float left
-	fullSize v
-	width $sidebar-size
-
-//Cosas de Alioth
-nav.primary > ul
-	border-bottom $borde1
 	width 100%
+	z-index 2
+	background-color $black
+	opacity 0
+	transition opacity 0.3s ease-in-out
+	pointer-events none
 
-nav.primary > ul > li
-	fontSize $smallFontSize
-	text-align center
+body
+	&.reducedWidth
+		&.uncollapsedSidebar
+			.overlaySidebarBackground
+				opacity 0.5
+				pointer-events all
 
-nav.primary > ul > li
-	semiPadded v
-	&.click
-		fondo color rgba($black, 0.4)
-		&.active
-			fondo color $color4
-
-
-nav.primary > ul > li i
-	display block
-	fontSize 3.2rem
-
-nav.primary > ul > li > span
-	display block
-
-////////////////////////////////////////
-
-nav.secondary
-	top $topbar-size !important
-	height calc(100% - 39px) !important
-	float left
-	width $sidebar-secondary-size
-	fondo textura hard
-	box-shadow 5px 0 10px 0 rgba($black, $shadowBoxOpacity)
-	border-right $borderDark
-	border-left $borderDark
-	showScroll()
-
-nav.secondary > ul li
-	text-align left
-	padding 0
-	//border-bottom none
-	//border-top none
-
-nav.secondary > ul li > a
-	fontSize $smallFontSize
-	padding 5px 0
-	padding-left 1.5rem
-	text-align left
-	text-decoration none
-	display: flex;
-	align-items: center;
-	&:focus
-		outline none
-
-nav.secondary > ul li > a i
-	font-size 2.8rem
-	vertical-align middle
-	margin-right 1rem
-
-// Cosas nuevas Carlos
-
-nav.secondary > ul li > a div
-	width 4rem
-	margin-right 1rem
-
-nav.secondary > ul li > a div i
-	width 100%
-	flexible h center center
-
-nav.secondary.retiring
-	z-index 3
-	noShadow()
-	position absolute
-	left -205px !important
-	transition left 0.5s ease-in 0s
-
-nav.secondary.overall
-	z-index 5
-	position absolute
-	left $sidebar-size
-	transition left 0.4s ease-in 0s, z-index 0.05s ease 0.48s
-
-.reducedMenu
-	nav.secondary.overall
-		left 50px
-	nav.primary
-		width 50px
-	nav.primary > ul > li > span
-		display none
-	nav.primary > ul > li > a > span
-		display none
-
-a:hover, a
-	text-decoration none
+	&:not(.uncollapsedSidebar)
+		.main-nav > nav
+			width 0

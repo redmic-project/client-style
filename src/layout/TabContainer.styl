@@ -7,9 +7,12 @@
 	// Common
 
 	.dijitTabPaneWrapper
-		fondo textura hard
+		fondo color $color13
 		border none
 		noScroll()
+
+		& > div > div
+			display flex
 
 	.dijitTabPane
 		showScroll()
@@ -22,7 +25,7 @@
 
 	.dijitTab
 		color $white
-		fondo textura hard
+		fondo color $color13
 		microMargined h
 		fontSize $normalFontSize
 		padding 7.3px 12px
@@ -131,6 +134,8 @@
 	// Custom
 
 	.sideTabContainer
+		width 100% !important
+		height 100% !important
 		noPadding()
 		bordeRedondeado()
 

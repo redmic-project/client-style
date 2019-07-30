@@ -11,16 +11,28 @@
 .hiddenId
 	noDisplay()
 
+.formContainerWithKeypad
+	display flex
+	flex-direction column-reverse
+	flex-grow 1
+	max-width 100%
+	max-height 100%
+
+	> div:last-child
+		overflow auto
+		display flex
+		flex-grow 1
+
 // Para todos los formularios
 .form
 .form-horizontal
 	color $white
 	noShadow()
 	height inherit
-	max-height calc(100% - 20px)
+	max-height calc(100% - 2rem)
 	showScroll()
-	padding 10px
-	min-width 25rem
+	padding 1rem
+	width calc(100% - 2rem)
 	fieldset
 		width 100%
 		noBorder()
@@ -116,7 +128,7 @@
 	margin-top 2rem
 
 .annotation
-	fondo textura medium
+	fondo color $color1
 	miniPadded()
 	bordeRedondeado()
 	bordeClaro()
@@ -176,13 +188,12 @@
 	position relative
 
 .textBoxModWidthExpand
-	@extend .fWidth
 	.additionalOptionInput
 		display flex
-		z-index 999
+		z-index 1
 		position absolute
 		right 0
-		height 29px
+		height 100%
 
 		.contentClick
 			align-items center
@@ -273,48 +284,72 @@
 		display flex
 		flex-direction column
 		padding 10px
-		.inputOptions, .valueOptions
+
+		.inputOptions
+		.valueOptions
 			display flex
 			flex-direction column
 			padding 3px 0
+
 			.item
 				padding 5px
 				cursor pointer
-				width 12rem
+				//width 12rem
+
 				&:hover
 					color $blue
+
 			.active
 				background-color $blue
 				border-radius 2px
 				font-weight bold
 				&:hover
 					color inherit
+
 		.inputOptions
 			padding-top 1rem
+
 		.valueOptions
 			border-bottom 1px solid #999
 			padding-bottom 1rem
+
 	.containerCenter
 		border-left 1px solid #999
-		width 45rem
+		//width 45rem
+
 		.containerInputs
 			display flex
 			justify-content center
+			flex-direction row
+			@media (max-width $media-low-size)
+				flex-direction column
+
 			> .containerInput:nth-child(2)
 				padding-left 0
+
 			.containerInput
 				display flex
 				flex-direction column
 				padding 10px
+
 				.dateTime
 					border 1px solid #555
 					border-radius 5px
 					display flex
 					flex-direction column
+
 				.control-input
 					padding 0
+
 				> div:nth-child(2)
 					margin-top 1rem
+
+				.dijitTextBox
+					width 100%
+
+				.dijitCalendar
+					width unset
+
 	.simpleDate
 		.timeInput
 			display none
@@ -327,12 +362,12 @@
 		flex-grow 1
 		display flex
 		justify-content center
-		padding-top 2rem
+		padding-top 1rem
 		fieldset
 			@extend .fWidth
 
 .dojoxColorPicker
-	background-image $linen-gray
+	background-color $color13
 	color white
 	.dojoxColorPickerPreview
 		border 1px solid rgba(255,255,255,0.5)
@@ -359,10 +394,6 @@
 	.dijitCalendarMonthContainer
 		.dijitButtonNode
 			padding 3px 5px
-		.dijitCalendarDecrementArrow,
-		.dijitCalendarIncrementArrow
-			padding 0 5px
-			line-height 3.5rem
 	.dijitCalendarDateTemplate
 		padding 1px 4px
 	.dijitCalendarDateLabel,

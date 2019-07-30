@@ -1,37 +1,40 @@
 .topZone
 	@extend .fWidth
 	noScroll()
-	min-height 3rem
-	fondo textura hard
+	min-height 2rem
+	padding 0.5rem 0
+	fondo color $color13
 	border-radius 5px 5px 0 0
 	border-radius unquote('0\9')
 	display flex
+	justify-content space-between
+	flex-wrap wrap
 
 	.dijitIcon
 		@extend .fWidth
 
 	.textSearchZone
 		display flex
-		padding 1rem 1rem
-		float right
+		padding 0 0.5rem
+		align-items center
+		max-width 30%
 
 	.titleZone
 		padding 0
-		line-height 5rem
-		font-size 2rem
+		fontSize 1.6rem
 		display flex
 		justify-content flex-start
+		align-items center
+		max-width 40%
+
 		span
 			padding-left 1rem
-			display inline-block
-			overflow hidden
-			white-space nowrap
-			text-overflow ellipsis
+			textEllipsis()
+
 	.widthLimitTitleZone
 		max-width calc(100% - 100px)
 
 	.optionZone
-		padding 1rem 0
 		display flex
 		justify-content space-between
 		padding-right 2rem
@@ -49,7 +52,6 @@
 
 .keypadZone, .selectZone
 	display flex
-	flex-grow 1
 	align-items center
 	justify-content flex-end
 	padding 0
@@ -76,7 +78,7 @@
 			i
 				@extend .clickable
 				margin 0 1rem
-				fontSize 2rem
+				fontSize 1.4rem
 
 		.iconGroup
 			display flex
@@ -112,7 +114,6 @@
 	fontSize 2rem
 
 .centerZone
-	height calc(100% - 5rem)
 	display flex
 	justify-content space-between
 	flex-direction row
@@ -120,18 +121,24 @@
 	noScroll()
 
 .facetsZone
-	width 25rem
-	min-width 25rem
-	fondo textura hard
+	position relative !important
+	height unset !important
+	width 15rem !important
+	@media (max-width $media-high-size)
+		width 14rem !important
+	@media (max-width $media-medium-size)
+		width 13rem !important
+	@media (max-width $media-low-size)
+		width 12rem !important
+	fondo color $color13
 	border-radius 0 0 0 5px
-	@extend .fHeight
 	.containerFacets
 		border-radius 0 0 0 5px
 		border-radius unquote('0\9')
 		margin 5px
 		height calc(100% - 10px)
 	.dijitTab
-		fondo textura hard
+		fondo color $color13
 		background-image none
 	.dijitTabPaneWrapper
 		background-image none
@@ -156,12 +163,7 @@
 
 .listZone
 	display flex
-	@extend .fHeight
-	@extend .col-xs-12
-	@extend .col-sm-12
-	@extend .col-md-12
-	@extend .col-lg-12
-	@extend .col-xl-12
+	width 100%
 	padding 0
 
 	.containerDetails
@@ -182,7 +184,12 @@
 		border-top 1px solid #4a4a54
 
 .dualContent
+	display flex
+	flex-flow column
+
 	.topZone
+		justify-content start
+
 		.buttonZone
 			padding 0
 			display flex
@@ -192,7 +199,7 @@
 
 	.dualCenterZone
 		position relative
-		height calc(100% - 5rem)
+		height calc(100% - 3rem)
 		noScroll()
 
 		.dualListZone
@@ -246,27 +253,6 @@
 	100%
 		transform translateX(100%)
 
-
-.embeddedContentTopbar
-	@extend .topZone
-	height 5rem
-	border-radius 5px
-	margin-bottom 5px
-
-.dijitDialog
-	.embeddedContentTopbar
-		border-radius 0
-
-.embeddedContentContainer
-	@extend .centerZone
-
-	.titleRedmic
-		color $grayLightest
-		fontSize 1.8rem
-
-	.listZone
-	.mapSideContainer
-		border-radius 5px
 
 li.objectClassification
 	&:not(:first-child)

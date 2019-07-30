@@ -1,0 +1,189 @@
+.designLayoutContainer
+	@extends .flexContainer
+	max-width 100%
+	max-height 100%
+
+
+.mapAndContentLayoutMapWithSideContentDesign
+	@media (orientation portrait)
+		flex-flow column
+
+	> .mapContainer
+	> .mapSideContainer
+		display flex
+		position relative
+
+	> .mapContainer
+		flex-grow 1
+		@media (orientation landscape)
+			margin-right 0.3rem
+
+			@media (min-resolution $mobile-min-density)
+				@media (max-aspect-ratio 4/3), (min-aspect-ratio 6/1)
+					display none
+
+		@media (orientation portrait)
+			margin-bottom 0.3rem
+
+	> .mapSideContainer
+		@media (orientation landscape)
+			height 100%
+			width 35%
+			max-width 40rem
+
+			@media (min-resolution $mobile-min-density)
+				@media (max-aspect-ratio 4/3), (min-aspect-ratio 6/1)
+					width 100%
+					max-width 100%
+
+		@media (orientation portrait)
+			height 35%
+			width 100%
+
+.mapAndContentAndTopbarLayoutMapWithSideContentDesign
+	@extends .flexContainer
+	flex-flow column
+
+	> :first-child
+		display flex
+		align-items center
+		height 3rem
+		padding 0.3rem
+		overflow auto
+
+	> .mapCenterContainer
+		@extend .designLayoutContainer
+		@extend .mapAndContentLayoutMapWithSideContentDesign
+		position relative
+		margin-top 0.3rem
+
+
+.layoutListDesign
+.layoutTextSearchListDesign
+.layoutTextSearchFacetsListDesign
+.layoutExternalTextSearchListDesign
+	flex-flow column
+
+	.centerZone
+		flex-grow 1
+
+.speciesMainTextSearchFacetsListDesign
+	.facetsZone
+		width 25rem !important
+		@media (max-width $media-high-size)
+			width 24rem !important
+		@media (max-width $media-medium-size)
+			width 23rem !important
+		@media (max-width $media-low-size)
+			width 20rem !important
+
+
+.topAndCenterContentLayoutEmbeddedContentWithTopbarDesign
+	flex-flow column
+	height 100%
+
+	.embeddedContentTopbar
+		@extend .topZone
+		border-radius 5px
+		margin-bottom 0.5rem
+
+	.embeddedContentContainer
+		@extend .centerZone
+		flex-grow 1
+
+		.titleRedmic
+			color $grayLightest
+			fontSize 1.8rem
+
+		.listZone
+		.mapSideContainer
+			border-radius 5px
+
+
+.topSecondaryContentLayoutDynamicDualContentDesign
+.leftSecondaryContentLayoutDynamicDualContentDesign
+.facetsInLeftSecondaryContentLayoutDynamicDualContentDesign
+	.primaryContent
+	.secondaryContent
+		display flex
+
+		> *
+			flex-grow 1
+
+	.primaryContent
+		display flex
+		flex-grow 1
+		overflow auto
+
+.topSecondaryContentLayoutDynamicDualContentDesign
+	flex-flow column
+
+.leftSecondaryContentLayoutDynamicDualContentDesign
+	flex-flow row
+
+
+.chartTopContent
+.chartTopAndBottomContent
+	@extend .fHeight
+	display flex
+	flex-direction column
+	.centerChartContent
+		display flex
+		flex-grow 1
+		height 100%
+
+.sideAndTopAndBottomContentLayoutChartDesign
+	@media (orientation portrait)
+		flex-flow column
+
+	> .chartCenterContainer
+	> .chartSideContainer
+		display flex
+		flex-direction column
+		position relative
+
+	> .chartCenterContainer
+		@extend .chartTopAndBottomContent
+		flex-grow 1
+		@media (orientation landscape)
+			margin-right 0.3rem
+
+		@media (orientation portrait)
+			margin-bottom 0.3rem
+
+	> .chartSideContainer
+		@media (orientation landscape)
+			height 100%
+			width 35%
+			max-width 40rem
+
+		@media (orientation portrait)
+			height 35%
+			width 100%
+
+		.chartSmartLegend
+			display flex
+			flex-grow 1
+			overflow none
+
+
+.layoutFormListDesign
+	&.twoColumnsLayout
+		.leftZone
+			margin-right 0.5rem
+			flex-grow 0
+
+
+.layoutDoubleListDesign
+	&.twoColumnsLayout
+		.leftZone
+			margin-right 0.5rem
+
+			.notFormZone
+				margin-bottom 0.5rem
+
+
+.atlasContainer
+	@extends .flexContainer
+	height 100%
+	overflow hidden

@@ -56,12 +56,6 @@ $yellowTitleRedmic = #fc0
 
 // Gráficos
 
-// Texturas
-$linen-gray-opa = url('/stylesheets/src/images/textures/linen-gray-opa.png')
-$linen-gray = url('/stylesheets/src/images/textures/linen-gray.png')
-$linen-light = url('/stylesheets/src/images/textures/linen-light.png')
-$linen-lighter = url('/stylesheets/src/images/textures/linen-lighter.png')
-
 // Iconos
 $worms-logo = url('/stylesheets/src/images/worms_logo.jpg')
 $pdf-logo = url('/stylesheets/src/images/pdf_logo.png')
@@ -88,9 +82,16 @@ $mediumOpacity = 0.5
 $highOpacity = 0.7
 $fullOpacity = 1
 $radio-esquinas = 5px
-$topbar-size = 39px
-$sidebar-size = 76px
-$sidebar-secondary-size = 20rem
+$topbar-default-size = 4rem
+$topbar-high-size = 4.3rem
+$topbar-medium-size = 4.6rem
+$topbar-low-size = 4.9rem
+$sidebar-default-size = 5.4rem
+$sidebar-high-size = 5.7rem
+$sidebar-medium-size = 6rem
+$sidebar-low-size = 6.3rem
+$sidebar-secondary-size = 18rem
+$notificationbar-size = 28rem
 $borderSize = $nano
 $borderType = $borderSize solid
 $borderSizeFat = $micro
@@ -100,19 +101,30 @@ $borde2 = $borderType $color2
 $borderDark = $borderType rgba($black, $mediumOpacity)
 $borderLight = $borderType rgba($white, $mediumOpacity)
 $loadingAndLockedZIndex = 10000
+$media-high-size = 1023px
+$media-medium-size = 839px
+$media-low-size = 599px
+$mobile-min-density = 200dpi
+$contentContainerChildPadding = 0.5rem
+
+// Window
+$moduleWindowMargin = 0.3rem
+$moduleWindowButtonSize = 1rem
+$detailsRowHeight = 9rem
+$detailsWindowMinWidth = 15rem
 
 // Tipografías
 $baseFontFamily = 'Open Sans', sans-serif;
 $fa-font-path = '/stylesheets/submodules/Font-Awesome-Stylus/fonts'
-$baseFontSize = 62.5%
-$baseLineHeight = 1.6rem
-$tinyFontSize = 1rem
-$smallFontSize = 1.2rem
-$normalFontSize = 1.4rem
-$bigFontSize = 1.6rem
-$giantFontSize = 1.8rem
-$hugeFontSize = 2.0rem
-$loadingFontSize = 4.0rem
+$baseFontSize = 14px
+$baseLineHeight = 120%
+$tinyFontSize = 0.6rem
+$smallFontSize = 0.8rem
+$normalFontSize = 1rem
+$bigFontSize = 1.2rem
+$giantFontSize = 1.4rem
+$hugeFontSize = 1.8rem
+$loadingFontSize = 12rem
 $textColor = $white
 
 // Sombras (componentes)
@@ -182,6 +194,12 @@ $gridBackgroundHover = lighten($gridSelectedBackground, 20%)
 $layerThumbnailWidth = 100px
 $layerThumbnailHeight = 67px
 
+// Clases abstractas
+.highlightOnHover
+	transition transform 0.2s ease-in-out
+	&:hover
+		filter drop-shadow(0 0 0.3rem $grayLighter)
+		transform scale(1.1)
 
 
 

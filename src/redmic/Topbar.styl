@@ -2,24 +2,92 @@
 	Plantilla para la barra superior.
 */
 
-
 .topbar
 	@extend .shadowBox
 	left 0px !important
 	width 100% !important
 	fondo degradado topbar
 	flexible h space-between center
-	border-bottom $borde1
-	height $topbar-size
+	height $topbar-default-size
+	@media (max-width $media-high-size)
+		height $topbar-high-size
+	@media (max-width $media-medium-size)
+		height $topbar-medium-size
+	@media (max-width $media-low-size)
+		height $topbar-low-size
 	noScroll()
+	z-index 6
 
-.topbarLogo
-	flexible h center center
-	//width $sidebar-size
-	min-width $sidebar-size
-	img.logo
-		width 115px
-		margin-left 7px
+	.collapseSidebarButton
+		@extend .fa
+		@extend .highlightOnHover
+		display flex
+		justify-content center
+		align-items center
+		width $sidebar-default-size
+		@media (max-width $media-high-size)
+			width $sidebar-high-size
+		@media (max-width $media-medium-size)
+			width $sidebar-medium-size
+		@media (max-width $media-low-size)
+			width $sidebar-low-size
+		height 2.5rem
+		fontSize 1.6rem
+		color $grayLighter
+
+		&:before
+			@extend .fa-bars:before
+
+	.topbarLogo
+		@extend .highlightOnHover
+		flexible h center center
+		user-select none
+		text-decoration none
+
+		&:hover
+			transform scale(1.01)
+
+		img
+			width 2rem
+			@media (max-width $media-medium-size)
+				width 2.5rem
+
+		span
+			@extend .titleRedmic
+			fontSize 2rem
+			margin-left 0.5rem
+			padding-bottom 0.2rem
+			@media (max-width $media-high-size)
+				padding-bottom 0
+			@media (max-width $media-medium-size)
+				display none
+
+	.topbarContent
+		display flex
+		flex-grow 1
+
+		> .manager
+			display flex
+			flex-grow 1
+
+		> .buttons
+			display flex
+
+.contentDisplacedByTopbar
+	top $topbar-default-size !important
+	@media (max-width $media-high-size)
+		top $topbar-high-size !important
+	@media (max-width $media-medium-size)
+		top $topbar-medium-size !important
+	@media (max-width $media-low-size)
+		top $topbar-low-size !important
+	height "calc(100% - %s)" % $topbar-default-size !important
+	@media (max-width $media-high-size)
+		height "calc(100% - %s)" % $topbar-high-size !important
+	@media (max-width $media-medium-size)
+		height "calc(100% - %s)" % $topbar-medium-size !important
+	@media (max-width $media-low-size)
+		height "calc(100% - %s)" % $topbar-low-size !important
 
 .manager
 	flexible h space-between center
@@ -35,9 +103,6 @@
 		.btnGroup
 			margin 0 3px
 			flexible h right center
-
-.displace
-	margin-left -13px
 
 .containerSelectionBox
 	display flex
@@ -65,26 +130,6 @@
 		align-items center
 		padding 0 4px
 		justify-content space-between
-
-.userAreaGuest
-	padding 0 2rem
-
-	a
-		color white
-		text-decoration none
-		cursor pointer
-		&:hover
-			color $blue
-		margin-right 3rem
-
-	a:last-child
-		margin-right 0
-
-.versionNumber
-	color #aaa
-	fontSize 1.2rem
-	padding 0 10px
-	user-select none
 
 .listMenu
 	.flag

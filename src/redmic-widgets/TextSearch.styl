@@ -1,24 +1,24 @@
 .containerTextSearch
 	display flex
-	width 100%
+	flex-grow 1
 
 	.textSearch
 		position relative
-		width calc(100% - 3rem)
+		width calc(100% - 2rem)
 		.fa-times
 			position absolute
 			z-index 3
 			color black
 			cursor pointer
-			margin-top 0.75rem
-			right 10px
+			margin-top 0.5rem
+			right 0.5rem
 			&:hover
 				color red
 
 		input
 			border none
 			width 100%
-			height 3rem
+			height 2rem
 			padding 0
 			padding-left 0.7rem
 			padding-right 2.5rem
@@ -32,15 +32,15 @@
 			color black
 			border-radius 5px 0 0 5px
 			position relative
-			z-index 2
+			//z-index 2
 			border-radius 5px 0 0 5px
 			top 0
 
 	.buttonSearch
 		flexible v center center
 		border-radius 0 5px 5px 0
-		width 3rem
-		height 3rem
+		width 2rem
+		height 2rem
 		border-left none
 		cursor pointer
 		background-color rgba(4, 156, 219, 0.5)
@@ -53,8 +53,8 @@
 		color white !important
 
 .suggestions
-	position relative
-	margin-top 3.2rem
+	position absolute
+	margin-top 2.1rem
 
 	z-index 999
 	width calc(100% - 2px)
