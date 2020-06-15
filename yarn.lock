@@ -338,12 +338,19 @@ delayed-stream@~1.0.0:
   resolved "https://registry.yarnpkg.com/delayed-stream/-/delayed-stream-1.0.0.tgz#df3ae199acadfb7d440aaae0b29e2272b24ec619"
   integrity sha1-3zrhmayt+31ECqrgsp4icrJOxhk=
 
-dijit@1.13.0, dijit@^1.13.0:
+dijit@1.13.0:
   version "1.13.0"
   resolved "https://registry.yarnpkg.com/dijit/-/dijit-1.13.0.tgz#42eceed26d5785d06323aa459306017684e74907"
   integrity sha512-trzi45atc86S37/AtgcUC4akByxpqeKfoOftXlgrTSoM136tjcgLbWUYGjFkP3hk2APTDrYOCSa8xTjhp3YPpw==
   dependencies:
     dojo "1.13.0"
+
+dijit@^1.13.8:
+  version "1.13.8"
+  resolved "https://registry.yarnpkg.com/dijit/-/dijit-1.13.8.tgz#a10105e5be2cafaf2376e45315380660fb5f47d7"
+  integrity sha512-XpKcrK76kEVnZxXzdBjqay/0vro7mSqW9bTA8idpfeyz2DDgtYtGM/BLnmfBytKqYu33Pd5UwPMjurRElyQ3kQ==
+  dependencies:
+    dojo "1.13.8"
 
 docopt@^0.4.1:
   version "0.4.1"
@@ -354,6 +361,11 @@ dojo@1.13.0:
   version "1.13.0"
   resolved "https://registry.yarnpkg.com/dojo/-/dojo-1.13.0.tgz#62a7c53628f4f7acfa791a96924c67f39cd5861b"
   integrity sha512-mGoGvsXAbPkUrBnxCoO7m6CFH8jvWq7rAL7fP7jrhJEOyswA/bZwWdXwEH0ovs68t8S0+xOpV/3V7addYbaiAA==
+
+dojo@1.13.8:
+  version "1.13.8"
+  resolved "https://registry.yarnpkg.com/dojo/-/dojo-1.13.8.tgz#5f6d150ac028b23c2b4001fa79399b6943011ea0"
+  integrity sha512-LYFynZD4mKGJWeO5iDRWlHoo05OSw2TryvWI4pFVLeI6AOzTxD0Y1XtuGN4M/am1u2Y9J9UKrfsgFFs16YS93g==
 
 dojox@^1.13.0:
   version "1.13.0"
