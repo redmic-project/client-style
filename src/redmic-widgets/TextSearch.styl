@@ -2,79 +2,103 @@
 	display flex
 	flex-grow 1
 
+	.innerButtons
+	.outerButtons
+		display flex
+		align-items center
+
+		.clearTextButton
+		.expandSearchButton
+		.searchButton
+			@extend .fa
+			cursor pointer
+			width 1.5rem
+			display flex
+			justify-content center
+			color black
+
 	.textSearch
 		position relative
-		width calc(100% - 2rem)
-		.fa-times
-			position absolute
-			z-index 3
-			color black
-			cursor pointer
-			margin-top 0.5rem
-			right 0.5rem
+		display flex
+		flex-grow 1
+		background-color $white
+		border-radius 5px 0 0 5px
+		padding 0.5rem 0
+
+		.innerButtons
+			padding-right 0.5rem
+
+		.clearTextButton
 			&:hover
 				color red
+			&:before
+				@extend .fa-times:before
 
-		input
-			border none
-			width 100%
-			height 2rem
-			padding 0
-			padding-left 0.7rem
-			padding-right 2.5rem
-			background transparent
-		.autocomplete
-			position absolute
-			z-index 0
-			color grey
 		.inputSearch
-			background-color #fff
+			border none
+			flex-grow 1
+			padding 0 0.7rem
+			background-color $white
 			color black
 			border-radius 5px 0 0 5px
 			position relative
-			//z-index 2
-			border-radius 5px 0 0 5px
 			top 0
 
-	.buttonSearch
-		flexible v center center
+	.outerButtons
 		border-radius 0 5px 5px 0
-		width 2rem
-		height 2rem
-		border-left none
-		cursor pointer
-		background-color rgba(4, 156, 219, 0.5)
-		&:hover
-			fondo color $blue
-			.fa-search
-				font-size 16px
-	.hover
-		background-image linear-gradient(to bottom, $blue, $blue)
-		color white !important
+		background-color $white
+
+		.expandSearchButton
+		.searchButton
+			padding 0 0.5rem
+
+			&:hover
+				color $blue
+
+		.searchButton
+			&:before
+				@extend .fa-search:before
+
+		.expandSearchButton
+			&:before
+				@extend .fa-ellipsis-v:before
+
+		> :first-child
+			border-left 1px solid $gray
+
+		> :not(:last-child)
+			border-right 1px solid $grayLighter
+
+	&.suggestionsShown
+		.textSearch
+			border-radius 5px 0 0 0
+		.outerButtons
+			border-radius 0 5px 0 0
+
 
 .suggestions
 	position absolute
-	margin-top 2.1rem
-
+	margin-top 2.3rem
+	display flex
+	flex-direction column
+	flex-grow 1
 	z-index 999
-	width calc(100% - 2px)
-	flexible v center left
-
-	border-radius 5px
+	border-radius 0 0 5px 5px
 	box-shadow inset 0 0 22px -11px rgba(0,0,0,0.5)
-	border 1px solid silver
+	background-color $white
+	max-height 40%
+	overflow auto
 
-	background-color white
 	span
 		color black
 		padding 5px
 		cursor pointer
-		border-top 1px solid rgba(0, 0, 0, 0.1)
+		border-top 1px solid rgba(black, 0.1)
 		&:last-child
 			border-radius 0 0 5px 5px
+		&:hover
+			background-color $blue
+			color white
 		img
 			width 15px
 			height 15px
-	.hover
-		background-image linear-gradient(to bottom, $blue, $blue)
-		color white !important
