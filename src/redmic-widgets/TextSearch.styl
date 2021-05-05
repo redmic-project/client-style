@@ -27,9 +27,11 @@
 
 		.innerButtons
 			*
-				padding 0 0.5rem
+				&:not(:last-child)
+					padding-right 0.25rem
 
 				&:last-child
+					padding-right 0.5rem
 					border-right 1px solid $gray
 
 		.clearTextButton
@@ -39,14 +41,11 @@
 				@extend .fa-times:before
 
 		.inputSearch
+			width 100%
 			border none
-			flex-grow 1
-			padding 0 0.7rem
+			padding-left 0.4rem
 			background-color $white
-			color black
-			border-radius 5px 0 0 5px
-			position relative
-			top 0
+			color $black
 
 	.outerButtons
 		border-radius 0 5px 5px 0
