@@ -427,6 +427,7 @@ body.uncollapsedSidebar
 
 		.moduleWindow
 			@extend .fHeight
+			background linear-gradient(bottom, $colorGrayBlack, $color13)
 
 		& > div, .moduleWindow
 			display flex
@@ -462,7 +463,6 @@ body.uncollapsedSidebar
 			min-width $detailsWindowMinWidth - $moduleWindowButtonSize
 			min-height $detailsRowHeight - $moduleWindowButtonSize
 			border-radius 5px 5px 0 5px
-			background linear-gradient(bottom, $colorGrayBlack, $color13)
 
 			.windowContent
 				padding 0 2px
