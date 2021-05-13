@@ -1,6 +1,9 @@
 .containerTextSearch
 	display flex
 	flex-grow 1
+	background-color $color2
+	border-radius 5px
+	color $white
 
 	.innerButtons
 	.outerButtons
@@ -15,14 +18,11 @@
 			width 1.5rem
 			display flex
 			justify-content center
-			color black
 
 	.textSearch
 		position relative
 		display flex
 		flex-grow 1
-		background-color $white
-		border-radius 5px 0 0 5px
 		padding 0.5rem 0
 
 		.innerButtons
@@ -40,17 +40,14 @@
 			&:before
 				@extend .fa-times:before
 
-		.inputSearch
+		input
 			width 100%
 			border none
 			padding-left 0.4rem
-			background-color $white
-			color $black
+			background-color inherit
+			color inherit
 
 	.outerButtons
-		border-radius 0 5px 5px 0
-		background-color $white
-
 		.expandSearchButton
 		.searchButton
 			padding 0 0.5rem
@@ -84,21 +81,20 @@
 	flex-grow 1
 	z-index 999
 	border-radius 0 0 5px 5px
-	box-shadow inset 0 0 22px -11px rgba(0,0,0,0.5)
-	background-color $white
+	box-shadow inset 0 0 22px -11px rgba($black,0.5)
+	background-color $color2
 	max-height 40%
 	overflow auto
 
 	span
-		color black
+		color $white
 		padding 5px
 		cursor pointer
-		border-top 1px solid rgba(black, 0.1)
+		border-top 1px solid rgba($white, 0.1)
 		&:last-child
 			border-radius 0 0 5px 5px
 		&:hover
 			background-color $blue
-			color white
 		img
 			width 15px
 			height 15px

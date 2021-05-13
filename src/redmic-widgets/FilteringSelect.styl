@@ -12,7 +12,7 @@
 			color #AAAAAA
 			border 1px solid rgba(255, 255, 255, 0.0)
 
-		.inputSearch
+		input
 			background transparent
 			color white
 			border 1px solid rgba(255, 255, 255, 0.7)
@@ -28,10 +28,14 @@
 
 	.disable
 		opacity 0.4
-		&, .inputSearch, .fa-times
+		&
+		input
+		.fa-times
 			cursor not-allowed
+
 		&:hover
 			background-color initial
+
 		.fa-times
 			&:hover
 				color white
