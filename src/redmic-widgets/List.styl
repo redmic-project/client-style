@@ -119,9 +119,9 @@
 	.contentList
 		position relative
 		overflow auto
-		background-color white
+		background-color $color1
 		flex-grow 1
-		color black
+		color $white
 		display flex
 		align-items center
 
@@ -141,9 +141,9 @@
 
 		.containerRow
 			&:nth-child(odd)
-				background-color #fff
+				background-color $color5
 			&:nth-child(even)
-				background-color #ddd
+				background-color $color1
 
 		.dragAndDropContainerRow
 			background-color #aaa !important
@@ -242,7 +242,7 @@
 			justify-content space-around
 
 	.contentListNoData
-		background-color #eee
+		background-color $color2
 
 	.check
 		width 1rem
@@ -265,8 +265,6 @@
 	.notDataFound
 		@extend .fHeight
 		flexible h center center
-		span
-			color black
 
 .containerList, .infoTitle
 	.iconList
@@ -281,31 +279,18 @@
 	.contentList
 		user-select none
 		cursor default
+
 		.rowsContainer
 			position inherit
 			width inherit
+
 		img
 			user-drag none
-		background-color #f2f2f2
+
 		.containerRow
-			background-color #f2f2f2 !important
-
-			.containerTopRow
-				border-bottom 1px solid #ccc
-				border-left 1px solid #ccc
-				background-color #e6e6e6
-
-				.rowList
-					padding 0px 5px
-
-				.containerButtons
-					padding 2px 10px
-
 			.containerBottomRow
 				.containerTopRow
-					border-bottom 1px solid #dedede
-					border-left 1px solid #dedede
-					background-color #cbcbcb
+					border-left 1px solid $color4
 
 		.containerTopRow
 			.expandCollapse
@@ -504,10 +489,6 @@
 .dialogSimple
 	.dijitContentPaneSingleChild, .topZone, .contentList
 		border-radius 0
-
-.infoContainer
-	.contentListNoData
-		background-color #D7D7D7
 
 .removed
 	animation disappear 0.5s
