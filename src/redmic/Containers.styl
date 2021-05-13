@@ -49,8 +49,6 @@
 
 #rootContainer
 	@extend .masterContainer
-	min-width 300px
-	min-height 300px
 
 // Estructura
 
@@ -155,7 +153,9 @@
 		height "calc(100% - %s)" % $topbar-low-size
 
 	> *
-		padding $contentContainerChildPadding
+		padding $contentContainerChildPadding !important
+		max-width "calc(100% - 2 * %s) !important" % $contentContainerChildPadding
+		max-height "calc(100% - 2 * %s) !important" % $contentContainerChildPadding
 
 body.uncollapsedSidebar
 	.contentContainer
