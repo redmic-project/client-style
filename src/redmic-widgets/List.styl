@@ -119,7 +119,7 @@
 	.contentList
 		position relative
 		overflow auto
-		background-color $color1
+		background-color $color12
 		flex-grow 1
 		color $white
 		display flex
@@ -143,7 +143,7 @@
 			&:nth-child(odd)
 				background-color $color5
 			&:nth-child(even)
-				background-color $color1
+				background-color $color12
 
 		.dragAndDropContainerRow
 			background-color #aaa !important
@@ -218,7 +218,7 @@
 
 
 		.containerButtons
-			color black
+			color $white
 			padding 10px
 			display flex
 			justify-content flex-end
@@ -289,8 +289,14 @@
 
 		.containerRow
 			.containerBottomRow
+				background-color $color12
+				border-top 1px solid $gray
+
 				.containerTopRow
-					border-left 1px solid $color4
+					border-left 1px solid $gray
+
+				.containerBottomRow
+					border-top none
 
 		.containerTopRow
 			.expandCollapse
