@@ -1,7 +1,3 @@
-.background
-	background-color $colorGrayBlack
-	color #fff
-
 .backgroundSoft
 	background-color #eee
 
@@ -9,24 +5,25 @@
 	color #444
 
 .borderTop
-	border-top 1px solid $colorBorderTemplateCatalog
+	border-top 1px solid $gray
 
 .borderBottom
-	border-bottom 1px solid $colorBorderTemplateCatalog
+	border-bottom 1px solid $gray
 
 .borderRight
-	border-right 1px solid $colorBorderTemplateCatalog
+	border-right 1px solid $gray
 
 .containerDetails
 	@extend .fHeight
-	color black
+	color $white
+	background-color $color12
 
 	.noDataFound
-		background-color white
 		border-radius 5px
 		min-height 12rem
 
-	h2, h4
+	h2
+	h4
 		margin 0
 
 	.cursive
@@ -35,7 +32,6 @@
 	.header
 		border-radius 5px 5px 0 0
 		flexible h center center
-		background-color white
 		height 12rem
 		box-shadow inset 0 0 22px -8px rgba(0,0,0,0.5)
 		border-bottom 1px solid rgba(0,0,0,0.2)
@@ -56,6 +52,7 @@
 				font-style italic
 			.name
 				font-style normal
+
 		.right
 			width 10%
 			flexible h center center
@@ -65,45 +62,49 @@
 	.content
 		@extend .fHeight
 		overflow auto
-		background-color white
 		border-radius 0 0 5px 5px
-		border-left 1px solid $colorBorderTemplateCatalog
 
 		.grid
 			@extend .fHeight
 			padding 0 0
+
 			&:last-child
 				border none
+
 			h4
 				padding 0 10px
-				//line-height 3rem
 				@extend .borderRight
+
 				i
 					margin-right 10px
 
-			.contentGrid, .contentGridList
-				@extend .borderRight
+			.contentGrid
+			.contentGridList
 				overflow auto
-				height calc(100% - 3rem)
+				//height calc(100% - 3rem)
 
 			.contentGrid
-				.row
+				> div
 					display flex
-					margin 0 0
 					@extend .borderBottom
-					div
-						padding 0 0
-						> span, > p
-							padding 0 10px
-							//line-height 3rem
-							margin 0
+
+					> div
+						padding .8rem 0
+						> span
 						> p
-							//line-height 2.5rem
+							padding 0 .6rem
+							margin 0
+
 					.rowLeft
-						@extend .backgroundSoft
-						@extend .colorTextSoft
+						@extend .inlineRow
+						background-color $color5
+
+					div:not(.rowLeft)
+						overflow auto
+
 					.status
 						text-transform capitalize
+
 					.code
 						color red
 
@@ -111,20 +112,20 @@
 						display flex
 						justify-content space-between
 						align-items center
+
 						a
 							margin-right 1rem
+
 				.rowDest
-					height 5rem
-					border-bottom 1px solid #fff
 					div
 						display flex
 						align-items center
-					div:first-child
-						background-color rgba(69, 156, 219, 0.3)
-						span
-							color #777
-					div:last-child
-						background-color: rgba(69, 156, 219, 0.2)
+
+						&:first-child
+							@extend .inlineRow
+							background-color rgba($blue, 0.3)
+						&:last-child
+							background-color: rgba($blue, 0.2)
 				.double
 					div
 						width 50%
@@ -198,7 +199,7 @@
 					border none
 				height auto
 				border none
-				border-bottom 1px solid $colorBorderTemplateCatalog
+				border-bottom 1px solid $gray
 				.contentGrid
 					div:last-child
 						border none
@@ -239,7 +240,7 @@
 						flexible v center top
 						div
 							width 100%
-							border-bottom 1px solid $colorBorderTemplateCatalog
+							border-bottom 1px solid $gray
 							&:last-child
 								border none
 

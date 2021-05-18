@@ -235,22 +235,30 @@
 					flex-wrap wrap
 					flex-basis 3rem
 
-					> i
-					> div
-					> a i
-						margin 0
-						padding .2rem
-
-					> a
-					> i
-					> a i
+					> *
 						display flex
 						justify-content center
 						flex-direction column
-						color $gray
+						margin 0
+						padding .2rem
+//					> i
+//					> div
+//					> a i
+//						margin 0
+//						padding .2rem
 
+//					> a
+//					> i
+//					> a i
+//						display flex
+//						justify-content center
+//						flex-direction column
+//						color $gray
+
+				&.selectContainerRow
+					.containerButtons
 						.fa-info-circle
-							color $blue
+							color $white
 
 				.containerButtonsForm
 					justify-content space-around
@@ -295,9 +303,6 @@
 	.iconList
 		cursor pointer
 		font-size 20px
-
-		&:hover
-			color $blue !important
 
 .containerHierarchicalList
 	overflow overlay
