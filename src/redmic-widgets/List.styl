@@ -188,8 +188,15 @@
 				.containerTopRowDragAndDrop
 					cursor move
 
+				&.selectContainerRow
+					&:nth-child(odd) > .containerTopRow
+						background-color $blue !important
+					&:nth-child(even) > .containerTopRow
+						background-color lighten($blue, 20%) !important
+
 				&.selectContainerRow > .containerTopRow
-					background-color $blue !important
+					&:hover
+						box-shadow inset 0px 0px 1rem 0 rgba($black, 0.3) !important
 
 					span
 						&.checkboxIcon
@@ -222,8 +229,13 @@
 
 				em
 				b
-					color $color15
-					font-weight 600
+					fontSize 1.2
+					color $blue
+
+				&.selectContainerRow
+					em
+					b
+						color $blueDark
 
 				.containerButtons
 					color $white
