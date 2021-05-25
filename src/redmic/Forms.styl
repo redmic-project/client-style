@@ -66,17 +66,21 @@
 	&.inverseLeftContainer
 		.inputContainer
 			> *
-			margin-bottom 1rem
+				margin-bottom 1rem
+
 			.leftContainer
 				flex-direction row-reverse
+
 				label
 					text-align left
 
 				.containerDisableSwitch
 					padding-left 0
+
 			&.noWrap
 				.leftContainer
 					flex-direction row
+
 				label
 					text-align right
 
@@ -109,12 +113,21 @@
 			text-align left
 
 		.containerDisableSwitch
-			padding-right 1rem
-			padding-left 1rem
-			display flex
-			justify-content center
-			font-size 2rem
+		.inputInfoButton
+			padding 0 .5rem
 			cursor pointer
+
+		.containerDisableSwitch
+			font-size 1.6rem
+
+		.inputInfoButton
+			@extend .fa
+
+			&:before
+				@extend .fa-info-circle:before
+
+			&:hover
+				color $blue
 
 	.rightContainer
 		flex-grow 4
