@@ -1,5 +1,5 @@
 .containerFilteringSelect
-	border 1px solid rgba($white, 0.7)
+	border 1px solid $inputBorder
 	border-radius 5px
 	background-color $color1
 
@@ -9,7 +9,7 @@
 	.textSearch
 		width calc(100% - 3.2rem)
 		border-radius 5px 0 0 5px
-		border-right inherit
+		border-right 1px solid $inputBorder
 		padding 0
 
 		.fa-times
@@ -40,7 +40,7 @@
 		align-items center
 		justify-content center
 		height auto
-		width 3.3rem
+		width 2.5rem
 		cursor pointer
 
 		&:hover
@@ -61,7 +61,7 @@
 				color white
 
 	.notValid
-		border-color #b94a48 !important
+		border-color $red !important
 
 // TODO unificar con suggestions
 .filteringResult
@@ -70,12 +70,12 @@
 	z-index 999
 	margin-top 3.1rem
 	border-radius 5px
-	box-shadow 0 5px 10px rgba($black, .2)
+	box-shadow 0 5px 10px rgba($white, .5)
 	border 1px solid rgba($black, .5)
 	border-top none
 	> span
 		padding 5px
-		color black
+		color $black
 		cursor pointer
 		img
 			width 15px
@@ -111,7 +111,7 @@
 	.hover
 		background-color $blue !important
 		span
-			color #fff !important
+			color $white !important
 
 .notFormZone .containerFilteringSelect .buttonSearch
 	height 2.8rem

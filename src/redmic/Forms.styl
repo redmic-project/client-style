@@ -140,6 +140,9 @@
 	fontSize $normalFontSize
 	margin-top 0
 
+	&.dijitDisabled
+		box-shadow none
+
 .form-vertical
 	display flex
 	padding-top 0 !important
@@ -231,6 +234,11 @@
 	position relative
 
 .textBoxModWidthExpand
+	border-radius 5px
+
+	&:focus-within
+		@extend .db .dijitTextBoxFocused
+
 	.additionalOptionInput
 		display flex
 		z-index 1
@@ -261,7 +269,7 @@
 				color $blue
 
 	.disable
-		opacity 0.4
+		opacity .5
 		.contentClick
 		.contentClear
 			cursor not-allowed
@@ -278,7 +286,7 @@
 .textBoxModWidthExpand
 .multiSelect
 	.contentClick
-		width 3.3rem
+		width 2.5rem
 		display flex
 		justify-content space-around
 		cursor pointer
