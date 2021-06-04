@@ -85,36 +85,6 @@
 				.iconModule
 					fontSize 3rem
 
-		.lastActivityModule
-			flexible h space-between center
-			min-height 5rem
-			padding 0 1rem
-
-			span
-				textEllipsis()
-				margin-right 0.5rem
-
-				.spanTemplate .subtitle
-					color #bbb
-
-			a
-				fontSize 1.6rem
-
-			&:hover
-				fondo color $blue
-
-				.spanTemplate
-					.span, .status, .subtitle, .subtitle i, .iconList:hover, em
-						color #fff !important
-
-				a
-					color #fff
-					&:hover
-						color grey
-
-		.lastActivityModule:nth-child(odd)
-			@extend .softSolidContainer
-
 .domains
 	overflow auto
 	@extend .borderRadiusBottom
@@ -168,6 +138,7 @@ a:hover
 		margin 0.2rem 0.5rem
 
 .searchBarPanel
+	flex-flow column
 	justify-content center
 	padding 0 30%
 
@@ -179,7 +150,18 @@ a:hover
 		padding 0 1rem
 
 	> div
-		align-self center
+		&:first-child
+			align-self center
+			padding .5rem
+			width calc(100% - 1rem)
+
+		&:last-child
+			color $grayLighter
+			text-align center
+			margin-top .5rem
+
+			b
+				color $blue
 
 .productContainer
 .statisticsContainer
