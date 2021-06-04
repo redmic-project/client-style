@@ -669,3 +669,29 @@ body.uncollapsedSidebar
 .kibana-dashboard
 	width calc(100% - 4px)
 	height calc(100% - 8px)
+
+.containerSelectionBox
+	display flex
+	align-items center
+
+	.seeSelection
+		display flex
+		align-items center
+		margin-left 0.5rem
+
+		> span
+			padding-right 1rem
+
+		select
+			min-width 9rem
+
+		&.active
+			select
+				border-color $blue !important
+
+	.selectionBox
+		cursor default
+		display flex
+		align-items center
+		padding 0 4px
+		justify-content space-between
