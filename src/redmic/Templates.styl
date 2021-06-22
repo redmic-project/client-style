@@ -1,0 +1,22 @@
+.badgesContainer
+	display flex
+	align-items center
+
+	> i
+		padding .5rem
+
+	.activityInProgressIcon
+	.activityConcludedIcon
+	.activityEmbargoedIcon
+		@extend .fa
+		fontSize 1.6rem
+
+	.activityInProgressIcon:before
+		@extend .fa-folder-o:before
+
+	.activityConcludedIcon:before
+		@extend .fa-folder-open-o:before
+
+	.activityEmbargoedIcon
+		@extend .fa-lock:before
+		color $red
