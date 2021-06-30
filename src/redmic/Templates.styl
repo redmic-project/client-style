@@ -7,16 +7,39 @@
 
 	.activityInProgressIcon
 	.activityConcludedIcon
+	.activityPendingIcon
+	.activityFreeIcon
 	.activityEmbargoedIcon
+	.activityRestrictedIcon
+	.activityConfidentialIcon
+	.activityInspireThemeIcon
 		@extend .fa
 		fontSize 1.6rem
 
 	.activityInProgressIcon:before
-		@extend .fa-folder-o:before
+		@extend .fa-folder-open-o:before
+		color $green
 
 	.activityConcludedIcon:before
-		@extend .fa-folder-open-o:before
+		@extend .fa-folder-o:before
+		color $red
 
-	.activityEmbargoedIcon
+	.activityPendingIcon:before
+		@extend .fa-hourglass-half:before
+		color $orange
+
+	.activityFreeIcon:before
+		@extend .fa-unlock-alt:before
+		color $green
+
+	.activityEmbargoedIcon:before
 		@extend .fa-lock:before
+		color $red
+
+	.activityRestrictedIcon:before
+		@extend .fa-low-vision:before
+		color $orange
+
+	.activityConfidentialIcon:before
+		@extend .fa-users:before
 		color $red
