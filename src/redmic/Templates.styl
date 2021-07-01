@@ -1,9 +1,11 @@
 .badgesContainer
 	display flex
 	align-items center
+	margin-top .5rem
 
 	> i
-		padding .5rem
+		padding .1rem .3rem
+		margin 0 .2rem
 
 	.activityInProgressIcon
 	.activityConcludedIcon
@@ -43,3 +45,8 @@
 	.activityConfidentialIcon:before
 		@extend .fa-users:before
 		color $red
+
+.selectContainerRow
+	.badgesContainer
+		i:before
+			color $white
