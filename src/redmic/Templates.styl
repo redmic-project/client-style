@@ -6,25 +6,16 @@
 	> i
 		padding .1rem .3rem
 		margin 0 .2rem
-
-	.activityInProgressIcon
-	.activityConcludedIcon
-	.activityPendingIcon
-	.activityFreeIcon
-	.activityEmbargoedIcon
-	.activityRestrictedIcon
-	.activityConfidentialIcon
-	.activityInspireThemeIcon
 		@extend .fa
 		fontSize 1.6rem
 
 	.activityInProgressIcon:before
-		@extend .fa-folder-open-o:before
+		@extend .fa-folder-open:before
 		color $green
 
 	.activityConcludedIcon:before
-		@extend .fa-folder-o:before
-		color $red
+		@extend .fa-folder:before
+		color $grayLight
 
 	.activityPendingIcon:before
 		@extend .fa-hourglass-half:before
@@ -45,6 +36,19 @@
 	.activityConfidentialIcon:before
 		@extend .fa-users:before
 		color $red
+
+	.activityConfidentialIcon:before
+		@extend .fa-users:before
+		color $red
+
+	.activityWithResourcesIcon:before
+		@extend .fa-external-link:before
+		color $grayLight
+
+	.activityStarredIcon:before
+		@extend .fa-star:before
+		color $yellow
+
 
 .selectContainerRow
 	.badgesContainer
