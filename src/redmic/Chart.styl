@@ -5,8 +5,22 @@
 	@extend .fHeight
 	flexible v center center
 	overflow hidden
-	background-color #eee
+	background-color $color1
 	user-select none
+
+	.axis
+	.gridAxis
+		stroke $white
+		fill $white
+
+		path
+			display none
+
+		line
+			stroke inherit
+
+		text
+			fill inherit
 
 	.axis
 		text
@@ -14,17 +28,10 @@
 			font-weight bold
 			stroke none
 			pointer-events none
+
 		line
 			fill none
 			shape-rendering crispEdges
-
-	.axis
-	.gridAxis
-		stroke $black
-		fill $black
-
-		path
-			display none
 
 	.gridAxis
 		stroke-dasharray 1 4
@@ -71,8 +78,8 @@
 	.radialAxis
 		text
 		line
-			$radialAxisShadow = 0 0 10px $white
-			text-shadow $radialAxisShadow, $radialAxisShadow, $radialAxisShadow, $radialAxisShadow
+			filter drop-shadow(.1rem .1rem .06rem $black)
+			text-shadow 0 0 .5rem $black
 
 	.linearChart
 		fill none
@@ -104,7 +111,7 @@
 
 	.zoomByDraggingRect
 		fill $blue
-		fill-opacity 0.2
+		fill-opacity .2
 
 	.infoOnMouseOverCircle
 		.insideCircle
@@ -120,10 +127,10 @@
 	.sliderBrush
 		.overlay
 			fill $blue
-			fill-opacity 0.1
+			fill-opacity .1
 		.selection
 			fill $blue
-			fill-opacity 0.2
+			fill-opacity .4
 			stroke none
 		.handle
 			fill $blue
@@ -137,6 +144,9 @@
 				text-shadow 1px 1px $black
 
 	.chartLegendBar
+		text:last-child
+			fill $white
+
 		.chartLegendTitle
 			negrita()
 
@@ -151,6 +161,9 @@
 		text-anchor end
 		fontSize 1.1rem
 
+		text
+			fill $white
+
 	.emptyDataMessage
 		@extend .fWidth
 		@extend .fHeight
@@ -158,7 +171,7 @@
 		flex-flow column
 		align-items center
 		justify-content center
-		color $black
+		color $white
 
 		i
 			fontSize 3rem
@@ -173,17 +186,18 @@
 .underChartContent
 	flexible h space-between center
 	flex-wrap wrap
+	background-color $color1
 
 .aboveChartContent
 	height 50px
 	padding 0 1rem
 	color $white
-	fondo color $color1
 
 	i
 		padding 0 .5rem
 
-	.icon, .titleButton
+	.icon
+	.titleButton
 		@extend .clickable
 		&.disabled
 			opacity .4
@@ -203,7 +217,6 @@
 	@extend .fWidth
 	height 55px
 	border-radius 0 0 5px 5px !important
-	fondo color #eee
 
 .chartsToolbar
 	flexible h flex-start center
