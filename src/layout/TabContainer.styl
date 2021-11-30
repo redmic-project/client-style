@@ -6,10 +6,17 @@
 .db
 	// Common
 
+	.dijitTabContainer
+		overflow hidden !important
+
 	.dijitTabPaneWrapper
 		fondo color $color13
 		border none
 		noScroll()
+
+		& > div
+			display flex !important
+			height 100%
 
 		& > div > div
 			display flex
@@ -28,7 +35,7 @@
 		fondo color $color13
 		microMargined h
 		fontSize $normalFontSize
-		padding 7.3px 12px
+		padding 8px 12px
 		opacity $highOpacity
 		bordeRedondeado()
 		min-width 15px

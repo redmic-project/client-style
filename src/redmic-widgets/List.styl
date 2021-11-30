@@ -1,13 +1,9 @@
-.containerList .bottomList, .bottomListBorder .contentList
+.containerList .bottomList
+.bottomListBorder .contentList
 	border-radius 0 0 5px 5px
+	border-top solid 1px $gray
 
 .containerList
-	@extend .col-xs-12
-	@extend .col-sm-12
-	@extend .col-md-12
-	@extend .col-lg-12
-	@extend .col-xl-12
-
 	padding 0
 	display flex
 	flex-flow column
@@ -16,32 +12,37 @@
 	.pagination
 		display flex
 		margin 0
-		li.active > a, li.active > span,
-		li > a, li > span
-			padding 0px 5px
-			cursor pointer
-			color white
 
-		li > a, li > span
-			background-color transparent
-			border none
-			height 1.6rem
-			display flex !important
-			align-items center
+		li
+			> a
+			> span
+				padding 0px 5px
+				cursor pointer
+				color $white
+				background-color transparent
+				border none
+				height 1.6rem
+				display flex !important
+				align-items center
 
-		li.active > a, li.active > span
-			background-color $blue
-			border-radius 5px
+			&.active
+				> a
+				> span
+					background-color $blue
+					border-radius 5px
 
-		li > .angle:hover
-			color $blue
+			> .angle:hover
+				color $blue
 
-		li.disabled > a, li.disabled > span
-			cursor not-allowed
-			background-color transparent
-			color rgba(255,255,255,0.5)
-		li.disabled > .angle:hover
-			color black
+			&.disabled
+				> a
+				> span
+					cursor not-allowed
+					background-color transparent
+					color rgba($white, 0.5)
+
+				> .angle:hover
+					color $black
 
 	.framework
 		fondo color $color13
@@ -60,21 +61,24 @@
 			margin-bottom 5px
 			i
 				fontSize 1.4rem
-				color #fff
+				color $white
 
 		.totalResult
 			display flex
 			align-items center
+
 			span
-				color white
-			span:first-child
-				padding-right 5px
+				color $white
+
+				&:first-child
+					padding-right 5px
 
 		.orderZone
 			display flex
 			justify-content center
 			align-items center
 			flex-wrap wrap
+
 			> span
 				display flex
 				margin-right 1rem
@@ -83,13 +87,16 @@
 				position relative
 				display flex
 				align-items center
+
 				select
 					padding-left 2rem
+
 				span
 					position absolute
 					left 5px
 					top 6px
 					cursor pointer
+
 					&:hover
 						color $blue
 
@@ -100,12 +107,14 @@
 			align-items center
 
 			.selectOption
-				color black
-		.paginate, .containerOrder, .containerSelectionBox
+				color $black
+
+		.paginate
+		.containerOrder
+		.containerSelectionBox
 			.form-control
 				background-color $color1
-				color white
-				border-color rgb(169, 169, 169)
+				color $white
 
 	.flexEndContent
 		justify-content flex-end
@@ -119,9 +128,10 @@
 	.contentList
 		position relative
 		overflow auto
-		background-color white
+		height 100%
+		background-color $color12
 		flex-grow 1
-		color black
+		color $white
 		display flex
 		align-items center
 
@@ -131,221 +141,246 @@
 			top 0
 			width 100%
 			align-self flex-start
-			overflow hidden
-
-		.rowsContainer .rowsContainer
-			padding-left 2rem
-
-		.containerRow
-			&:nth-child(odd)
-				background-color #fff
-			&:nth-child(even)
-				background-color #ddd
-
-		.dragAndDropContainerRow
-			background-color #aaa !important
-
-		.borderTopDragAndDrop
-			border-top 20px solid #fc0 !important
-
-		.borderBottomDragAndDrop
-			border-bottom 20px solid #fc0 !important
-
-		.containerTopRow
-			padding 6px 0 6px 10px
-			flexible h left center
-
-			&:hover
-				box-shadow inset 0px 0px 10px 2px rgba(0, 0, 0, 0.3) !important
-
-			.rowList
-				//width 85%
-				padding 5px 10px
-				display flex
-				align-items center
-
-				> img
-					width 30px
-					margin-right 0.7rem
-					height 30px
-					border-radius 10px
-			.spanIcon
-				font-size 3.2rem
-				padding-right 5px
-				.fa-camera
-					color silver
-
-
-		.containerTopRowDragAndDrop
-			cursor move
-
-		.selectContainerRow > .containerTopRow
-			background-color #049cdb !important
-			color #fff !important
-			box-shadow inset 0 0px 4px -1px rgba(0,0,0,0.5)
-
-			span, .status, .subtitle, .subtitle i, .iconList:hover, em, .containerButtons > a,
-			.containerButtons > i, .containerButtons > a i
-				color #fff !important
-
-			span.checkboxIcon:before
-				@extend .fa
-				@extend .fa-check-square-o:before
-			span.radioButtonIcon:before
-				@extend .fa
-				@extend .fa-check-circle:before
-			span.toggleIcon:before
-				@extend .fa
-				@extend .fa-toggle-on:before
-		.moreResult
-			height 4rem
+			max-height 100%
 			display flex
-			justify-content center
-			background-color #bbb !important
-			font-weight 600
-			cursor pointer
-			span
-				margin 0 3rem
-			&:hover
-				background-color #ccc !important
+			flex-flow column
 
-		em, b
-			color #77779C
-			font-weight 600
+			& .rowsContainer
+				padding-left 2rem
 
+			.containerRow
+				text-shadow .5px .5px $black
 
-		.containerButtons
-			color black
-			padding 10px
-			display flex
-			justify-content flex-end
-			align-self flex-start
+				&:nth-child(odd)
+					background-color $color5
+				&:nth-child(even)
+					background-color $color12
 
-			> i, > div, > a i
-				margin 0
-				//margin-right 1rem
-				padding 0 5px
+				.dragAndDropContainerRow
+					background-color $color6 !important
 
-			> a, > i, > a i
-				display flex
-				justify-content center
-				flex-direction column
-				color #555
+				.borderTopDragAndDrop
+					border-top 1.5rem solid $yellowTitleRedmic !important
 
-				.fa-info-circle
+				.borderBottomDragAndDrop
+					border-bottom 1.5rem solid $yellowTitleRedmic !important
+
+				.containerTopRow
+					display flex
+					justify-content left
+					align-items center
+
+					&:hover
+						box-shadow inset 0px 0px .5rem .3rem rgba($white, 0.3) !important
+
+					.rowList
+						padding 1rem
+						display flex
+						flex-grow 1
+						//flex-basis 5rem
+						align-items center
+
+						> img
+							width 30px
+							margin-right 0.7rem
+							height 30px
+							border-radius 10px
+					.spanIcon
+						font-size 3.2rem
+						padding-right 5px
+
+				.containerTopRowDragAndDrop
+					cursor move
+
+				&.selectContainerRow
+					&:nth-child(odd) > .containerTopRow
+						background-color $blue !important
+					&:nth-child(even) > .containerTopRow
+						background-color lighten($blue, 20%) !important
+
+				&.selectContainerRow > .containerTopRow
+					&:hover
+						box-shadow inset 0px 0px .5rem .3rem rgba($black, 0.3) !important
+
+					span
+						&.checkboxIcon
+						&.radioButtonIcon
+						&.toggleIcon
+							@extend .fa
+
+						&.checkboxIcon:before
+							@extend .fa-check-square-o:before
+
+						&.radioButtonIcon:before
+							@extend .fa-check-circle:before
+
+						&.toggleIcon:before
+							@extend .fa-toggle-on:before
+
+				.moreResult
+					height 4rem
+					display flex
+					justify-content center
+					background-color $color6 !important
+					font-weight 600
+					cursor pointer
+
+					span
+						margin 0 3rem
+
+					&:hover
+						background-color $color7 !important
+
+				em
+				b
+					fontSize 1.2
 					color $blue
 
-		.containerButtonsForm
-			justify-content space-around
+				&.selectContainerRow
+					em
+					b
+						color $blueDark
+
+				.containerButtons
+					color $white
+					padding 1rem
+					display flex
+					//flex-grow 1
+					justify-content flex-end
+					align-self flex-start
+					flex-wrap wrap
+					//flex-basis 3rem
+
+					> *
+						display flex
+						justify-content center
+						flex-direction row
+						margin 0
+						padding .2rem
+//					> i
+//					> div
+//					> a i
+//						margin 0
+//						padding .2rem
+
+//					> a
+//					> i
+//					> a i
+//						display flex
+//						justify-content center
+//						flex-direction column
+//						color $gray
+
+				&.selectContainerRow
+					.containerButtons
+						.fa-info-circle
+							color $white
+
+				.containerButtonsForm
+					justify-content space-around
 
 	.contentListNoData
-		background-color #eee
+		background-color $color2
 
 	.check
 		width 1rem
 		margin 0 0.5rem
 		cursor pointer
-		flexible h center center
-		span.checkboxIcon:before
-			@extend .fa
-			@extend .fa-square-o:before
-		span.radioButtonIcon:before
-			@extend .fa
-			@extend .fa-circle-thin:before
-		span.toggleIcon:before
-			@extend .fa
-			@extend .fa-toggle-off:before
+		display flex
+		justify-content center
+		align-items center
+
+		span
+			&.checkboxIcon
+			&.radioButtonIcon
+			&.toggleIcon
+				@extend .fa
+
+			&.checkboxIcon:before
+				@extend .fa-square-o:before
+
+			&.radioButtonIcon:before
+				@extend .fa-circle-thin:before
+
+			&.toggleIcon:before
+				@extend .fa-toggle-off:before
 
 	.iconListNoButton
 		font-size 3rem
 
 	.notDataFound
 		@extend .fHeight
-		flexible h center center
-		span
-			color black
+		display flex
+		justify-content center
+		align-items center
 
-.containerList, .infoTitle
+.containerList
+.infoTitle
 	.iconList
 		cursor pointer
 		font-size 20px
-		&:hover
-			color $blue !important
 
 .containerHierarchicalList
-	overflow overlay
-
 	.contentList
 		user-select none
 		cursor default
+
 		.rowsContainer
 			position inherit
 			width inherit
+
 		img
 			user-drag none
-		background-color #f2f2f2
+
 		.containerRow
-			background-color #f2f2f2 !important
+			.containerBottomRow
+				background-color $color12
+				border-top 1px solid $gray
+
+				.containerTopRow
+					border-left 1px solid $gray
+
+				.containerBottomRow
+					border-top none
 
 			.containerTopRow
-				border-bottom 1px solid #ccc
-				border-left 1px solid #ccc
-				background-color #e6e6e6
+				.expandCollapse
+					display flex
+					justify-content center
+					align-items center
+					cursor pointer
+					margin-left 1rem
 
-				.rowList
-					padding 0px 5px
-
-				.containerButtons
-					padding 2px 10px
-
-			.containerBottomRow
-				.containerTopRow
-					border-bottom 1px solid #dedede
-					border-left 1px solid #dedede
-					background-color #cbcbcb
-
-		.containerTopRow
-			.expandCollapse
-				flexible h center center
-				width 1rem
-				margin 0 0.5rem
-				min-width 1rem
-				max-width 1rem
-				cursor pointer
-				&:hover
 					span
-						color $blue
+						width 1rem
+						font-size 1.8rem
+						padding 0 .5rem
+
+			&.mixedSelectContainerRow > .containerTopRow
+				background-color rgba($blue, 0.4) !important
+
 				span
-					font-size 1.8rem
+					&.checkboxIcon
+						@extend .fa
 
-		.mixedSelectContainerRow > .containerTopRow
-			background-color #7cc8e7 !important
-			color #fff !important
-			box-shadow inset 0 0px 4px -1px rgba(0,0,0,0.5)
-
-			span, .status, .subtitle, .subtitle i, .iconList:hover, em, .containerButtons > a,
-			.containerButtons > i, .containerButtons > a i
-				color #fff !important
-
-			span.checkboxIcon:before
-				@extend .fa
-				@extend .fa-square:before
+					&.checkboxIcon:before
+						@extend .fa-square:before
 
 .spanTemplate
 	display flex
 	width 100%
 	flex-direction column
-	//padding 0 5px
-	//line-height 1.8rem
 	overflow hidden
+
 	.title
 		font-weight 600
+
 		.scientificName
 			font-style italic
 
 	.subtitle .subtitleIcon
 		font-size 1.3rem
-		color #666
+		color $color15
 
 		.status
 			text-transform capitalize
@@ -362,6 +397,7 @@
 
 	.subtitleIcon
 		margin-top 5px
+
 		i
 			padding-left 0
 			font-size 3rem
@@ -369,22 +405,28 @@
 	.subTitleFlex
 		display flex
 		align-items center
-		span:last-child
-			margin-left 1rem
-		span:first-child
-			margin-left 0
+
+		span
+			&:last-child
+				margin-left 1rem
+
+			&:first-child
+				margin-left 0
+
 		.subtitleIcon
 			margin-top 0
 
 	.picture
 		padding 0.5rem
+
 		.animalImage
 			width 10rem !important
 			min-width 10rem
 			height 10rem !important
 			min-height 10rem
 
-.spanTemplateTable, .headerList
+.spanTemplateTable
+.headerList
 	.rowSpan
 		min-width 8rem
 		justify-content center
@@ -406,11 +448,13 @@
 		cursor not-allowed
 		opacity .65
 
-.containerRow .table-row, .headerList
+.containerRow .table-row
+.headerList
 	.table-cell
 		padding 0 0.5rem
-		border-right 1px solid rgba(0, 0, 0, 0.1)
+		border-right 1px solid rgba($black, 0.1)
 		align-items center
+
 	.table-col-1
 		flex-grow 2
 
@@ -419,6 +463,7 @@
 	background-color $color1
 	padding 1rem 0 1rem 0
 	position relative
+
 	.iconOptionHeader
 		position absolute
 		left 10px
@@ -426,30 +471,16 @@
 		display flex
 		align-items center
 		height calc(100% - 2rem)
+
 		&:hover
 			color $blue
+
 	.table-cell
-		border-right 1px solid rgba(255, 255, 255, 0.5)
+		border-right 1px solid rgba($white, 0.5)
 		justify-content center
 
-.spanTemplateStatistic, .spanTemplateTable
+.spanTemplateTable
 	flex-direction row
-
-.spanTemplateStatistic
-	justify-content space-between
-	flex-wrap wrap
-
-	.title
-		min-width 25rem
-
-	.subtitle
-		display flex
-		.rightColOne, .rightColTwo
-			width 11rem
-
-		.rightColSeparator
-			margin-right 2rem
-
 
 .noBorderList .containerList .contentList
 	border-radius 0
@@ -461,10 +492,11 @@
 	display flex
 	align-items center
 	flex-wrap wrap
+
 	div
 		margin-right 1rem
-	div:last-child
-		margin-right 0
+		&:last-child
+			margin-right 0
 
 .imageLayerList
 	width 6rem !important
@@ -472,39 +504,63 @@
 	height 6rem !important
 	min-height 6rem
 
-.colorGroup1
-	background-color rgba(255, 235, 134, 0.48) !important
 
-.colorGroup2
-	background-color rgba(246, 171, 119, 0.56) !important
 
-// Colores para los iconos de inspireThemes
 
-.inspire-ad, .inspire-tn, .inspire-el, .inspire-us, .inspire-pf, .inspire-af, .inspire-er //naranja
-	color #F6A41C
+// // TODO aquí no deberían definirse los colores para los iconos de inspireThemes
 
-.inspire-ge, .inspire-so, .inspire-mr, .inspire-nz //marron
-	color #B57D42
+.inspire-ad
+.inspire-tn
+.inspire-el
+.inspire-us
+.inspire-pf
+.inspire-af
+.inspire-er
+	color $inspireOrange
 
-.inspire-au, .inspire-su, .inspire-lu, .inspire-hh, .inspire-pd, .inspire-am //rojo
-	color #F15B40
+.inspire-ge
+.inspire-so
+.inspire-mr
+.inspire-nz
+	color $inspireBrown
 
-.inspire-hy, .inspire-ef, .inspire-ac, .inspire-mf, .inspire-of, .inspire-sr //azul
-	color #41A2E9
+.inspire-au
+.inspire-su
+.inspire-lu
+.inspire-hh
+.inspire-pd
+.inspire-am
+	color $inspireRed
 
-.inspire-ps, .inspire-lc, .inspire-br, .inspire-hb, .inspire-sd //verde
-	color #94C120
+.inspire-hy
+.inspire-ef
+.inspire-ac
+.inspire-mf
+.inspire-of
+.inspire-sr
+	color $inspireBlue
 
-.inspire-rs, .inspire-gg, .inspire-gn, .inspire-cp, .inspire-oi, .inspire-bu //gris
-	color #B5B5B5
+.inspire-ps
+.inspire-lc
+.inspire-br
+.inspire-hb
+.inspire-sd
+	color $inspireGreen
+
+.inspire-rs
+.inspire-gg
+.inspire-gn
+.inspire-cp
+.inspire-oi
+.inspire-bu
+	color $inspireGray
+
 
 .dialogSimple
-	.dijitContentPaneSingleChild, .topZone, .contentList
+	.dijitContentPaneSingleChild
+	.topZone
+	.contentList
 		border-radius 0
-
-.infoContainer
-	.contentListNoData
-		background-color #D7D7D7
 
 .removed
 	animation disappear 0.5s

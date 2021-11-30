@@ -13,6 +13,12 @@ textEllipsis()
 	white-space nowrap
 	text-overflow ellipsis
 
+multiTextEllipsis()
+	display -webkit-box
+	-webkit-line-clamp 3
+	-webkit-box-orient vertical
+	overflow hidden
+
 // Funciones de compatibilidad
 
 box-sizing()
@@ -332,7 +338,6 @@ maximizeFont()
 
 flexible(orientacion, justificado, alineado)
 	display flex
-	flex-wrap nowrap
 	if orientacion == h
 		flex-direction row
 	if orientacion == hr

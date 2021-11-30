@@ -1,0 +1,70 @@
+.badgesContainer
+	margin-top .5rem
+
+	> i
+		padding .1rem .3rem
+		margin 0 .2rem
+		fontSize 1.6rem
+
+.detailsRowWithBadge
+
+	& > div:last-child
+		flex-grow 1
+
+	& > i
+		margin .8rem
+		fontSize 2rem
+
+.badgesContainer
+.detailsRowWithBadge
+	display flex
+	align-items center
+
+	> i
+		@extend .fa
+
+	.activityInProgressIcon:before
+		@extend .fa-folder-open:before
+		color $green
+
+	.activityConcludedIcon:before
+		@extend .fa-folder:before
+		color $grayLight
+
+	.activityPendingIcon:before
+		@extend .fa-hourglass-half:before
+		color $orange
+
+	.activityFreeIcon:before
+		@extend .fa-unlock-alt:before
+		color $green
+
+	.activityEmbargoedIcon:before
+		@extend .fa-lock:before
+		color $red
+
+	.activityRestrictedIcon:before
+		@extend .fa-low-vision:before
+		color $orange
+
+	.activityConfidentialIcon:before
+		@extend .fa-users:before
+		color $red
+
+	.activityConfidentialIcon:before
+		@extend .fa-users:before
+		color $red
+
+	.activityWithResourcesIcon:before
+		@extend .fa-external-link:before
+		color $grayLight
+
+	.activityStarredIcon:before
+		@extend .fa-star:before
+		color $yellow
+
+
+.selectContainerRow
+	.badgesContainer
+		i:before
+			color $white

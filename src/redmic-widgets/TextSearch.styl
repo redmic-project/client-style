@@ -1,80 +1,116 @@
 .containerTextSearch
 	display flex
-	flex-grow 1
+	width 100%
+	background-color $color2
+	border-radius 5px
+	color $white
+
+	.innerButtons
+	.outerButtons
+		display flex
+		align-items center
+
+		.clearTextButton
+		.expandSearchButton
+		.searchButton
+			@extend .fa
+			cursor pointer
+			width 1.5rem
+			height 1rem
+			display flex
+			justify-content center
+			align-items center
+
+			&:before
+				padding .5rem
 
 	.textSearch
 		position relative
-		width calc(100% - 2rem)
-		.fa-times
-			position absolute
-			z-index 3
-			color black
-			cursor pointer
-			margin-top 0.5rem
-			right 0.5rem
+		display flex
+		flex-grow 1
+		padding 0.5rem 0
+
+		.innerButtons
+			*
+				&:not(:last-child)
+					padding-right 0.25rem
+
+				&:last-child
+					padding-right 0.5rem
+					border-right 1px solid $gray
+
+		.clearTextButton
 			&:hover
 				color red
+			&:before
+				@extend .fa-times:before
 
 		input
-			border none
 			width 100%
-			height 2rem
-			padding 0
-			padding-left 0.7rem
-			padding-right 2.5rem
-			background transparent
-		.autocomplete
-			position absolute
-			z-index 0
-			color grey
-		.inputSearch
-			background-color #fff
-			color black
-			border-radius 5px 0 0 5px
-			position relative
-			//z-index 2
-			border-radius 5px 0 0 5px
-			top 0
+			border none
+			padding-left 0.4rem
+			background-color inherit
+			color inherit
 
-	.buttonSearch
-		flexible v center center
-		border-radius 0 5px 5px 0
-		width 2rem
-		height 2rem
-		border-left none
-		cursor pointer
-		background-color rgba(4, 156, 219, 0.5)
-		&:hover
-			fondo color $blue
-			.fa-search
-				font-size 16px
-	.hover
-		background-image linear-gradient(to bottom, $blue, $blue)
-		color white !important
+	.outerButtons
+		.expandSearchButton
+		.searchButton
+			padding 0 0.5rem
+
+			&:hover
+				color $blue
+
+		.searchButton
+			&:before
+				@extend .fa-search:before
+
+		.expandSearchButton
+			&:before
+				@extend .fa-ellipsis-v:before
+
+		> :not(:last-child)
+			border-right 1px solid $grayLighter
+
+	&.suggestionsShown
+		.textSearch
+			border-radius 5px 0 0 0
+		.outerButtons
+			border-radius 0 5px 0 0
+
 
 .suggestions
 	position absolute
-	margin-top 2.1rem
+	display flex
+	flex-direction column
+	flex-grow 1
+	z-index 1000
+	border-radius 0 0 5px 5px
+	box-shadow inset 0 0 22px -11px rgba($black,0.5)
+	background-color $color2
+	max-height 40%
+	overflow auto
 
-	z-index 999
-	width calc(100% - 2px)
-	flexible v center left
-
-	border-radius 5px
-	box-shadow inset 0 0 22px -11px rgba(0,0,0,0.5)
-	border 1px solid silver
-
-	background-color white
 	span
-		color black
+		color $white
 		padding 5px
 		cursor pointer
-		border-top 1px solid rgba(0, 0, 0, 0.1)
+		border-top 1px solid rgba($white, 0.1)
+
 		&:last-child
 			border-radius 0 0 5px 5px
+
+		em
+		b
+			fontSize 1.2
+			color $blue
+
+		&:hover
+			background-color $blue
+
+			em
+			b
+				color $blueDark
+
 		img
 			width 15px
 			height 15px
-	.hover
-		background-image linear-gradient(to bottom, $blue, $blue)
-		color white !important

@@ -4,12 +4,16 @@
 
 
 // Campos disabled
-.dj_webkit .db .dijitTextBoxDisabled input, .dj_webkit .db textarea.dijitTextAreaDisabled
+.dj_webkit .db .dijitTextBoxDisabled input
+.dj_webkit .db textarea.dijitTextAreaDisabled
 	color #8E8E8E
 
 // Para ocultar los campos ocultos
 .hiddenId
 	noDisplay()
+
+.formContainer
+	max-height 100%
 
 .formContainerWithKeypad
 	display flex
@@ -21,7 +25,9 @@
 	> div:last-child
 		overflow auto
 		display flex
+		flex-flow column
 		flex-grow 1
+		height 100%
 
 // Para todos los formularios
 .form
@@ -33,67 +39,99 @@
 	showScroll()
 	padding 1rem
 	width calc(100% - 2rem)
+	display flex
+	flex-flow column
+
 	fieldset
+		flex-grow 1
 		width 100%
 		noBorder()
 		noPadding()
 		margin-bottom $semi
 		fondo none
+
 	legend
 		noBorder()
 		fontSize $bigFontSize
 		padding-left 10%
 		color gold
 		negrita()
+
 		&:first-of-type
 			padding-top $semi
+
 	&.form-border
 		border 1px solid #ccc
 
 	&.inverseLeftContainer
 		.inputContainer
 			> *
-			margin-bottom 1rem
+				margin-bottom 1rem
+
 			.leftContainer
 				flex-direction row-reverse
+
 				label
 					text-align left
 
 				.containerDisableSwitch
 					padding-left 0
+
 			&.noWrap
 				.leftContainer
 					flex-direction row
+
 				label
 					text-align right
+
+.multiFieldsetForm
+	flex-flow row
+	flex-wrap wrap
+
+	fieldset
+		flex-basis 20rem
 
 .inputContainer
 	display flex
 	flex-wrap wrap
 
-	.leftContainer, .rightContainer
+	.leftContainer
+	.rightContainer
 		display flex
 		align-items center
 		padding 3px
 
 	.leftContainer
-		flex 1 2 15rem
+		flex-flow row-reverse
+		flex-grow 1
+		flex-basis 12rem
 		justify-content flex-end
 		padding-right 7px
+
 		label
 			margin-bottom 0
-			text-align right
+			text-align left
 
 		.containerDisableSwitch
-			padding-right 1rem
-			padding-left 1rem
-			display flex
-			justify-content center
-			font-size 2rem
+		.inputInfoButton
+			padding 0 .5rem
 			cursor pointer
 
+		.containerDisableSwitch
+			font-size 1.6rem
+
+		.inputInfoButton
+			@extend .fa
+
+			&:before
+				@extend .fa-info-circle:before
+
+			&:hover
+				color $blue
+
 	.rightContainer
-		flex 4 1 20rem
+		flex-grow 4
+		flex-basis 18rem
 
 	&.noWrap
 		flex-wrap nowrap
@@ -102,11 +140,15 @@
 	fontSize $normalFontSize
 	margin-top 0
 
+	&.dijitDisabled
+		box-shadow none
+
 .form-vertical
 	display flex
+	padding-top 0 !important
+
 	.dijitArrowButton
 		padding 5px 10px !important
-	padding-top 0 !important
 
 .embedded
 	.inputContainer
@@ -135,6 +177,7 @@
 
 .geographicCoordinate
 	padding 0
+
 	> div
 		margin-right 5px
 
@@ -154,6 +197,7 @@
 .timeInput
 	display flex
 	justify-content center
+
 	.unitContent
 		display flex
 		width 2.5rem
@@ -168,6 +212,7 @@
 			border-radius 5px
 		i:hover
 			background-color $blue
+
 	.unitSeparator
 		display flex
 		align-items center
@@ -175,19 +220,25 @@
 	&.disable
 		cursor not-allowed
 		opacity .65
+
 		.unitContent
 			i:hover
 				background-color initial
 
 .inputLittleWidth
 	> div
-		max-width 25rem
+		max-width 16rem
 
 .textBoxLittleWidth
-	max-width 35rem
+	max-width 16rem
 	position relative
 
 .textBoxModWidthExpand
+	border-radius 5px
+
+	&:focus-within
+		@extend .db .dijitTextBoxFocused
+
 	.additionalOptionInput
 		display flex
 		z-index 1
@@ -204,7 +255,8 @@
 		.contentIcon
 			font-size 2rem
 
-		.contentIcon, .contentClear
+		.contentIcon
+		.contentClear
 			width 2.2rem
 			display flex
 			justify-content space-around
@@ -212,13 +264,16 @@
 
 		.contentClear
 			cursor pointer
+
 			i:hover
 				color $blue
 
 	.disable
-		opacity 0.4
-		.contentClick, .contentClear
+		opacity .5
+		.contentClick
+		.contentClear
 			cursor not-allowed
+
 			&:hover
 				background-color initial
 				color white
@@ -228,12 +283,14 @@
 		padding-right 5rem !important
 
 
-.textBoxModWidthExpand, .multiSelect
+.textBoxModWidthExpand
+.multiSelect
 	.contentClick
-		width 3.3rem
+		width 2.5rem
 		display flex
 		justify-content space-around
 		cursor pointer
+
 		&:hover
 			background-color $blue
 
@@ -243,18 +300,24 @@
 		border-radius 5px
 		border 1px solid rgba($white, 0.7)
 		padding 0.6rem 1rem
+
 	.active
 		background-color rgba(4,156,219,0.5)
+
 	.disable
 		opacity 0.4
 		cursor not-allowed
+
 		&:hover
 			background-color initial
 
-.colorRampSelect, .colorSelect
+.colorRampSelect
+.colorSelect
 	@extend .multiSelect
+
 	.contentClick
 		width 100%
+
 		.value
 			height 1rem
 			width 100%
@@ -264,6 +327,7 @@
 	flex-direction row !important
 	flex-wrap wrap
 	border-radius 3px
+
 	.unitColor
 		flex-grow 1
 		height 1rem
@@ -272,6 +336,7 @@
 .dateRange
 	.dijitTextBox
 		width 21rem
+
 	.textBoxModWidthExpand
 	.additionalOptionInput
 		right 0
@@ -280,6 +345,7 @@
 	padding 0
 	display flex
 	align-items flex-start
+
 	.containerOptions
 		display flex
 		flex-direction column
@@ -303,6 +369,7 @@
 				background-color $blue
 				border-radius 2px
 				font-weight bold
+
 				&:hover
 					color inherit
 
@@ -321,6 +388,7 @@
 			display flex
 			justify-content center
 			flex-direction row
+
 			@media (max-width $media-low-size)
 				flex-direction column
 
@@ -358,26 +426,33 @@
 	flex-grow 1
 	display flex
 	flex-direction column-reverse
+
 	.form-horizontal
 		flex-grow 1
 		display flex
 		justify-content center
 		padding-top 1rem
+
 		fieldset
 			@extend .fWidth
 
 .dojoxColorPicker
 	background-color $color13
 	color white
+
 	.dojoxColorPickerPreview
 		border 1px solid rgba(255,255,255,0.5)
 
 .selectOnPopup
 	position relative
-	input, .dijitInputContainer, .dijitDisabled
+
+	input
+	.dijitInputContainer
+	.dijitDisabled
 		color white !important
 		opacity 1 !important
 		cursor pointer !important
+
 	.cleanInput
 		position absolute
 		top 10px
@@ -391,22 +466,29 @@
 
 .dijitCalendar
 	width 18rem
+
 	.dijitCalendarMonthContainer
 		.dijitButtonNode
 			padding 3px 5px
+
 	.dijitCalendarDateTemplate
 		padding 1px 4px
-	.dijitCalendarDateLabel,
-	.dijitCalendarDayLabel,
-	.dijitCalendarNextYear,
+
+	.dijitCalendarDateLabel
+	.dijitCalendarDayLabel
+	.dijitCalendarNextYear
 	.dijitCalendarPreviousYear
 		font-size 12px
+
 	.dijitDownArrowButton
 		font-size 13px
+
 	.dijitCalendarSelectedYear
 		font-size 16px
+
 	.dijitCalendarYearLabel
 		margin-top 4px
+
 	.dijitCalendarDayLabel
 		padding-bottom 4px
 		padding-top 0px
@@ -422,6 +504,7 @@
 
 .containerImageLayerEdit
 	cursor pointer
+
 	img
 		margin-bottom 2rem
 		border-radius 5px

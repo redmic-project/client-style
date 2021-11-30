@@ -93,31 +93,42 @@
 // Botonera
 
 .keypad
-	flexible h space-between center
-	flexibleGrow 1
+	display flex
+	flex-flow row
+	justify-content space-between
+	align-items center
+	flex-grow 1
+	flex-wrap wrap
 	noScroll()
 	box-shadow $sombra-s rgba($white, $lowOpacity) !important
 	border $borderType $color12
 	fondo color $color5
 	min-height 30px
+
+	& > div
+		display flex
+		flex-flow row
+		justify-content center
+		align-items center
+		miniMargined()
+
+		.btnGroup
+			display flex
+			flex-flow row
+			align-items center
+			miniMargined h
+
 	.left
-		flexible h center center
-		miniMargined h
 		.btnGroup
-			flexible h left center
-			miniMargined h
+			justify-content left
+
 	.center
-		flexible h center center
-		miniMargined h
 		.btnGroup
-			flexible h center center
-			miniMargined h
+			justify-content center
+
 	.right
-		flexible h center center
-		miniMargined h
 		.btnGroup
-			flexible h right center
-			miniMargined h
+			justify-content right
 
 
 .backgroundNone

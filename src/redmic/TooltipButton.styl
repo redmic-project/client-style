@@ -1,61 +1,87 @@
-.tooltipButton
-	border 1px rgba(255, 255, 255, 0.7) solid !important
-	right -7px
-	margin-top 8px !important
-	padding 10px !important
+.tooltipContainer
 	position relative
-	background-color $color13 !important
-	boz-shadow $sombra-contenedor-externa-centrada-clara
+	padding .8rem
+	background-color $color13
+	border 1px $grayLighter solid
+	border-radius .5rem
+	box-shadow $sombra-contenedor-externa-centrada-clara
 
-	.containerContent
-	.containerContent > div
+	&.tooltipAboveSource
+		margin-bottom .6rem
+
+		.tooltipSourceIndicator
+			bottom -1rem
+
+			&:before
+				@extend .fa-caret-down:before
+
+	&.tooltipBelowSource
+		margin-top .6rem
+
+		.tooltipSourceIndicator
+			top -1.05rem
+
+			&:before
+				@extend .fa-caret-up:before
+
+	&.tooltipLeftSource
+		.tooltipSourceIndicator
+			right .3rem
+
+	&.tooltipRightSource
+		.tooltipSourceIndicator
+			left .3rem
+
+	.tooltipSourceIndicator
+		@extend .fa
+		position absolute
+		fontSize 1.2rem
+		color $grayLighter
+		padding 0 .4rem
+		filter drop-shadow(0 0 .1rem $grayLighter)
+
+	// Contenido específico
+
+	.inputInfoTooltipContent
+		max-width 20rem
+
+	.itemMenu
+		margin-top 1rem
+		cursor pointer
+		color $white
+		text-decoration none
 		display flex
-		flex-direction column
+		align-items center
 
-	.containerContent
-		.itemMenu
-			margin-top 1rem
-			cursor pointer
-			color white
-			text-decoration none
+		&:first-child
+			margin-top 0
+
+		i
+			width 2rem
+			fontSize 1.2rem
+			justify-content center
 			display flex
-			align-items center
+			margin-right 10px
 
-			&:first-child
-				margin-top 0
-
-			i
-				width 2rem
-				fontSize 1.2rem
-				justify-content center
-				display flex
-				margin-right 10px
-
-			&:hover
-				i
-				span
-					color $blue
-
-		.itemSelect
+		&:hover
 			i
 			span
 				color $blue
 
-	.indicatorParent
-		position absolute
-		top -14px
-		right 8px
-		fontSize 1.2rem
+	.itemSelect
+		i
+		span
+			color $blue
 
-.tooltipButtonMenu
-	padding 0 !important
-	.containerContent
+	.tooltipButtonMenu
+		padding 0 !important
+
 		.itemSelect
-			background-color rgba(4, 156, 219, 0.5)
+			background-color $blue
 
 			i
 			span
-				color white
+				color $white
 				font-weight bold
 
 		.itemMenu
@@ -67,45 +93,40 @@
 
 				i
 				span
-					color white
+					color $white
 
-.tooltipButtonChart
-	margin-top 4px !important
+	.tooltipButtonChart
+		margin-top 4px !important
 
-.tooltipButtonAggrement
-	margin-bottom 5px !important
+	.tooltipButtonAggrement
+		margin-bottom 5px !important
 
-.tooltipButtonLeft
-	left 0px
+	.descriptionTooltip
+		max-width 20rem
 
-	.indicatorParent
-		left 5px
+		.hrefInTooltip
+			padding-top 1rem
+			display flex
+			justify-content flex-end
 
-.descriptionTooltip
-	max-width 50rem
-	.hrefInTooltip
-		padding-top 1rem
+	.tooltipUser
 		display flex
-		justify-content flex-end
+		align-items center
+		padding-bottom 1rem
+		border-bottom 1px solid $grayLighter
 
-.tooltipUser
-	display flex
-	align-items center
-	padding-bottom 1rem
-	border-bottom 1px solid rgba(255, 255, 255, 0.3)
+		> img
+			width 7rem
+			height 7rem
+			margin-right 1rem
+			border-radius 5px
 
-	> img
-		width 7rem
-		height 7rem
-		margin-right 1rem
-		border-radius 5px
+		> div
+			display flex
+			flex-direction column
 
-	> div
-		display flex
-		flex-direction column
+			.name
+				fontSize 1.3rem
 
-		.name
-			fontSize 1.3rem
-
-		.email
-			color rgba(255, 255, 255, 0.6)
+			.email
+				color $grayLighter
