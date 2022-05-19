@@ -46,7 +46,7 @@
     "leaflet-measure": "2.1.7",
     "leaflet-minimap": "3.6.1",
     "load-grunt-tasks": "5.1.0",
-    "nib": "1.1.2",
+    "nib": "1.2.0",
     "prunecluster": "2.1.0",
     "stylus": "0.57.0",
     "webfont-dl": "0.2.0"
