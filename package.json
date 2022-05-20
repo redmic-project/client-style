@@ -43,7 +43,7 @@
     "leaflet": "1.7.1",
     "leaflet-awesome-markers": "https://github.com/lennardv2/Leaflet.awesome-markers.git#2.0/develop",
     "leaflet-draw": "1.0.4",
-    "leaflet-measure": "2.1.7",
+    "leaflet-measure": "3.1.0",
     "leaflet-minimap": "3.6.1",
     "load-grunt-tasks": "5.1.0",
     "nib": "1.2.0",
