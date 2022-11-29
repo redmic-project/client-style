@@ -1,7 +1,7 @@
 .badgesContainer
 	margin-top .5rem
 
-	> i
+	i
 		padding .1rem .3rem
 		margin 0 .2rem
 		fontSize 1.6rem
@@ -11,7 +11,7 @@
 	& > div:last-child
 		flex-grow 1
 
-	& > i
+	& i
 		margin .8rem
 		fontSize 2rem
 
@@ -20,7 +20,7 @@
 	display flex
 	align-items center
 
-	> i
+	i
 		@extend .fa
 
 	.activityInProgressIcon:before
@@ -63,8 +63,28 @@
 		@extend .fa-star:before
 		color $yellow
 
+	.itemDisabledIcon:before
+		@extend .fa-low-vision:before
+		color $orange
+
+	.documentInternalUrlIcon:before
+		@extend .fa-file-pdf-o:before
+		color $white
+
+	.documentPrivateInternalUrlIcon:before
+		@extend .fa-file-pdf-o:before
+		color $orange
+
+	.documentExternalUrlIcon:before
+		@extend .fa-external-link:before
 
 .selectContainerRow
 	.badgesContainer
 		i:before
 			color $white
+
+
+.imageListContainer
+	.imageListElement
+		padding-top 1rem
+		max-width 100%

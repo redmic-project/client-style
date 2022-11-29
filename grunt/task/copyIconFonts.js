@@ -10,7 +10,7 @@ module.exports = function(grunt) {
 				'fontRedmic': 'submodules/Font-Awesome-Stylus/fonts',
 				'fontAwesome': 'submodules/font-redmic/build',
 				'iconMarkers': 'submodules/leaflet-awesome-markers/dist/images',
-				'iconMeasure': 'submodules/leaflet-measure/dist/images',
+				'iconMeasure': 'submodules/leaflet-measure/dist/assets',
 				'iconFlags': 'submodules/redmic-flag-icon-css/flags',
 				'iconDraw': 'submodules/leaflet-draw/dist/images',
 				'iconDijit': 'submodules/dijit/themes/claro/images' // TODO no se usarán estas images
