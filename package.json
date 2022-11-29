@@ -28,8 +28,8 @@
   "devDependencies": {
     "alertifyjs": "1.13.1",
     "animate.css": "4.1.1",
-    "dijit": "1.17.2",
-    "dojox": "1.17.2",
+    "dijit": "1.17.3",
+    "dojox": "1.17.3",
     "dropzone": "5.9.3",
     "font-awesome-stylus": "4.7.1",
     "glob": "8.0.3",
@@ -48,7 +48,7 @@
     "load-grunt-tasks": "5.1.0",
     "nib": "1.2.0",
     "prunecluster": "2.1.0",
-    "stylus": "0.57.0",
+    "stylus": "0.59.0",
     "webfont-dl": "0.2.0"
   },
   "engines": {
