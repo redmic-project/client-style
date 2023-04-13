@@ -978,10 +978,10 @@ leaflet-minimap@3.6.1:
   resolved "https://registry.yarnpkg.com/leaflet-minimap/-/leaflet-minimap-3.6.1.tgz#2a43ff3b3d947a45a0acf4bdefc96505b673a6c6"
   integrity sha1-KkP/Oz2UekWgrPS978llBbZzpsY=
 
-leaflet@1.7.1:
-  version "1.7.1"
-  resolved "https://registry.yarnpkg.com/leaflet/-/leaflet-1.7.1.tgz#10d684916edfe1bf41d688a3b97127c0322a2a19"
-  integrity sha512-/xwPEBidtg69Q3HlqPdU3DnrXQOvQU/CCHA1tcDQVzOwm91YMYaILjNp7L4Eaw5Z4sOYdbBz6koWyibppd8Zqw==
+leaflet@1.9.3:
+  version "1.9.3"
+  resolved "https://registry.yarnpkg.com/leaflet/-/leaflet-1.9.3.tgz#52ec436954964e2d3d39e0d433da4b2500d74414"
+  integrity sha512-iB2cR9vAkDOu5l3HAay2obcUHZ7xwUBBjph8+PGtmW/2lYhbLizWtG7nTeYht36WfOslixQF9D/uSIzhZgGMfQ==
 
 liftup@~3.0.1:
   version "3.0.1"

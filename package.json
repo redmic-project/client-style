@@ -40,7 +40,7 @@
     "grunt-contrib-stylus": "1.2.0",
     "grunt-git": "1.1.1",
     "grunt-shell": "4.0.0",
-    "leaflet": "1.7.1",
+    "leaflet": "1.9.3",
     "leaflet-awesome-markers": "https://github.com/lennardv2/Leaflet.awesome-markers.git#2.0/develop",
     "leaflet-draw": "1.0.4",
     "leaflet-measure": "3.1.0",
