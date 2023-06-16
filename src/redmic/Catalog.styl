@@ -1,7 +1,7 @@
 .topZone
 	@extend .fWidth
 	noScroll()
-	min-height 2rem
+	min-height 3rem
 	padding 0.5rem 0
 	fondo color $color13
 	border-radius 5px 5px 0 0
@@ -10,22 +10,27 @@
 	justify-content space-between
 	flex-wrap wrap
 
+	> div
+		flex-grow 1
+		padding .2rem 0
+		max-width 100%
+
 	.dijitIcon
 		@extend .fWidth
 
 	.textSearchZone
 		display flex
-		padding 0 0.5rem
 		align-items center
-		max-width 30%
+
+		> div
+			margin 0 .5rem
 
 	.titleZone
-		padding 0
 		fontSize 1.2rem
 		display flex
 		justify-content flex-start
 		align-items center
-		max-width 40%
+		max-width calc(100% - 1rem)
 
 		span
 			padding-left 1rem
