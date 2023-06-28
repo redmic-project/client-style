@@ -182,47 +182,27 @@
 	.centerContent
 		border-top 1px solid #4a4a54
 
-.dualContent
-	display flex
-	flex-flow column
+.nestedContent
+	position relative
+	noScroll()
 
-	.topZone
-		justify-content start
+	& > *
+		position absolute
+		@extend .fHeight
+		@extend .fWidth
 
-		.buttonZone
-			padding 0
-			display flex
-			align-items center
-			& > *
-				margin 0.5rem
-
-	.dualCenterZone
-		position relative
-		height calc(100% - 3rem)
-		noScroll()
-
-		.dualListZone
-			display flex
-			position absolute
-			@extend .fHeight
-			@extend .fWidth
-
-			& > *
-				display flex
-				flex-grow 1
-
-			.primaryIn
-				animation enterFromLeftToRight 0.6s
-				animation-fill-mode forwards
-			.primaryOut
-				animation leaveToLeft 0.4s
-				animation-fill-mode forwards
-			.secondaryIn
-				animation enterFromRightToLeft 0.6s
-				animation-fill-mode forwards
-			.secondaryOut
-				animation leaveToRight 0.4s
-				animation-fill-mode forwards
+		.primaryIn
+			animation enterFromLeftToRight 0.6s
+			animation-fill-mode forwards
+		.primaryOut
+			animation leaveToLeft 0.4s
+			animation-fill-mode forwards
+		.secondaryIn
+			animation enterFromRightToLeft 0.6s
+			animation-fill-mode forwards
+		.secondaryOut
+			animation leaveToRight 0.4s
+			animation-fill-mode forwards
 
 @keyframes enterFromRightToLeft
 	0%
