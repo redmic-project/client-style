@@ -1,13 +1,10 @@
 {
   "name": "redmic-style",
-  "version": "0.23.0",
+  "version": "0.24.0",
   "author": "REDMIC",
   "homepage": "https://gitlab.com/redmic-project/client/style/blob/master/README.md",
   "description": "Estilos y recursos para REDMIC",
   "contributors": [
-    {
-      "name": "Ignacio Lorenzo García"
-    },
     {
       "name": "Pedro E. Trujillo Brito",
       "email": "pedro@redmic.es"
@@ -15,9 +12,6 @@
     {
       "name": "Noel Alonso Expósito",
       "email": "noel@redmic.es"
-    },
-    {
-      "name": "Carlos Alberto González Carballo"
     }
   ],
   "repository": {
@@ -40,7 +34,7 @@
     "grunt-contrib-stylus": "1.2.0",
     "grunt-git": "1.1.1",
     "grunt-shell": "4.0.0",
-    "leaflet": "1.7.1",
+    "leaflet": "1.9.3",
     "leaflet-awesome-markers": "https://github.com/lennardv2/Leaflet.awesome-markers.git#2.0/develop",
     "leaflet-draw": "1.0.4",
     "leaflet-measure": "3.1.0",
