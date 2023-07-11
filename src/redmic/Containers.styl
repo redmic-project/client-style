@@ -645,6 +645,25 @@ body.uncollapsedSidebar
 	width calc(100% - 4px)
 	height calc(100% - 8px)
 
+.embeddedContent
+	@extend .fWidth
+	@extend .fHeight
+
+.missingEmbeddedContent
+	@extend .fWidth
+	@extend .fHeight
+	display flex
+	flex-flow column
+	justify-content center
+	align-items center
+
+	& > i
+		fontSize 6rem
+
+	& > span
+		fontSize 1.5rem
+		text-align center
+
 .containerSelectionBox
 	display flex
 	align-items center
