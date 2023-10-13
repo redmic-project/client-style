@@ -1,6 +1,6 @@
 {
-  "name": "redmic-style",
-  "version": "0.24.0",
+  "name": "@redmic-project/style",
+  "version": "0.25.0",
   "author": "REDMIC",
   "homepage": "https://gitlab.com/redmic-project/client/style/blob/master/README.md",
   "description": "Estilos y recursos para REDMIC",
@@ -18,7 +18,6 @@
     "type": "git",
     "url": "https://gitlab.com/redmic-project/client/style.git"
   },
-  "private": true,
   "devDependencies": {
     "alertifyjs": "1.13.1",
     "animate.css": "4.1.1",
@@ -45,6 +44,7 @@
     "stylus": "0.59.0",
     "webfont-dl": "0.2.0"
   },
+  "files": ["style.css", "dist", "yarn.lock"],
   "engines": {
     "node": ">=14.0",
     "npm": ">=6.14"
