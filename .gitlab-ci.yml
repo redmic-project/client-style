@@ -26,7 +26,6 @@ build-package:
     paths:
       - node_modules/
       - dist/
-      - style.css
   cache:
     paths:
       - node_modules/
