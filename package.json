@@ -44,7 +44,7 @@
     "stylus": "0.59.0",
     "webfont-dl": "0.2.0"
   },
-  "files": ["dist", "yarn.lock"],
+  "files": ["dist"],
   "engines": {
     "node": ">=14.0",
     "npm": ">=6.14"
