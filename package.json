@@ -31,7 +31,6 @@
     "grunt-contrib-copy": "1.0.0",
     "grunt-contrib-cssmin": "5.0.0",
     "grunt-contrib-stylus": "1.2.0",
-    "grunt-git": "1.1.1",
     "grunt-shell": "3.0.1",
     "leaflet": "1.9.4",
     "leaflet-awesome-markers": "https://github.com/lennardv2/Leaflet.awesome-markers.git#2.0/develop",
