@@ -76,15 +76,18 @@
 		.gobcan-logos
 			display flex
 			flex-grow 1
-			flex-wrap wrap
 			justify-content start
 			align-items center
-			padding .2rem
+			padding 0 .2rem
 
 			> img
-				max-height 2rem
-				padding .2rem
-				margin 0 .5rem
+				max-height 3.5rem
+				@media (max-width $media-high-size)
+					max-height 3rem
+				@media (max-width $media-medium-size)
+					max-height 2rem
+				@media (max-width $media-low-size)
+					max-height 1rem
 
 .contentDisplacedByTopbar
 	top $topbar-default-size !important
