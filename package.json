@@ -19,7 +19,7 @@
     "url": "https://gitlab.com/redmic-project/client/style.git"
   },
   "devDependencies": {
-    "alertifyjs": "1.13.1",
+    "alertifyjs": "1.14.0",
     "animate.css": "4.1.1",
     "dijit": "1.17.3",
     "dojox": "1.17.3",
