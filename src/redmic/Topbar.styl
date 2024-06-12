@@ -25,6 +25,7 @@
 		justify-content center
 		align-items center
 		width $sidebar-default-size
+		min-width 4rem
 		@media (max-width $media-high-size)
 			width $sidebar-high-size
 		@media (max-width $media-medium-size)
@@ -71,6 +72,22 @@
 		> .buttons
 			display flex
 			align-items center
+
+		.gobcan-logos
+			display flex
+			flex-grow 1
+			justify-content start
+			align-items center
+			padding 0 .2rem
+
+			> img
+				max-height 3.5rem
+				@media (max-width $media-high-size)
+					max-height 3rem
+				@media (max-width $media-medium-size)
+					max-height 2rem
+				@media (max-width $media-low-size)
+					max-height 1rem
 
 .contentDisplacedByTopbar
 	top $topbar-default-size !important
