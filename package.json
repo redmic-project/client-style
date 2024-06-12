@@ -3,7 +3,7 @@
   "version": "0.25.0",
   "author": "REDMIC",
   "homepage": "https://gitlab.com/redmic-project/client/style/blob/master/README.md",
-  "description": "Estilos y recursos para REDMIC",
+  "description": "Styles of the REDMIC application",
   "contributors": [
     {
       "name": "Pedro E. Trujillo Brito",
@@ -25,7 +25,7 @@
     "dojox": "1.17.3",
     "dropzone": "5.9.3",
     "font-awesome-stylus": "4.7.1",
-    "glob": "10.3.10",
+    "glob": "10.4.1",
     "grunt": "1.6.1",
     "grunt-contrib-clean": "2.0.1",
     "grunt-contrib-copy": "1.0.0",
@@ -40,7 +40,7 @@
     "load-grunt-tasks": "5.1.0",
     "nib": "1.2.0",
     "prunecluster": "2.1.0",
-    "stylus": "0.62.0",
+    "stylus": "0.63.0",
     "webfont-dl": "0.2.0"
   },
   "files": ["dist"],
