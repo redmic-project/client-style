@@ -7,13 +7,13 @@ module.exports = function(grunt) {
 		var iconFontsSrcPath = './',
 			iconFontsDistPath = grunt.config('redmicConfig.distPath') + '/',
 			paths = {
-				'fontRedmic': 'submodules/Font-Awesome-Stylus/fonts',
-				'fontAwesome': 'submodules/font-redmic/build',
-				'iconMarkers': 'submodules/leaflet-awesome-markers/dist/images',
-				'iconMeasure': 'submodules/leaflet-measure/dist/assets',
-				'iconFlags': 'submodules/redmic-flag-icon-css/flags',
-				'iconDraw': 'submodules/leaflet-draw/dist/images',
-				'iconDijit': 'submodules/dijit/themes/claro/images' // TODO no se usarán estas images
+				'fontRedmic': 'dep/Font-Awesome-Stylus/fonts',
+				'fontAwesome': 'dep/font-redmic/build',
+				'iconMarkers': 'dep/leaflet-awesome-markers/dist/images',
+				'iconMeasure': 'dep/leaflet-measure/dist/assets',
+				'iconFlags': 'dep/redmic-flag-icon-css/flags',
+				'iconDraw': 'dep/leaflet-draw/dist/images',
+				'iconDijit': 'dep/dijit/themes/claro/images' // TODO no se usarán estas images
 			},
 			subTasks = [];
 
