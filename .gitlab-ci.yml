@@ -15,7 +15,7 @@ build-package:
     WEB_BUILD_IMAGE_NAME: registry.gitlab.com/redmic-project/docker/web-build
     WEB_BUILD_IMAGE_TAG: latest
   before_script:
-    - type grunt
+    - type npm
   script:
     - npm install
   dependencies: []

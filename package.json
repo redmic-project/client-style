@@ -19,6 +19,7 @@
     "url": "https://gitlab.com/redmic-project/client/style.git"
   },
   "scripts": {
+    "preinstall": "type grunt",
     "postinstall": "grunt build"
   },
   "devDependencies": {
