@@ -19,7 +19,7 @@
     "url": "https://gitlab.com/redmic-project/client/style.git"
   },
   "scripts": {
-    "prepack": "grunt build"
+    "postinstall": "grunt build"
   },
   "devDependencies": {
     "alertifyjs": "1.14.0",

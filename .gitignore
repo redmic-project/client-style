@@ -2,4 +2,3 @@ node_modules
 dist
 .gitmodules.old
 style.css
-*.tgz
