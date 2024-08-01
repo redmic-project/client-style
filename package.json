@@ -18,6 +18,9 @@
     "type": "git",
     "url": "https://gitlab.com/redmic-project/client/style.git"
   },
+  "scripts": {
+    "prepack": "grunt build"
+  },
   "devDependencies": {
     "alertifyjs": "1.14.0",
     "animate.css": "4.1.1",
@@ -33,7 +36,7 @@
     "grunt-contrib-stylus": "1.2.0",
     "grunt-shell": "3.0.1",
     "leaflet": "1.9.4",
-    "leaflet-awesome-markers": "https://github.com/lennardv2/Leaflet.awesome-markers.git#2.0/develop",
+    "leaflet.awesome-markers": "2.0.5",
     "leaflet-draw": "1.0.4",
     "leaflet-measure": "3.1.0",
     "leaflet-minimap": "3.6.1",

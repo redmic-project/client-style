@@ -9,7 +9,7 @@ module.exports = function(grunt) {
 			paths = {
 				'fontRedmic': 'dep/Font-Awesome-Stylus/fonts',
 				'fontAwesome': 'dep/font-redmic/build',
-				'iconMarkers': 'dep/leaflet-awesome-markers/dist/images',
+				'iconMarkers': 'dep/leaflet.awesome-markers/dist/images',
 				'iconMeasure': 'dep/leaflet-measure/dist/assets',
 				'iconFlags': 'dep/redmic-flag-icon-css/flags',
 				'iconDraw': 'dep/leaflet-draw/dist/images',
