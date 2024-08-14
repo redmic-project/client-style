@@ -1,4 +1,6 @@
 node_modules
 dist
-.gitmodules.old
 style.css
+.gitmodules.old
+*.tgz
+*.log
