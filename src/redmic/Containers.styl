@@ -401,7 +401,9 @@ body.uncollapsedSidebar
 			overflow hidden
 			transition-property height, width
 			transition-duration .3s
-			max-height calc(100% - .3rem)
+
+			&:not([data-rows="fitContent"])
+				max-height calc(100% - .3rem)
 
 			$cols = 6
 			for col in 1..$cols
