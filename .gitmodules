@@ -5,6 +5,6 @@
 	ignore = dirty
 [submodule "dep/font-redmic"]
 	path = dep/font-redmic
-	url = ../../Font-Redmic.git
+	url = ../font-redmic.git
 	branch = master
 	ignore = dirty
