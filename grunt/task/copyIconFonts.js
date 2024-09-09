@@ -11,7 +11,6 @@ module.exports = function(grunt) {
 				'fontAwesome': 'dep/font-redmic/build',
 				'iconMarkers': 'dep/leaflet.awesome-markers/dist/images',
 				'iconMeasure': 'dep/leaflet-measure/dist/assets',
-				'iconFlags': 'dep/redmic-flag-icon-css/flags',
 				'iconDraw': 'dep/leaflet-draw/dist/images',
 				'iconDijit': 'dep/dijit/themes/claro/images' // TODO no se usarán estas images
 			},
