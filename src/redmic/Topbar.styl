@@ -65,9 +65,11 @@
 		flex-grow 1
 		margin-left 1rem
 
-		> .manager
+		> .center
 			display flex
 			flex-grow 1
+			justify-content space-between
+			align-items center
 
 		> .buttons
 			display flex
@@ -104,21 +106,6 @@
 		height "calc(100% - %s)" % $topbar-medium-size !important
 	@media (max-width $media-low-size)
 		height "calc(100% - %s)" % $topbar-low-size !important
-
-.manager
-	flexible h space-between center
-	flexibleGrow 1
-	.left
-		flexible h space-around center
-		flexibleGrow 1
-		.btnGroup
-			flexible h center center
-	.right
-		flexible h right center
-		miniMargined h
-		.btnGroup
-			margin 0 3px
-			flexible h right center
 
 .listMenu
 	.flag
