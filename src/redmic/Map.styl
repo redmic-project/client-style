@@ -9,6 +9,40 @@
 @import '../dep/pruneCluster/dist/LeafletStyleSheet.css'
 @import '../dep/leaflet-timedimension/dist/leaflet.timedimension.control.min.css'
 
+.timeDimensionTopbarContainer
+	height 2rem
+	overflow hidden !important
+
+.leaflet-bar-timecontrol
+	display flex
+	width 100%
+	fontSize .8rem
+
+	a
+		min-width 40px
+
+	.timecontrol-date
+		width 185px !important
+
+	.timecontrol-dateslider
+		display flex
+		flex-grow 1
+
+		.slider
+			display flex
+			flex-grow 1
+
+	.timecontrol-speed
+		display flex
+		flex-grow .2
+
+		.speed
+			width 4rem
+
+		.slider
+			display flex
+			flex-grow 1
+
 .map
 	display flex
 	flex-grow 1
