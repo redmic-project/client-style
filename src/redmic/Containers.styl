@@ -534,6 +534,7 @@ body.uncollapsedSidebar
 			color $blue
 
 .legendContainer
+.tagListBottomContentContainer
 	@extend .imageContainer
 	background none
 	border-top 1px solid $gray
@@ -683,3 +684,17 @@ body.uncollapsedSidebar
 		align-items center
 		padding 0 4px
 		justify-content space-between
+
+.tagListContainer
+	display flex
+	flex-wrap wrap
+
+	.tagListItem
+		border 1px solid $white
+		border-radius 1rem
+		padding .2rem 1rem
+		margin .3rem
+		cursor pointer
+
+		&:hover
+			background-color $blue
