@@ -696,5 +696,8 @@ body.uncollapsedSidebar
 		margin .3rem
 		cursor pointer
 
-		&:hover
+		&.selected
 			background-color $blue
+
+		&:hover
+			background-color lighten($blue, 10%)
