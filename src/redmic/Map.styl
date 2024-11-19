@@ -4,9 +4,61 @@
 
 
 
-@import '../submodules/leaflet/dist/leaflet.css'
-@import '../submodules/leaflet-awesome-markers/dist/leaflet.awesome-markers.css'
-@import '../submodules/pruneCluster/dist/LeafletStyleSheet.css'
+@import '../dep/leaflet/dist/leaflet.css'
+@import '../dep/leaflet.awesome-markers/dist/leaflet.awesome-markers.css'
+@import '../dep/pruneCluster/dist/LeafletStyleSheet.css'
+@import '../dep/leaflet-timedimension/dist/leaflet.timedimension.control.min.css'
+
+.timeDimensionTopbarContainer
+	height 2rem
+	overflow hidden !important
+
+	.leaflet-bar-timecontrol
+		display flex
+		width 100%
+		fontSize .8rem
+		background-color $color5
+		box-shadow none
+		z-index unset
+
+		> .leaflet-control-timecontrol
+			background-color $color5
+			color $white
+
+			&:last-child
+				border none
+
+		a.leaflet-control-timecontrol
+			min-width 40px
+
+			&.loading
+				color $black
+
+		.timecontrol-date
+			width 185px !important
+
+		.timecontrol-dateslider
+			display flex
+			flex-grow 1
+
+			.slider
+				display flex
+				flex-grow 1
+				background-color $color5
+
+				.range
+					background-color $color1
+
+		.timecontrol-speed
+			display flex
+			flex-grow .2
+
+			.speed
+				width 4rem
+
+			.slider
+				display flex
+				flex-grow 1
 
 .map
 	display flex
@@ -256,7 +308,7 @@
 			.dijitTooltipFocusNode
 				padding 0
 		.dijitTooltipConnector
-			border-bottom-color #3a3a41
+			border-bottom-color #color5
 
 .borderContainerDialog
 	border-radius 5px

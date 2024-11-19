@@ -1,10 +1,5 @@
-[submodule "submodules/redmic-flag-icon-css"]
-	path = submodules/redmic-flag-icon-css
-	url = ../../third-party/flag-icon-css.git
-	branch = master
-	ignore = dirty
-[submodule "submodules/font-redmic"]
-	path = submodules/font-redmic
-	url = ../../Font-Redmic.git
+[submodule "dep/font-redmic"]
+	path = dep/font-redmic
+	url = ../font-redmic.git
 	branch = master
 	ignore = dirty

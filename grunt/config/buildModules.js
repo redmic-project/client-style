@@ -1,9 +1,9 @@
 module.exports = function(grunt) {
 
-	var preBuildCmds = ['yarn install'];
+	var preBuildCmds = ['npm install'];
 
 	grunt.config('redmicConfig.buildModules', {
-		'submodules/pruneCluster': preBuildCmds.concat([
+		'dep/pruneCluster': preBuildCmds.concat([
 			'grunt uglify'
 		])
 	});

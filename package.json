@@ -1,6 +1,6 @@
 {
   "name": "@redmic-project/style",
-  "version": "0.26.0",
+  "version": "0.27.0",
   "author": "REDMIC",
   "homepage": "https://gitlab.com/redmic-project/client/style/blob/master/README.md",
   "description": "Styles of the REDMIC application",
@@ -18,6 +18,10 @@
     "type": "git",
     "url": "https://gitlab.com/redmic-project/client/style.git"
   },
+  "scripts": {
+    "preinstall": "type grunt",
+    "postinstall": "grunt build"
+  },
   "devDependencies": {
     "alertifyjs": "1.14.0",
     "animate.css": "4.1.1",
@@ -25,7 +29,7 @@
     "dojox": "1.17.3",
     "dropzone": "5.9.3",
     "font-awesome-stylus": "4.7.1",
-    "glob": "10.4.1",
+    "glob": "11.0.0",
     "grunt": "1.6.1",
     "grunt-contrib-clean": "2.0.1",
     "grunt-contrib-copy": "1.0.0",
@@ -33,10 +37,11 @@
     "grunt-contrib-stylus": "1.2.0",
     "grunt-shell": "3.0.1",
     "leaflet": "1.9.4",
-    "leaflet-awesome-markers": "https://github.com/lennardv2/Leaflet.awesome-markers.git#2.0/develop",
+    "leaflet.awesome-markers": "2.0.5",
     "leaflet-draw": "1.0.4",
     "leaflet-measure": "3.1.0",
     "leaflet-minimap": "3.6.1",
+    "leaflet-timedimension": "1.1.1",
     "load-grunt-tasks": "5.1.0",
     "nib": "1.2.0",
     "prunecluster": "2.1.0",
@@ -45,8 +50,8 @@
   },
   "files": ["dist"],
   "engines": {
-    "node": ">=16.0",
-    "npm": ">=8.19"
+    "node": ">=20.16",
+    "npm": ">=10.8"
   },
   "license": "Apache-2.0"
 }

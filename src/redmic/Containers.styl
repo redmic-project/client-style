@@ -219,15 +219,6 @@ body.uncollapsedSidebar
 	&.red
 		fondo color $red
 
-// Contenedor de errores
-.errorContainer
-	fullSize()
-	background-position center
-	background-repeat no-repeat
-	background-size 35% 35%
-	&.error404
-		fondo imagen $404-image
-
 .topMarginedContainer
 	margin-top $big
 
@@ -333,6 +324,7 @@ body.uncollapsedSidebar
 
 		.buttons
 			justify-content space-between
+			flex-wrap wrap
 
 			.right
 				display flex
@@ -410,7 +402,9 @@ body.uncollapsedSidebar
 			overflow hidden
 			transition-property height, width
 			transition-duration .3s
-			max-height calc(100% - .3rem)
+
+			&:not([data-rows="fitContent"])
+				max-height calc(100% - .3rem)
 
 			$cols = 6
 			for col in 1..$cols
@@ -540,6 +534,7 @@ body.uncollapsedSidebar
 			color $blue
 
 .legendContainer
+.tagListBottomContentContainer
 	@extend .imageContainer
 	background none
 	border-top 1px solid $gray
@@ -596,7 +591,7 @@ body.uncollapsedSidebar
 			font-weight bold
 	.selectInputContainer
 		padding 2rem
-		border-bottom 3px solid #3a3a41
+		border-bottom 3px solid #color5
 		> div
 			display flex
 			flex-direction column
@@ -689,3 +684,20 @@ body.uncollapsedSidebar
 		align-items center
 		padding 0 4px
 		justify-content space-between
+
+.tagListContainer
+	display flex
+	flex-wrap wrap
+
+	.tagListItem
+		border 1px solid $white
+		border-radius 1rem
+		padding .2rem 1rem
+		margin .3rem
+		cursor pointer
+
+		&.selected
+			background-color $blue
+
+		&:hover
+			background-color lighten($blue, 10%)
