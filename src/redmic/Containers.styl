@@ -334,21 +334,28 @@ body.uncollapsedSidebar
 			justify-content space-between
 			flex-wrap wrap
 
-			.right
+			& > .rightContainer
 				display flex
-				right 5rem
-				box-shadow 0 0 10px 0 rgba(0,0,0,0.5),inset 0 0 1px rgba(255,255,255,0.5)
-				border 1px solid rgba(255,255,255,0.3)
-				top 1.5rem
-				justify-content center
-				align-items center
-				padding 6px
-				border-radius 5px
 
-				& > i
-				& > a
-					color #fff
-					padding 0 5px
+				& > *
+					margin-left 1rem
+
+				.goToCatalogContainer
+				.right
+					display flex
+					right 5rem
+					box-shadow 0 0 10px 0 rgba(0,0,0,0.5),inset 0 0 1px rgba(255,255,255,0.5)
+					border 1px solid rgba(255,255,255,0.3)
+					top 1.5rem
+					justify-content center
+					align-items center
+					padding 6px
+					border-radius 5px
+
+					& > i
+					& > a
+						color #fff
+						padding 0 5px
 
 			.left
 			.right
