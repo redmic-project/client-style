@@ -144,6 +144,7 @@
 			max-height 100%
 			display flex
 			flex-flow column
+			overflow-x hidden
 
 			& .rowsContainer
 				padding-left 2rem
@@ -156,14 +157,14 @@
 				&:nth-child(even)
 					background-color $color12
 
-				.dragAndDropContainerRow
-					background-color $color6 !important
+				&.dragAndDrop
+					opacity .4
 
-				.borderTopDragAndDrop
-					border-top 1.5rem solid $yellowTitleRedmic !important
+				&.borderTopDragAndDrop
+					border-top 1.5rem solid $blue !important
 
-				.borderBottomDragAndDrop
-					border-bottom 1.5rem solid $yellowTitleRedmic !important
+				&.borderBottomDragAndDrop
+					border-bottom 1.5rem solid $blue !important
 
 				.containerTopRow
 					display flex
@@ -177,7 +178,6 @@
 						padding 1rem
 						display flex
 						flex-grow 1
-						//flex-basis 5rem
 						align-items center
 
 						> img
@@ -190,8 +190,15 @@
 						font-size 3.2rem
 						padding-right 5px
 
-				.containerTopRowDragAndDrop
-					cursor move
+					.dragHandler
+						cursor move
+						display flex
+						width 2rem
+						padding .5rem
+						justify-content center
+
+						span
+							margin 0 .1rem
 
 				&.selectContainerRow
 					&:nth-child(odd) > .containerTopRow
