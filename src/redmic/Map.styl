@@ -364,7 +364,7 @@
 		padding 5px
 
 
-.leaflet-overlay-pane.childIsOnHover > .trackingSvg
+.leaflet-overlay-pane:has(.trackingLineGroup:hover) > .trackingSvg
 	opacity 0.2
 
 .trackingSvg
@@ -372,12 +372,12 @@
 	transition-property opacity
 	transition-duration 0.5s
 
-	&.onHover
+	&:has(.trackingLineGroup:hover)
 		opacity 1 !important
 
 	.trackingLineGroup
 
-		&.onHover
+		&:hover
 			opacity 1
 
 			& > defs
