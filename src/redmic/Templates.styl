@@ -20,6 +20,10 @@
 	display flex
 	align-items center
 
+	&.badgesWithCounters
+		> div
+			margin-right .5rem
+
 	i
 		@extend .fa
 
@@ -78,6 +82,16 @@
 	.documentExternalUrlIcon:before
 		@extend .fa-external-link:before
 
+	.acousticReceptorsIcon:before
+		@extend .fa-bullseye:before
+
+	.acousticAnimalsIcon:before
+		@extend .fr-turtle:before
+
+	.acousticDetectionsIcon:before
+		@extend .fa-signal:before
+
+
 .selectContainerRow
 	.badgesContainer
 		i:before
@@ -88,3 +102,10 @@
 	.imageListElement
 		padding-top 1rem
 		max-width 100%
+
+
+.leaflet-popup-content
+	.mainTitle
+		fontSize 1.5rem
+		font-weight bold
+		margin-bottom 1rem
